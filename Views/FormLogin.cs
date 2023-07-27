@@ -22,7 +22,7 @@ namespace Views
 
 		}
 
-		private void btnIngresar_Click(object sender, EventArgs e)
+		private void BtnIngresar_Click(object sender, EventArgs e)
 		{
 			var frm = new FormCreateTaco();
 			frm.ShowDialog();

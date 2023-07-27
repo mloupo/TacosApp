@@ -1,4 +1,6 @@
-﻿namespace Views
+﻿using Model.Productos;
+
+namespace Views
 {
 	partial class FormIngredient
 	{
@@ -34,20 +36,20 @@
 			textBox1 = new TextBox();
 			btnSeacrhIngredient = new Button();
 			btnAddIngredient = new Button();
-			salsaBindingSource = new BindingSource(components);
-			idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			rellenoBindingSource = new BindingSource(components);
+			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgvFormIngredient).BeginInit();
-			((System.ComponentModel.ISupportInitialize)salsaBindingSource).BeginInit();
+			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
 			// 
 			// dgvFormIngredient
 			// 
 			dgvFormIngredient.AutoGenerateColumns = false;
 			dgvFormIngredient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
-			dgvFormIngredient.DataSource = salsaBindingSource;
+			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1 });
+			dgvFormIngredient.DataSource = rellenoBindingSource;
 			dgvFormIngredient.Location = new Point(13, 79);
 			dgvFormIngredient.Margin = new Padding(4, 3, 4, 3);
 			dgvFormIngredient.Name = "dgvFormIngredient";
@@ -71,7 +73,7 @@
 			btnSeacrhIngredient.TabIndex = 3;
 			btnSeacrhIngredient.Text = "Search";
 			btnSeacrhIngredient.UseVisualStyleBackColor = true;
-			btnSeacrhIngredient.Click += btnSeacrhIngredient_Click;
+			btnSeacrhIngredient.Click += BtnSeacrhIngredient_Click;
 			// 
 			// btnAddIngredient
 			// 
@@ -83,33 +85,33 @@
 			btnAddIngredient.UseVisualStyleBackColor = true;
 			btnAddIngredient.Click += BtnAddIngredient_Click;
 			// 
-			// salsaBindingSource
+			// rellenoBindingSource
 			// 
-			salsaBindingSource.DataSource = typeof(Model.Salsa);
+			rellenoBindingSource.DataSource = typeof(Relleno);
 			// 
-			// idDataGridViewTextBoxColumn
+			// dataGridViewTextBoxColumn3
 			// 
-			idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			idDataGridViewTextBoxColumn.HeaderText = "Id";
-			idDataGridViewTextBoxColumn.MinimumWidth = 6;
-			idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			idDataGridViewTextBoxColumn.Width = 125;
+			dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+			dataGridViewTextBoxColumn3.HeaderText = "Id";
+			dataGridViewTextBoxColumn3.MinimumWidth = 6;
+			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			dataGridViewTextBoxColumn3.Width = 125;
 			// 
-			// nombreDataGridViewTextBoxColumn
+			// dataGridViewTextBoxColumn2
 			// 
-			nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-			nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-			nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
-			nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-			nombreDataGridViewTextBoxColumn.Width = 125;
+			dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+			dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+			dataGridViewTextBoxColumn2.MinimumWidth = 6;
+			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			dataGridViewTextBoxColumn2.Width = 125;
 			// 
-			// precioDataGridViewTextBoxColumn
+			// dataGridViewTextBoxColumn1
 			// 
-			precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-			precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-			precioDataGridViewTextBoxColumn.MinimumWidth = 6;
-			precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-			precioDataGridViewTextBoxColumn.Width = 125;
+			dataGridViewTextBoxColumn1.DataPropertyName = "Precio";
+			dataGridViewTextBoxColumn1.HeaderText = "Precio";
+			dataGridViewTextBoxColumn1.MinimumWidth = 6;
+			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			dataGridViewTextBoxColumn1.Width = 125;
 			// 
 			// FormIngredient
 			// 
@@ -125,9 +127,10 @@
 			Name = "FormIngredient";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = resources.GetString("$this.Text");
+			Activated += FormIngredient_Activated;
 			Load += FormIngredient_Load;
 			((System.ComponentModel.ISupportInitialize)dgvFormIngredient).EndInit();
-			((System.ComponentModel.ISupportInitialize)salsaBindingSource).EndInit();
+			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -141,6 +144,9 @@
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
-		private BindingSource salsaBindingSource;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private BindingSource rellenoBindingSource;
 	}
 }

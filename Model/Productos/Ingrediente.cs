@@ -1,10 +1,10 @@
 ﻿using Model.Interfaces;
 
-namespace Model
+namespace Model.Productos
 {
-    public abstract class Ingrediente : IIngrediente
+	public abstract class Ingrediente : IIngrediente
 	{
-		public double Precio { get ; set; }
+		public double Precio { get; set; }
 		public string? Nombre { get; set; }
 		public int Id { get; set; }
 
@@ -12,7 +12,7 @@ namespace Model
 		{
 			Console.WriteLine(Precio);
 		}
-	
+
 		public override string? ToString()
 		{
 			return GetType().Name + DatosIngrediente();

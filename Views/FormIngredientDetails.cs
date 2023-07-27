@@ -1,16 +1,6 @@
 ﻿using Model;
 using Model.Controllers;
-using Model.Factory;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static Model.Enums;
+using Model.Productos;
 
 namespace Views
 {
@@ -18,7 +8,7 @@ namespace Views
 	{
 		private string tipoIngrediente;
 		private Ingrediente _ingrediente;
-		private BusinessLogicLayer _businessLogicLayer;
+		private readonly BusinessLogicLayer _businessLogicLayer;
 		private readonly IngredientController _ingredientController;
 		private List<Ingrediente> _ingredientes;
 
@@ -53,7 +43,7 @@ namespace Views
 			tipoIngrediente = cmbTipoIngrediente.SelectedItem.ToString();
 			CargarGrilla();
 		}
-		private void dgvFormIngredienteDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void DgvFormIngredienteDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvFormIngredienteDetails.Rows[e.RowIndex].Cells[e.ColumnIndex];
 			if (cell.Value.ToString() == "Edit")

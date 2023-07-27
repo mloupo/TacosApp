@@ -1,4 +1,5 @@
 ﻿using Model.Interfaces;
+using Model.Productos;
 
 namespace Model.Factory
 {
@@ -32,6 +33,7 @@ namespace Model.Factory
 			}
 			return producto;
 		}
+
 		public static IIngrediente GetCreation(string pProducto, string nombre, double precio, int id)
 		{
 			IIngrediente? producto = null;

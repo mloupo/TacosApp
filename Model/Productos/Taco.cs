@@ -1,44 +1,41 @@
 ﻿using Model.Interfaces;
 
-namespace Model
+namespace Model.Productos
 {
-    public class Taco : ITaco
+	public class Taco : ITaco
 	{
-		private static int TotalTacos = 1;
-		private readonly int myId;
-		private readonly List<IIngrediente> IngredientesTaco = new();
+		public int Id { get; set; }
+		private readonly List<Ingrediente> IngredientesTaco = new();
 		public readonly DateTime CreatedAt;
-	
-		public int MyId()
-		{
-			return myId;
-		}
 
-		public Taco() 
-		{
-		
-		}
-		public Taco(List<IIngrediente> lista)
+
+		public Taco(int id)
 		{
 			CreatedAt = DateTime.Now;
-			myId = TotalTacos;
-			TotalTacos++;
+			Id = id;
+		}
+
+		public Taco(int id, List<Ingrediente> lista)
+		{
+			Id = id;
+			CreatedAt = DateTime.Now;
 			IngredientesTaco = lista;
 		}
 
 		public double GetPrecio()
 		{
 			double PrecioTaco = 0;
-			foreach (Ingrediente Ingred in IngredientesTaco.Cast<Ingrediente>())
+			foreach (Ingrediente Ingred in IngredientesTaco)
 			{
 				PrecioTaco += Ingred.Precio;
 			}
 			return PrecioTaco;
 		}
+
 		public void PrecioToString()
 		{
 			double PrecioTaco = 0;
-			foreach (Ingrediente Ingred in IngredientesTaco.Cast<Ingrediente>())
+			foreach (Ingrediente Ingred in IngredientesTaco)
 			{
 				PrecioTaco += Ingred.Precio;
 			}
@@ -48,24 +45,25 @@ namespace Model
 
 		public void ShowIngredientes()
 		{
-			foreach (IIngrediente Ingrediente in IngredientesTaco)
+			foreach (Ingrediente Ingrediente in IngredientesTaco)
 			{
 				Console.WriteLine(Ingrediente.ToString());
 			}
 		}
-		public List<IIngrediente> GetIngredientes()
+
+		public List<Ingrediente> GetIngredientes()
 		{
-			return this.IngredientesTaco;
+			return IngredientesTaco;
 		}
 
 		public void Info()
 		{
-			Console.WriteLine($"\nTaco Nro: {MyId()}");
+			Console.WriteLine($"\nTaco Nro: {Id}");
 			Console.WriteLine($"Creado: {CreatedAt,50:D}");
 			ShowIngredientes();
 			PrecioToString();
 		}
 
-	
+
 	}
 }

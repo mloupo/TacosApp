@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Model.Productos
 {
 	public partial class Salsa : Ingrediente
 	{
@@ -20,7 +20,7 @@ namespace Model
 		{
 			Nombre = name;
 			Precio = precio;
-			Id = id;	
-		}	
+			Id = id;
+		}
 	}
 }

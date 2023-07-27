@@ -1,14 +1,5 @@
 ﻿using Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static Model.Enums;
+using Model.Productos;
 
 namespace Views
 {
@@ -44,7 +35,7 @@ namespace Views
 		#endregion
 
 		#region PRIVATE METHODS
-		private void btnSeacrhIngredient_Click(object sender, EventArgs e)
+		private void BtnSeacrhIngredient_Click(object sender, EventArgs e)
 		{
 
 		}
@@ -76,6 +67,10 @@ namespace Views
 		}
 
 		#endregion
-		
+
+		private void FormIngredient_Activated(object sender, EventArgs e)
+		{
+			ActualizarGrillaSearch();
+		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Model.Productos
 {
 	public class Relleno : Ingrediente
 	{

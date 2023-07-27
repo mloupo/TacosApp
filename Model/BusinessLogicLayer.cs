@@ -1,5 +1,6 @@
 ﻿using Model.Controllers;
 using Model.Interfaces;
+using Model.Productos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

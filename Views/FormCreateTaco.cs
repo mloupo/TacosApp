@@ -1,10 +1,11 @@
 ﻿using Model;
 using Model.Controllers;
 using Model.Interfaces;
+using Model.Productos;
 
 namespace Views
 {
-    public partial class FormCreateTaco : Form
+	public partial class FormCreateTaco : Form
 	{
 		private List<IIngrediente> ListaTortillas;
 		private List<IIngrediente> ListaSalsas;
@@ -12,7 +13,6 @@ namespace Views
 		private List<IIngrediente> AllIngredientList;
 		private List<IIngrediente> ListaIngredientesTaco;
 		private List<Taco> listaTacos;
-		
 
 		public FormCreateTaco()
 		{
@@ -67,10 +67,7 @@ namespace Views
 
 		private void CargarIngredientesTaco(List<IIngrediente> lista)
 		{
-
 			// Cargar el ingrediente selecionado en el datagrid
-
-
 			OrdenarIngredientesBD(AllIngredientList);
 		}
 
@@ -94,6 +91,7 @@ namespace Views
 				}
 			}
 		}
+
 		private void ActualizarListaTacos(List<Taco> listaTacos)
 		{
 			dgvTacoDetails.Rows.Clear();

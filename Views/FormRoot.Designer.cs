@@ -31,6 +31,7 @@
 			btnCreateTaco = new Button();
 			btnManageIngredient = new Button();
 			button4 = new Button();
+			RootPanel = new Panel();
 			SuspendLayout();
 			// 
 			// btnCreateTaco
@@ -65,11 +66,19 @@
 			button4.Text = "Mostrar Pedido";
 			button4.UseVisualStyleBackColor = true;
 			// 
+			// RootPanel
+			// 
+			RootPanel.Location = new Point(325, 12);
+			RootPanel.Name = "RootPanel";
+			RootPanel.Size = new Size(778, 568);
+			RootPanel.TabIndex = 11;
+			// 
 			// FormRoot
 			// 
 			AutoScaleDimensions = new SizeF(11F, 23F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1115, 592);
+			Controls.Add(RootPanel);
 			Controls.Add(button4);
 			Controls.Add(btnManageIngredient);
 			Controls.Add(btnCreateTaco);
@@ -86,5 +95,6 @@
 
 		private Button button4;
 		private Button btnManageIngredient;
+		private Panel RootPanel;
 	}
 }

@@ -5,7 +5,8 @@
 
 		static void Main()
 		{
-			/*TacoController tacoController = new();
+			/*
+			TacoController tacoController = new();
 			IngredientController ingredientController = IngredientController.GetInstance();
 
 			IIngrediente Maiz = ingredientController.Create(Enums.TipoIngrediente.Tortilla.ToString(), "Maiz", 135.50);
@@ -13,7 +14,7 @@
 
 			IIngrediente CannabisSativa = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Maria Juana", 905.75);
 			IIngrediente PsilocybeCubensis = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Goomba", 905.75);
-			IIngrediente HericiumErinaceus = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Champicóptero", 905.75); *//*https://mario.fandom.com/es/wiki/Champi%C3%B1%C3%B3n#Tipos_de_champi%C3%B1ones*//*
+			IIngrediente HericiumErinaceus = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Champicóptero", 905.75); https://mario.fandom.com/es/wiki/Champi%C3%B1%C3%B3n#Tipos_de_champi%C3%B1ones
 			IIngrediente Carne = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Carne", 150);
 			IIngrediente Pollo = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Pollo", 120);
 			IIngrediente Cerdo = ingredientController.Create(Enums.TipoIngrediente.Relleno.ToString(), "Cerdo", 140);
@@ -55,8 +56,8 @@ ocurrio hace {years} año{(years > 1 ? "s" : "")}"; //interpolation + verbatim +
 
 
 			Console.ReadLine();
-*/
-			/*
+
+			
 						string frase = """
 											Beautiful is better than ugly.
 											Explicit is better than implicit.

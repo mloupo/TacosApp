@@ -75,7 +75,7 @@
 			btnIngresar.TabIndex = 4;
 			btnIngresar.Text = "Ingresar";
 			btnIngresar.UseVisualStyleBackColor = true;
-			btnIngresar.Click += btnIngresar_Click;
+			btnIngresar.Click += BtnIngresar_Click;
 			// 
 			// FormLogin
 			// 

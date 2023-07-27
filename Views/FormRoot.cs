@@ -22,7 +22,8 @@ namespace Views
 
 		private void BtnManageIngredient_Click(object sender, EventArgs e)
 		{
-			OpenManageIngredientForm();
+			//OpenManageIngredientForm();
+			Helpers.OpenChildForm(OpenManageIngredientForm(), RootPanel);
 		}
 
 		private void BtnCreateTaco_Click(object sender, EventArgs e)
@@ -40,10 +41,10 @@ namespace Views
 			frmTaco.ShowDialog();
 		}
 
-		private void OpenManageIngredientForm()
+		private Form OpenManageIngredientForm()
 		{
 			FormIngredient frmIngredient = new();
-			frmIngredient.ShowDialog();
+			return frmIngredient;
 		}
 
 		#endregion

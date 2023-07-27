@@ -1,19 +1,25 @@
-﻿using Model.Interfaces;
+﻿using Model.Productos;
 
 namespace Model.Controllers
 {
-    public class TacoController
+	public class TacoController
 	{
 		// List<Taco> _listaTacos = new();
 
 
-		public Taco Create(List<IIngrediente> lista)
+		public Taco Create(int id, List<Ingrediente> lista)
 		{
-			Taco taco = new(lista);
+			Taco taco = new(id, lista);
 			return taco;
 		}
 
-		public List<IIngrediente> GetTacoIngredients(Taco taco)
+		public Taco Create(int id)
+		{
+			Taco taco = new(id);
+			return taco;
+		}
+
+		public List<Ingrediente> GetTacoIngredients(Taco taco)
 		{
 			return taco.GetIngredientes();
 		}
