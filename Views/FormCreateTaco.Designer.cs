@@ -43,8 +43,8 @@
 			btnCreateTaco = new Button();
 			label3 = new Label();
 			label4 = new Label();
-			textBox1 = new TextBox();
-			textBox2 = new TextBox();
+			txtDatosCliente = new TextBox();
+			txtNroContactoCliente = new TextBox();
 			btnCargaPedido = new Button();
 			label5 = new Label();
 			label6 = new Label();
@@ -188,19 +188,19 @@
 			label4.TabIndex = 20;
 			label4.Text = "Nro Contacto";
 			// 
-			// textBox1
+			// txtDatosCliente
 			// 
-			textBox1.Location = new Point(135, 22);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(550, 27);
-			textBox1.TabIndex = 21;
+			txtDatosCliente.Location = new Point(135, 22);
+			txtDatosCliente.Name = "txtDatosCliente";
+			txtDatosCliente.Size = new Size(550, 27);
+			txtDatosCliente.TabIndex = 21;
 			// 
-			// textBox2
+			// txtNroContactoCliente
 			// 
-			textBox2.Location = new Point(135, 55);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(550, 27);
-			textBox2.TabIndex = 22;
+			txtNroContactoCliente.Location = new Point(135, 55);
+			txtNroContactoCliente.Name = "txtNroContactoCliente";
+			txtNroContactoCliente.Size = new Size(550, 27);
+			txtNroContactoCliente.TabIndex = 22;
 			// 
 			// btnCargaPedido
 			// 
@@ -253,8 +253,8 @@
 			Controls.Add(label6);
 			Controls.Add(label5);
 			Controls.Add(btnCargaPedido);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
+			Controls.Add(txtNroContactoCliente);
+			Controls.Add(txtDatosCliente);
 			Controls.Add(label4);
 			Controls.Add(label3);
 			Controls.Add(btnCreateTaco);
@@ -294,8 +294,8 @@
 		private DataGridViewTextBoxColumn dgvPrecio;
 		private Label label3;
 		private Label label4;
-		private TextBox textBox1;
-		private TextBox textBox2;
+		private TextBox txtDatosCliente;
+		private TextBox txtNroContactoCliente;
 		private Button btnCargaPedido;
 		private Label label5;
 		private Label label6;
