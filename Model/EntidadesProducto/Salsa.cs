@@ -10,13 +10,13 @@ namespace Model.Productos
 	{
 		public Salsa() { }
 
-		public Salsa(string name, double precio)
+		public Salsa(string name, decimal precio)
 		{
 			Nombre = name;
 			Precio = precio;
 		}
 
-		public Salsa(string name, double precio, int id)
+		public Salsa(string name, decimal precio, int id)
 		{
 			Nombre = name;
 			Precio = precio;

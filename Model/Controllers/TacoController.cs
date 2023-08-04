@@ -19,7 +19,7 @@ namespace Model.Controllers
 			return taco;
 		}
 
-		public List<Ingrediente> GetTacoIngredients(Taco taco)
+		public IEnumerable<Ingrediente> GetTacoIngredients(Taco taco)
 		{
 			return taco.GetIngredientes();
 		}

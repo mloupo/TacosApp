@@ -4,56 +4,50 @@ namespace Model.Productos
 {
 	public class Taco : ITaco
 	{
-		public int Id { get; set; }
-		private readonly List<Ingrediente> IngredientesTaco = new();
+		public int Id { get; private set; }
+		private readonly IEnumerable<Ingrediente> _ingredientesTaco;
 		public readonly DateTime CreatedAt;
 
-
 		public Taco(int id)
-		{
+		{ 
 			CreatedAt = DateTime.Now;
 			Id = id;
 		}
 
-		public Taco(int id, List<Ingrediente> lista)
+		public Taco(int id, IEnumerable<Ingrediente> lista)
 		{
 			Id = id;
 			CreatedAt = DateTime.Now;
-			IngredientesTaco = lista;
+			_ingredientesTaco = lista;
 		}
 
-		public double GetPrecio()
+		public decimal GetPrecio()
 		{
-			double PrecioTaco = 0;
-			foreach (Ingrediente Ingred in IngredientesTaco)
+			decimal precioTaco = 0;
+			foreach (var ingred in _ingredientesTaco)
 			{
-				PrecioTaco += Ingred.Precio;
+				precioTaco += ingred.Precio;
 			}
-			return PrecioTaco;
+			return precioTaco;
 		}
 
 		public void PrecioToString()
 		{
-			double PrecioTaco = 0;
-			foreach (Ingrediente Ingred in IngredientesTaco)
-			{
-				PrecioTaco += Ingred.Precio;
-			}
-			Console.WriteLine($"\nTotal a Pagar: {PrecioTaco,40}");
+			decimal precioTaco = GetPrecio();
+			Console.WriteLine(string.Format("\nTotal a Pagar: {0,40:C}", precioTaco));
 		}
-
 
 		public void ShowIngredientes()
 		{
-			foreach (Ingrediente Ingrediente in IngredientesTaco)
+			foreach (var ingrediente in _ingredientesTaco)
 			{
-				Console.WriteLine(Ingrediente.ToString());
+				Console.WriteLine(ingrediente.ToString());
 			}
 		}
 
-		public List<Ingrediente> GetIngredientes()
+		public IEnumerable<Ingrediente> GetIngredientes()
 		{
-			return IngredientesTaco;
+			return _ingredientesTaco;
 		}
 
 		public void Info()
@@ -63,7 +57,5 @@ namespace Model.Productos
 			ShowIngredientes();
 			PrecioToString();
 		}
-
-
 	}
 }

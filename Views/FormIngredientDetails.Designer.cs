@@ -31,7 +31,7 @@ namespace Views
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			cmbTipoIngrediente = new ComboBox();
+			CmbIngredientType = new ComboBox();
 			lblIngredientType = new Label();
 			txtIngredientName = new TextBox();
 			txtIngredientPrice = new TextBox();
@@ -39,26 +39,26 @@ namespace Views
 			lblIngredientPrice = new Label();
 			btnCreateIngredient = new Button();
 			btnCancel = new Button();
-			dgvFormIngredienteDetails = new DataGridView();
-			rellenoBindingSource = new BindingSource(components);
+			dgvIngredientDetails = new DataGridView();
 			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 			Edit = new DataGridViewLinkColumn();
 			Delete = new DataGridViewLinkColumn();
-			((System.ComponentModel.ISupportInitialize)dgvFormIngredienteDetails).BeginInit();
+			rellenoBindingSource = new BindingSource(components);
+			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).BeginInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
 			// 
-			// cmbTipoIngrediente
+			// CmbIngredientType
 			// 
-			cmbTipoIngrediente.FormattingEnabled = true;
-			cmbTipoIngrediente.Location = new Point(101, 45);
-			cmbTipoIngrediente.Margin = new Padding(4, 3, 4, 3);
-			cmbTipoIngrediente.Name = "cmbTipoIngrediente";
-			cmbTipoIngrediente.Size = new Size(375, 31);
-			cmbTipoIngrediente.TabIndex = 0;
-			cmbTipoIngrediente.SelectedIndexChanged += CmbTipoIngrediente_SelectedIndexChanged;
+			CmbIngredientType.FormattingEnabled = true;
+			CmbIngredientType.Location = new Point(101, 45);
+			CmbIngredientType.Margin = new Padding(4, 3, 4, 3);
+			CmbIngredientType.Name = "CmbIngredientType";
+			CmbIngredientType.Size = new Size(375, 31);
+			CmbIngredientType.TabIndex = 0;
+			CmbIngredientType.SelectedIndexChanged += CmbIngredientType_SelectedIndexChanged;
 			// 
 			// lblIngredientType
 			// 
@@ -133,24 +133,20 @@ namespace Views
 			btnCancel.UseVisualStyleBackColor = true;
 			btnCancel.Click += BtnCancel_Click;
 			// 
-			// dgvFormIngredienteDetails
+			// dgvIngredientDetails
 			// 
-			dgvFormIngredienteDetails.AllowUserToOrderColumns = true;
-			dgvFormIngredienteDetails.AutoGenerateColumns = false;
-			dgvFormIngredienteDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvFormIngredienteDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, Edit, Delete });
-			dgvFormIngredienteDetails.DataSource = rellenoBindingSource;
-			dgvFormIngredienteDetails.Location = new Point(17, 260);
-			dgvFormIngredienteDetails.Name = "dgvFormIngredienteDetails";
-			dgvFormIngredienteDetails.RowHeadersWidth = 51;
-			dgvFormIngredienteDetails.RowTemplate.Height = 29;
-			dgvFormIngredienteDetails.Size = new Size(678, 347);
-			dgvFormIngredienteDetails.TabIndex = 12;
-			dgvFormIngredienteDetails.CellContentClick += DgvFormIngredienteDetails_CellContentClick;
-			// 
-			// rellenoBindingSource
-			// 
-			rellenoBindingSource.DataSource = typeof(Relleno);
+			dgvIngredientDetails.AllowUserToOrderColumns = true;
+			dgvIngredientDetails.AutoGenerateColumns = false;
+			dgvIngredientDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvIngredientDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, Edit, Delete });
+			dgvIngredientDetails.DataSource = rellenoBindingSource;
+			dgvIngredientDetails.Location = new Point(17, 260);
+			dgvIngredientDetails.Name = "dgvFormIngredienteDetails";
+			dgvIngredientDetails.RowHeadersWidth = 51;
+			dgvIngredientDetails.RowTemplate.Height = 29;
+			dgvIngredientDetails.Size = new Size(678, 347);
+			dgvIngredientDetails.TabIndex = 12;
+			dgvIngredientDetails.CellContentClick += DgvIngredientDetails_CellContentClick;
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
@@ -196,12 +192,16 @@ namespace Views
 			Delete.UseColumnTextForLinkValue = true;
 			Delete.Width = 80;
 			// 
+			// rellenoBindingSource
+			// 
+			rellenoBindingSource.DataSource = typeof(Relleno);
+			// 
 			// FormIngredientDetails
 			// 
 			AutoScaleDimensions = new SizeF(11F, 23F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(706, 619);
-			Controls.Add(dgvFormIngredienteDetails);
+			Controls.Add(dgvIngredientDetails);
 			Controls.Add(btnCancel);
 			Controls.Add(btnCreateIngredient);
 			Controls.Add(lblIngredientPrice);
@@ -209,14 +209,14 @@ namespace Views
 			Controls.Add(txtIngredientPrice);
 			Controls.Add(txtIngredientName);
 			Controls.Add(lblIngredientType);
-			Controls.Add(cmbTipoIngrediente);
+			Controls.Add(CmbIngredientType);
 			Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			Margin = new Padding(4, 3, 4, 3);
 			Name = "FormIngredientDetails";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Detalle Ingredientes";
 			Load += FormIngredientDetails_Load;
-			((System.ComponentModel.ISupportInitialize)dgvFormIngredienteDetails).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).EndInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
@@ -224,7 +224,7 @@ namespace Views
 
 		#endregion
 
-		private ComboBox cmbTipoIngrediente;
+		private ComboBox CmbIngredientType;
 		private Label lblIngredientType;
 		private TextBox txtIngredientName;
 		private TextBox txtIngredientPrice;
@@ -235,7 +235,7 @@ namespace Views
 		private DataGridViewTextBoxColumn preciounitarioDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private BindingSource salsaBindingSource;
-		private DataGridView dgvFormIngredienteDetails;
+		private DataGridView dgvIngredientDetails;
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;

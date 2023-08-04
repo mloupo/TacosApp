@@ -21,14 +21,14 @@ namespace Model.Controllers
 		}
 
 
-		public IIngrediente Create(string pIngrediente, string nombre, double precio)
+		public IIngrediente Create(string pIngrediente, string nombre, decimal precio)
 		{
 			IIngrediente creacion = IngredientFactory.GetCreation(pIngrediente, nombre, precio);
 			Console.WriteLine(creacion.ToString());
 			return creacion;
 		}
 
-		public IIngrediente Create(string pIngrediente, string nombre, double precio, int Id)
+		public IIngrediente Create(string pIngrediente, string nombre, decimal precio, int Id)
 		{
 			IIngrediente creacion = IngredientFactory.GetCreation(pIngrediente, nombre, precio, Id);
 			return creacion;

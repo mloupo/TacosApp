@@ -12,123 +12,138 @@ namespace Views
 		private readonly IngredientController _ingredientController;
 		private List<Ingrediente> _ingredientes;
 
-		public FormIngredientDetails()
-		{
-			InitializeComponent();
-			_businessLogicLayer = new();
-			_ingredientController = IngredientController.GetInstance();
-			_ingredientes = new();
-		}
-
-		#region EVENTS
-
 		private void BtnCreateIngredient_Click(object sender, EventArgs e)
 		{
 			GuardarIngrediente();
 		}
 
-		private void CmbTipoIngrediente_SelectedIndexChanged(object sender, EventArgs e)
+		private void CmbIngredientType_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			CleanFields();
-			ActualizarGrilla();
+			LimpiarCampos();
+			ActualizarGridView();
 		}
 
 		private void BtnCancel_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
+
 		private void FormIngredientDetails_Load(object sender, EventArgs e)
 		{
-			cmbTipoIngrediente.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente));
-			tipoIngrediente = cmbTipoIngrediente.SelectedItem.ToString();
-			CargarGrilla();
+			CmbIngredientType.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente));
+			tipoIngrediente = CmbIngredientType.SelectedItem.ToString();
+			CargarGridView();
 		}
-		private void DgvFormIngredienteDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+		private void DgvIngredientDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvFormIngredienteDetails.Rows[e.RowIndex].Cells[e.ColumnIndex];
+			DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvIngredientDetails.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
 			if (cell.Value.ToString() == "Edit")
 			{
-				int Id = int.Parse(dgvFormIngredienteDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
-				string Nombre = dgvFormIngredienteDetails.Rows[e.RowIndex].Cells[1].Value.ToString();
-				double Precio = double.Parse(dgvFormIngredienteDetails.Rows[e.RowIndex].Cells[2].Value.ToString());
+				int id = int.Parse(dgvIngredientDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
+				string name = dgvIngredientDetails.Rows[e.RowIndex].Cells[1].Value.ToString();
+				string priceStr = dgvIngredientDetails.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-				Ingrediente ingrediente = (Ingrediente)_ingredientController.Create(
-						tipoIngrediente, Nombre, Precio, Id);
+				if (!IsValidDecimal(priceStr))
+				{
+					MessageBox.Show("Invalid price value. Please enter a valid decimal value.");
+					return;
+				}
 
-				// Una cagada este metodo porque si mañana quisiera agregar una columna me tengo que acordar de modificar aca
+				decimal price = decimal.Parse(priceStr);
 
-				LoadIngred(ingrediente);
+				Ingrediente ingredient = (Ingrediente)_ingredientController.Create(
+						tipoIngrediente, name, price, id);
+
+				CargarIngrediente(ingredient);
 			}
 			else if (cell.Value.ToString() == "Delete")
 			{
-				int Id = int.Parse(dgvFormIngredienteDetails.Rows[e.RowIndex].Cells[4].Value.ToString());
-				DeleteIngred(Id);
-				ActualizarGrilla();
+				int id = int.Parse(dgvIngredientDetails.Rows[e.RowIndex].Cells[4].Value.ToString());
+				EliminarIngrediente(id);
+				ActualizarGridView();
 			}
 		}
 
-		#endregion
-
-		#region PRIVATE METHODS
 		private void GuardarIngrediente()
 		{
-			Ingrediente creacion = (Ingrediente)_ingredientController.Create(
+			decimal price;
+			if (!IsValidPositiveDecimal(txtIngredientPrice.Text))
+			{
+				MessageBox.Show("Invalid price value. Please enter a valid decimal value.");
+				return;
+			}
+
+			Ingrediente creation = (Ingrediente)_ingredientController.Create(
 				tipoIngrediente,
 				txtIngredientName.Text,
-				Convert.ToDouble(txtIngredientPrice.Text
-				));
-			creacion.Id = _ingrediente != null ? _ingrediente.Id : 0;
+				decimal.Parse(txtIngredientPrice.Text));
+			creation.Id = _ingrediente != null ? _ingrediente.Id : 0;
 
-			CleanFields();
-			_businessLogicLayer.SaveIngrediente(creacion, tipoIngrediente);
-			ActualizarGrilla();
+			LimpiarCampos();
+			_businessLogicLayer.SaveIngrediente(creation, tipoIngrediente);
+			ActualizarGridView();
 		}
 
-		private void CleanFields()
+		private bool IsValidDecimal(string input)
+		{
+			decimal result;
+
+			if (!decimal.TryParse(input, out result))
+			{
+				return false;
+			}
+
+			return true;
+		}
+
+		private bool IsValidPositiveDecimal(string input)
+		{
+			decimal result;
+
+			if (!decimal.TryParse(input, out result))
+			{
+				return false;
+			}
+
+			return result > 0;
+		}
+
+		private void LimpiarCampos()
 		{
 			txtIngredientName.Text = String.Empty;
 			txtIngredientPrice.Text = String.Empty;
 		}
 
-		private void CargarGrilla()
+		private void CargarGridView()
 		{
 			_ingredientes = _businessLogicLayer.GetIngredientes(tipoIngrediente);
-			dgvFormIngredienteDetails.DataSource = _ingredientes;
+			dgvIngredientDetails.DataSource = _ingredientes;
 		}
 
-		private void ActualizarGrilla()
+		private void ActualizarGridView()
 		{
-			tipoIngrediente = cmbTipoIngrediente.SelectedItem.ToString();
+			tipoIngrediente = CmbIngredientType.SelectedItem.ToString();
 			_ingredientes = _businessLogicLayer.GetIngredientes(tipoIngrediente);
-			dgvFormIngredienteDetails.DataSource = _ingredientes;
+			dgvIngredientDetails.DataSource = _ingredientes;
 		}
 
-		#endregion
-
-		#region PUBLIC METHODS
-		public void LoadIngred(Ingrediente ingrediente)
+		public void CargarIngrediente(Ingrediente ingredient)
 		{
-			_ingrediente = ingrediente;
+			_ingrediente = ingredient;
 
-			if (ingrediente != null)
+			if (_ingrediente != null)
 			{
-				CleanFields();
-				txtIngredientName.Text = ingrediente.Nombre;
-				txtIngredientPrice.Text = ingrediente.Precio.ToString();
+				LimpiarCampos();
+				txtIngredientName.Text = _ingrediente.Nombre;
+				txtIngredientPrice.Text = _ingrediente.Precio.ToString();
 			}
 		}
 
-		public void DeleteIngred(int Id)
+		public void EliminarIngrediente(int id)
 		{
-			_businessLogicLayer.DeleteIngredient(Id, tipoIngrediente);
+			_businessLogicLayer.DeleteIngredient(id, tipoIngrediente);
 		}
-
-		#endregion
-
-
-
-
-
-
 	}
 }

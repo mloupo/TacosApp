@@ -56,7 +56,7 @@ namespace Model
 				{
 					int Id = int.Parse(reader["Id"].ToString());
 					string Nombre = reader["Nombre"].ToString();
-					double Precio = double.Parse(reader["Precio"].ToString());
+					decimal Precio = decimal.Parse(reader["Precio"].ToString());
 					Ingrediente ingred = (Ingrediente)_ingredientController.Create(tipoIngrediente, Nombre, Precio, Id);
 					ingredientes.Add(ingred);
 				}

@@ -22,23 +22,22 @@ namespace Views
 
 		private void BtnManageIngredient_Click(object sender, EventArgs e)
 		{
-			//OpenManageIngredientForm();
 			Helpers.OpenChildForm(OpenManageIngredientForm(), RootPanel);
 		}
 
 		private void BtnCreateTaco_Click(object sender, EventArgs e)
 		{
-			OpenCreateTacoForm();
+			Helpers.OpenChildForm(OpenCreateTacoForm(), RootPanel);
 		}
 
 		#endregion
 
 		#region PRIVATE METHODS
 
-		private void OpenCreateTacoForm()
+		private Form OpenCreateTacoForm()
 		{
 			FormCreateTaco frmTaco = new();
-			frmTaco.ShowDialog();
+			return frmTaco;
 		}
 
 		private Form OpenManageIngredientForm()

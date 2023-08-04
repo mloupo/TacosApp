@@ -61,7 +61,7 @@
 			btnAgregarIngrediente.TabIndex = 8;
 			btnAgregarIngrediente.Text = "Agregar Ingrediente";
 			btnAgregarIngrediente.UseVisualStyleBackColor = true;
-			btnAgregarIngrediente.Click += BtnAgregarIngrediente_Click;
+			
 			// 
 			// label2
 			// 
@@ -98,7 +98,7 @@
 			cmbTipoIngrediente.Name = "cmbTipoIngrediente";
 			cmbTipoIngrediente.Size = new Size(439, 28);
 			cmbTipoIngrediente.TabIndex = 12;
-			cmbTipoIngrediente.SelectedIndexChanged += CmbTipoIngrediente_SelectedIndexChanged;
+			
 			// 
 			// cmbIngrediente
 			// 
@@ -168,7 +168,7 @@
 			btnCreateTaco.TabIndex = 18;
 			btnCreateTaco.Text = "Agregar Taco";
 			btnCreateTaco.UseVisualStyleBackColor = true;
-			btnCreateTaco.Click += BtnCreateTaco_Click;
+		
 			// 
 			// label3
 			// 

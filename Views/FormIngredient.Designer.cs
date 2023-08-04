@@ -33,13 +33,13 @@ namespace Views
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngredient));
 			dgvFormIngredient = new DataGridView();
-			textBox1 = new TextBox();
-			btnSeacrhIngredient = new Button();
-			btnAddIngredient = new Button();
-			rellenoBindingSource = new BindingSource(components);
 			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+			rellenoBindingSource = new BindingSource(components);
+			textBox1 = new TextBox();
+			btnSeacrhIngredient = new Button();
+			btnAddIngredient = new Button();
 			((System.ComponentModel.ISupportInitialize)dgvFormIngredient).BeginInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
@@ -57,37 +57,6 @@ namespace Views
 			dgvFormIngredient.RowTemplate.Height = 29;
 			dgvFormIngredient.Size = new Size(661, 427);
 			dgvFormIngredient.TabIndex = 0;
-			// 
-			// textBox1
-			// 
-			textBox1.Location = new Point(16, 23);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(360, 31);
-			textBox1.TabIndex = 1;
-			// 
-			// btnSeacrhIngredient
-			// 
-			btnSeacrhIngredient.Location = new Point(382, 23);
-			btnSeacrhIngredient.Name = "btnSeacrhIngredient";
-			btnSeacrhIngredient.Size = new Size(94, 29);
-			btnSeacrhIngredient.TabIndex = 3;
-			btnSeacrhIngredient.Text = "Search";
-			btnSeacrhIngredient.UseVisualStyleBackColor = true;
-			btnSeacrhIngredient.Click += BtnSeacrhIngredient_Click;
-			// 
-			// btnAddIngredient
-			// 
-			btnAddIngredient.Location = new Point(482, 23);
-			btnAddIngredient.Name = "btnAddIngredient";
-			btnAddIngredient.Size = new Size(114, 29);
-			btnAddIngredient.TabIndex = 4;
-			btnAddIngredient.Text = "Agregar";
-			btnAddIngredient.UseVisualStyleBackColor = true;
-			btnAddIngredient.Click += BtnAddIngredient_Click;
-			// 
-			// rellenoBindingSource
-			// 
-			rellenoBindingSource.DataSource = typeof(Relleno);
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
@@ -112,6 +81,36 @@ namespace Views
 			dataGridViewTextBoxColumn1.MinimumWidth = 6;
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			dataGridViewTextBoxColumn1.Width = 125;
+			// 
+			// rellenoBindingSource
+			// 
+			rellenoBindingSource.DataSource = typeof(Relleno);
+			// 
+			// textBox1
+			// 
+			textBox1.Location = new Point(16, 23);
+			textBox1.Name = "textBox1";
+			textBox1.Size = new Size(360, 31);
+			textBox1.TabIndex = 1;
+			// 
+			// btnSeacrhIngredient
+			// 
+			btnSeacrhIngredient.Location = new Point(382, 23);
+			btnSeacrhIngredient.Name = "btnSeacrhIngredient";
+			btnSeacrhIngredient.Size = new Size(94, 29);
+			btnSeacrhIngredient.TabIndex = 3;
+			btnSeacrhIngredient.Text = "Search";
+			btnSeacrhIngredient.UseVisualStyleBackColor = true;
+			// 
+			// btnAddIngredient
+			// 
+			btnAddIngredient.Location = new Point(495, 23);
+			btnAddIngredient.Name = "btnAddIngredient";
+			btnAddIngredient.Size = new Size(114, 29);
+			btnAddIngredient.TabIndex = 13;
+			btnAddIngredient.Text = "Agregar";
+			btnAddIngredient.UseVisualStyleBackColor = true;
+			btnAddIngredient.Click += btnAddIngredient_Click;
 			// 
 			// FormIngredient
 			// 
@@ -140,7 +139,6 @@ namespace Views
 		private DataGridView dgvFormIngredient;
 		private TextBox textBox1;
 		private Button btnSeacrhIngredient;
-		private Button btnAddIngredient;
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
@@ -148,5 +146,6 @@ namespace Views
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private BindingSource rellenoBindingSource;
+		private Button btnAddIngredient;
 	}
 }

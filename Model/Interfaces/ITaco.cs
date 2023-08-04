@@ -9,10 +9,10 @@ namespace Model.Interfaces
 {
     public interface ITaco
     {
-        public double GetPrecio();
+        public decimal GetPrecio();
         public void PrecioToString();
         public void ShowIngredientes();
-        public List<Ingrediente> GetIngredientes();
+        public IEnumerable<Ingrediente> GetIngredientes();
         public void Info();
 
     }

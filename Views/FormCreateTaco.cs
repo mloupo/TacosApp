@@ -2,106 +2,142 @@
 using Model.Controllers;
 using Model.Interfaces;
 using Model.Productos;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Views
 {
-	public partial class FormCreateTaco : Form
-	{
-		private List<IIngrediente> ListaTortillas;
-		private List<IIngrediente> ListaSalsas;
-		private List<IIngrediente> ListaRellenos;
-		private List<IIngrediente> AllIngredientList;
-		private List<IIngrediente> ListaIngredientesTaco;
-		private List<Taco> listaTacos;
+    public partial class FormCreateTaco : Form
+    {
+        private readonly List<Ingrediente> listaTortillas = new();
+        private readonly List<Ingrediente> listaSalsas = new();
+        private readonly List<Ingrediente> listaRellenos = new();
+        private readonly List<Ingrediente> allIngredientList = new();
+        private readonly List<Taco> listaTacos = new List<Taco>();
+        private readonly BindingList<Ingrediente> listaIngredientesTaco = new();
 
-		public FormCreateTaco()
+        public FormCreateTaco()
+        {
+            InitializeComponent();
+            cmbTipoIngrediente.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente));
+
+            OrdenarIngredientesBD(allIngredientList);
+            CargarIngredientesCmb();
+        }
+
+/*		private void btnCreateTaco_Click(object sender, EventArgs e)
 		{
-			InitializeComponent();
-			cmbTipoIngrediente.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente)); //Ir a buscar a la base de datos
+			if (!listaIngredientesTaco.Any())
+			{
+				MessageBox.Show("Primero debe agregar ingredientes al taco.");
+				return;
+			}
 
-			ListaTortillas = new();
-			ListaRellenos = new();
-			ListaSalsas = new();
-			AllIngredientList = new();
-			ListaIngredientesTaco = new();
-			OrdenarIngredientesBD(AllIngredientList);
-			CargarIngredientesCmb();
-		}
-
-		private void BtnCreateTaco_Click(object sender, EventArgs e)
-		{
-
+			var taco = new Taco();
+			foreach (var ingrediente in listaIngredientesTaco)
+			{
+				taco.AddIngrediente(ingrediente);
+			}
+			listaTacos.Add(taco);
 			ActualizarListaTacos(listaTacos);
-			//Aca ademas de cargar el taco recien creado a la lista de tacos del pedido,
-			//hay que llamar una funcion que calcule taco valor menor, mayor y promedio
-		}
+			// Fixed a mistake in the code block before to call the CalcularValorTacos() method
+			CalcularValorTacos(listaTacos);
+		}*/
 
-		private void BtnAgregarIngrediente_Click(object sender, EventArgs e)
-		{
-			ListaIngredientesTaco.Add((IIngrediente)cmbIngrediente.SelectedItem);
+		private void btnAgregarIngrediente_Click(object sender, EventArgs e)
+        {
+            if (cmbIngrediente.SelectedIndex >= 0) {
+                listaIngredientesTaco.Add(cmbIngrediente.SelectedItem as Ingrediente);
+            } else {
+                MessageBox.Show("Debe seleccionar un ingrediente.");
+            }
+        }
 
-		}
+        private void cmbTipoIngrediente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarIngredientesCmb();
+        }
 
-		private void CmbTipoIngrediente_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			CargarIngredientesCmb();
-		}
+        private void CargarIngredientesCmb()
+        {
+            switch (cmbTipoIngrediente.Text)
+            {
+                case "Salsa":
+                    cmbIngrediente.DataSource = listaSalsas;
+                    break;
+                case "Relleno":
+                    cmbIngrediente.DataSource = listaRellenos;
+                    break;
+                case "Tortilla":
+                    cmbIngrediente.DataSource = listaTortillas;
+                    break;
+                default:
+                    cmbIngrediente.DataSource = null;
+                    break;
+            }
+            
+            cmbIngrediente.ValueMember = "Nombre";
+            cmbIngrediente.DisplayMember = "Nombre";
+            cmbIngrediente.SelectedIndex = -1;
+        }
 
-		private void CargarIngredientesCmb()
-		{
-			switch (cmbTipoIngrediente.Text)
-			{
-				case "Salsa":
-					cmbIngrediente.DataSource = ListaSalsas;
-					break;
+        private void CargarIngredientesTaco(List<Ingrediente> list)
+        {
+            dgvTacoDetails.DataSource = list;
+        }
 
-				case "Relleno":
-					cmbIngrediente.DataSource = ListaRellenos;
-					break;
 
-				case "Tortilla":
-					cmbIngrediente.DataSource = ListaTortillas;
-					break;
-			}
-		}
+        private void OrdenarIngredientesBD(List<Ingrediente> allIngredientList)
+        {
+            listaSalsas.Clear();
+            listaTortillas.Clear();
+            listaRellenos.Clear();
 
-		private void CargarIngredientesTaco(List<IIngrediente> lista)
-		{
-			// Cargar el ingrediente selecionado en el datagrid
-			OrdenarIngredientesBD(AllIngredientList);
-		}
+            if (allIngredientList.Any()) {
+                foreach (var ingrediente in allIngredientList)
+                {
+                    switch (ingrediente.GetType().Name)
+                    {
+                        case nameof(Salsa):
+                            listaSalsas.Add(ingrediente);
+                            break;
+                        case nameof(Relleno):
+                            listaRellenos.Add(ingrediente);
+                            break;
+                        case nameof(Tortilla):
+                            listaTortillas.Add(ingrediente);
+                            break;
+                    }
+                }
+            }
+        }
 
-		private void OrdenarIngredientesBD(List<IIngrediente> AllIngredientList)
-		{
-			foreach (IIngrediente ingrediente in AllIngredientList)
-			{
-				switch (ingrediente.GetType().Name)
-				{
-					case "Salsa":
-						ListaSalsas.Add(ingrediente);
-						break;
+        private void ActualizarListaTacos(List<Taco> listaTacos)
+        {
+            dgvTacoDetails.DataSource = null;
+            dgvTacoDetails.DataSource = listaTacos;
+            dgvTacoDetails.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
 
-					case "Relleno":
-						ListaRellenos.Add(ingrediente);
-						break;
+      /*  private void CalcularValorTacos(List<Taco> tacos)
+        {
+            var precios = tacos.Select(x => x.GetPrecio).ToArray();
+            if (precios.Any()) {
+                var valorMayor = precios.Max();
+                var valorMenor = precios.Min();
+                var promedio = precios.Average();
 
-					case "Tortilla":
-						ListaTortillas.Add(ingrediente);
-						break;
-				}
-			}
-		}
-
-		private void ActualizarListaTacos(List<Taco> listaTacos)
-		{
-			dgvTacoDetails.Rows.Clear();
-			dgvTacoDetails.Refresh();
-
-			foreach (var taco in listaTacos)
-			{
-				Console.WriteLine("\n-----------------------------------------------------------");
-				taco.Info();
-			}
-		}
-	}
+                txtMayorValorTaco.Text = $"${valorMayor:0.00}";
+                txtMenorValorTaco.Text = $"${valorMenor:0.00}";
+                txtPromedioValorTaco.Text = $"${promedio:0.00}";
+            }
+        }*/
+    }
 }

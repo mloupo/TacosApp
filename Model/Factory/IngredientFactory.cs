@@ -14,7 +14,7 @@ namespace Model.Factory
 				return _instance;
 			}
 
-		public static IIngrediente GetCreation(string pProducto, string nombre, double precio)
+		public static IIngrediente GetCreation(string pProducto, string nombre, decimal precio)
 		{
 			IIngrediente? producto = null;
 			switch (pProducto)
@@ -34,7 +34,7 @@ namespace Model.Factory
 			return producto;
 		}
 
-		public static IIngrediente GetCreation(string pProducto, string nombre, double precio, int id)
+		public static IIngrediente GetCreation(string pProducto, string nombre, decimal precio, int id)
 		{
 			IIngrediente? producto = null;
 			switch (pProducto)

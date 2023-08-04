@@ -50,7 +50,7 @@
 			btnManageIngredient.Location = new Point(16, 61);
 			btnManageIngredient.Margin = new Padding(4, 3, 4, 3);
 			btnManageIngredient.Name = "btnManageIngredient";
-			btnManageIngredient.Size = new Size(302, 33);
+			btnManageIngredient.Size = new Size(278, 33);
 			btnManageIngredient.TabIndex = 8;
 			btnManageIngredient.Text = "Gestionar Ingredientes";
 			btnManageIngredient.UseVisualStyleBackColor = true;
@@ -70,14 +70,14 @@
 			// 
 			RootPanel.Location = new Point(325, 12);
 			RootPanel.Name = "RootPanel";
-			RootPanel.Size = new Size(778, 568);
+			RootPanel.Size = new Size(1326, 941);
 			RootPanel.TabIndex = 11;
 			// 
 			// FormRoot
 			// 
 			AutoScaleDimensions = new SizeF(11F, 23F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1115, 592);
+			ClientSize = new Size(1663, 965);
 			Controls.Add(RootPanel);
 			Controls.Add(button4);
 			Controls.Add(btnManageIngredient);

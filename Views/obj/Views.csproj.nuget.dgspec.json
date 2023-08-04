@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj": {}
+    "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj": {
+    "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj",
+        "projectUniqueName": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj",
+        "projectPath": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\obj\\",
+        "outputPath": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,18 +61,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400-preview.23330.10\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj": {
+    "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj",
+        "projectUniqueName": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj",
         "projectName": "Views",
-        "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj",
+        "projectPath": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\Views.csproj",
         "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\obj\\",
+        "outputPath": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Views\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj"
+              "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj": {
+                "projectPath": "c:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\Model\\Model.csproj"
               }
             }
           }
@@ -123,7 +123,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400-preview.23330.10\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,7 +6,7 @@ namespace Model
     public class Pedido : IPedido
     {
         private readonly List<Taco> _listaTacos;
-        public double Importe { get; set; }
+        public decimal Importe { get; set; }
 
         public int Id { get; set; }
         public readonly DateTime CreatedAt;
@@ -25,7 +25,7 @@ namespace Model
 
         }
 
-        private double GetImporteTotal()
+        private decimal GetImporteTotal()
         {
             foreach (Taco taco in _listaTacos)
             {

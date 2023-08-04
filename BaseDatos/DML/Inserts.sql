@@ -13,7 +13,7 @@ INSERT INTO MediosEnvio (Patente, Nombre, NroContacto) VALUES
     ('XYZ987', 'Jorge Porcel', '4444444444'),
     ('LMN456', 'Jonh Travolta', '6666666666'),
     ('DEF789', 'Conor MacGregor', '2222222222'),
-    ('GHI321', 'Sanderlei Silva', '9999999999');
+    ('GHI321', 'Wanderlei Silva', '9999999999');
 
 -- Insertar datos en la tabla Tacos
 INSERT INTO Tacos (Precio) VALUES
@@ -29,4 +29,9 @@ INSERT INTO Pedidos (Fecha_Hora, Importe, Entregado, idCliente, idMedioEnvio) VA
     ('2023-07-26 14:30:00', 12.0, 1, 2, 2),
     ('2023-07-26 18:15:00', 6.0, 0, 3, 3),
     ('2023-07-27 12:45:00', 9.5, 1, 4, 4),
-    ('2023-07-27 20:00:00', 6.0, 1, 5, 5)
+    ('2023-07-27 20:00:00', 6.0, 1, 5, 5),
+    ('2023-07-25 11:00:00', 15.5, 1, 3, 1),
+    ('2023-07-26 14:50:00', 12.0, 1, 2, 2),
+    ('2023-07-26 18:15:00', 7.0, 0, 3, 3),
+    ('2023-07-27 12:49:00', 5.5, 1, 4, 4),
+    ('2023-07-27 21:00:00', 6.0, 1, 5, 5)

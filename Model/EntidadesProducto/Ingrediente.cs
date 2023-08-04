@@ -4,7 +4,7 @@ namespace Model.Productos
 {
 	public abstract class Ingrediente : IIngrediente
 	{
-		public double Precio { get; set; }
+		public decimal Precio { get; set; }
 		public string? Nombre { get; set; }
 		public int Id { get; set; }
 
