@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.EntidadesUsuario
 {
-    public class Admin : User
+    public class Admin : Usuario
     {
 
     }

@@ -9,12 +9,12 @@ namespace Views
 		private readonly List<Ingrediente> _tortillas;
 		private readonly List<Ingrediente> _rellenos;
 		private readonly List<Ingrediente> _salsas;
-		private readonly BusinessLogicLayer _businessLogicLayer;
+		private readonly CapaLogicaNegocio _businessLogicLayer;
 
 		public FormIngredient()
 		{
 			InitializeComponent();
-			_businessLogicLayer = new BusinessLogicLayer();
+			_businessLogicLayer = new CapaLogicaNegocio();
 			_allIngredientes = new List<Ingrediente>();
 			_tortillas = new List<Ingrediente>();
 			_rellenos = new List<Ingrediente>();
@@ -33,9 +33,9 @@ namespace Views
 
 		private List<Ingrediente> UnirListas()
 		{
-			_tortillas.AddRange(_businessLogicLayer.GetIngredientes("Tortilla"));
-			_rellenos.AddRange(_businessLogicLayer.GetIngredientes("Relleno"));
-			_salsas.AddRange(_businessLogicLayer.GetIngredientes("Salsa"));
+			_tortillas.AddRange(_businessLogicLayer.ObtenerIngredientes("Tortilla"));
+			_rellenos.AddRange(_businessLogicLayer.ObtenerIngredientes("Relleno"));
+			_salsas.AddRange(_businessLogicLayer.ObtenerIngredientes("Salsa"));
 
 			_allIngredientes.AddRange(_tortillas);
 			_allIngredientes.AddRange(_rellenos);

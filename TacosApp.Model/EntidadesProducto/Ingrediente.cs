@@ -4,12 +4,12 @@ namespace Model.Productos
 {
 	public abstract class Ingrediente : IIngrediente
 	{
-		public decimal Precio { get; set; }
+		public float Precio { get; set; }
 		public string? Nombre { get; set; }
 		public int Id { get; set; }
 		public int CantidadMaxima { get; set; }
 
-		public void GetPrecioConsole()
+		public void ObtenerPrecioConsola()
 		{
 			Console.WriteLine(Precio);
 		}

@@ -1,23 +1,24 @@
 ﻿using Model;
+using Model.Controllers;
 using Model.Productos;
 using System.ComponentModel;
-using static Model.Enums;
 
 namespace Views
 {
 	public partial class FormCreateTaco : Form
 	{
 		private string _tipoIngrediente;
-		private List<Ingrediente> listaTortillas = new();
-		private List<Ingrediente> listaSalsas = new();
-		private List<Ingrediente> listaRellenos = new();
+		private readonly CapaLogicaNegocio _businessLogicLayer;
+		private readonly ControladorTaco _tacoController;
+		private Taco taco = new Taco();
+
 		private BindingList<Ingrediente> listaIngredientesTaco = new();
 		private List<Taco> listaTacos = new List<Taco>();
 
 		public FormCreateTaco()
 		{
 			InitializeComponent();
-
+			_businessLogicLayer = new();
 		}
 
 		private void btnAgregarIngrediente_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Views
 
 		private void btnCreateTaco_Click(object sender, EventArgs e)
 		{
-			var taco = new Taco(listaIngredientesTaco);
+
 
 			listaTacos.Add(taco);
 			ActualizarListaTacos(listaTacos);
@@ -45,7 +46,7 @@ namespace Views
 		private void cmbTipoIngrediente_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			_tipoIngrediente = cmbTipoIngrediente.SelectedItem.ToString();
-			CargarListasIngredientes();
+			CargarIngredientesCmb();
 
 		}
 
@@ -54,13 +55,13 @@ namespace Views
 			switch (_tipoIngrediente)
 			{
 				case "Salsa":
-					cmbIngrediente.DataSource = listaSalsas;
+					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes("Salsa");
 					break;
 				case "Relleno":
-					cmbIngrediente.DataSource = listaRellenos;
+					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes("Relleno");
 					break;
 				case "Tortilla":
-					cmbIngrediente.DataSource = listaTortillas;
+					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes("Tortilla");
 					break;
 				default:
 					cmbIngrediente.DataSource = null;
@@ -86,7 +87,7 @@ namespace Views
 
 		private void CalcularValorTacos(List<Taco> tacos)
 		{
-			var precios = tacos.Select(x => x.GetPrecio()).ToArray();
+			var precios = tacos.Select(x => x.ObtenerPrecio()).ToArray();
 			if (precios.Any())
 			{
 				var valorMayor = precios.Max();
@@ -106,7 +107,7 @@ namespace Views
 
 		public void GenerarNuevoPedido()
 		{
-			// Code to generate a new order goes here
+			// Code to generate a new order 
 
 		}
 
@@ -129,19 +130,6 @@ namespace Views
 			txtDatosCliente.Enabled = enabled;
 			txtNroContactoCliente.Enabled = enabled;
 			dtPickerDeliveryRequest.Enabled = enabled;
-		}
-
-
-		private void CargarListasIngredientes()
-		{
-			var businessLogicLayer = new BusinessLogicLayer();
-			var dataAccessLayer = new DataAccessLayer();
-
-			listaRellenos = businessLogicLayer.GetIngredientes("Relleno");
-			listaSalsas = businessLogicLayer.GetIngredientes("Salsa");
-			listaTortillas = businessLogicLayer.GetIngredientes("Tortilla");
-
-			CargarIngredientesCmb();
 		}
 	}
 }

@@ -8,15 +8,15 @@ namespace Views
 	{
 		private string tipoIngrediente;
 		private Ingrediente _ingrediente;
-		private readonly BusinessLogicLayer _businessLogicLayer;
-		private readonly IngredientController _ingredientController;
+		private readonly CapaLogicaNegocio _capaLogicaNegocio;
+		private readonly ControladorIngrediente _controladorIngrediente;
 		private List<Ingrediente> _ingredientes;
 
-		public FormIngredientDetails( )
+		public FormIngredientDetails()
 		{
 			InitializeComponent();
-			_businessLogicLayer = new();
-			_ingredientController = IngredientController.GetInstance();
+			_capaLogicaNegocio = new();
+			_controladorIngrediente = ControladorIngrediente.ObtenerInstancia();
 			_ingredientes = new();
 		}
 
@@ -53,15 +53,15 @@ namespace Views
 				string name = dgvIngredientDetails.Rows[e.RowIndex].Cells[1].Value.ToString();
 				string priceStr = dgvIngredientDetails.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-				if (!IsValidDecimal(priceStr))
+				if (!EsValidoDecimal(priceStr))
 				{
 					MessageBox.Show("Invalid price value. Please enter a valid decimal value.");
 					return;
 				}
 
-				decimal price = decimal.Parse(priceStr);
+				float price = float.Parse(priceStr);
 
-				Ingrediente ingredient = (Ingrediente)_ingredientController.Create(
+				Ingrediente ingredient = (Ingrediente)_controladorIngrediente.Crear(
 						tipoIngrediente, name, price, id);
 
 				CargarIngrediente(ingredient);
@@ -91,38 +91,38 @@ namespace Views
 		{
 			if (String.IsNullOrEmpty(txtIngredientName.Text))
 			{
-				MessageBox.Show("Please enter a valid name.");
+				MessageBox.Show("Por favor ingresa un nombre válido");
 				return;
 			}
 
-			if (!IsValidPositiveDecimal(txtIngredientPrice.Text))
+			if (!EsValidoPositivoDecimal(txtIngredientPrice.Text))
 			{
-				MessageBox.Show("Please enter a valid decimal value for the price.");
+				MessageBox.Show("Por favor ingresa un valor decimal válido para el precio.");
 				return;
 			}
 
 			if (!System.Text.RegularExpressions.Regex.IsMatch(txtIngredientName.Text, "^[a-zA-Z]+$"))
 			{
-				MessageBox.Show("The ingredient name should only contain letters.");
+				MessageBox.Show("El nombre del ingrediente solo debe contener letras.");
 				return;
 			}
 
-			Ingrediente creation = (Ingrediente)_ingredientController.Create(
+			Ingrediente creacion = (Ingrediente)_controladorIngrediente.Crear(
 				tipoIngrediente,
 				txtIngredientName.Text,
-				decimal.Parse(txtIngredientPrice.Text));
-			creation.Id = _ingrediente != null ? _ingrediente.Id : 0;
+				float.Parse(txtIngredientPrice.Text));
+			creacion.Id = _ingrediente != null ? _ingrediente.Id : 0;
 
 			LimpiarCampos();
-			_businessLogicLayer.SaveIngrediente(creation, tipoIngrediente);
+			_capaLogicaNegocio.AlmacenarIngrediente(creacion, tipoIngrediente);
 			ActualizarGridView();
 		}
 
-		private bool IsValidDecimal(string input)
+		private bool EsValidoDecimal(string input)
 		{
-			decimal result;
+			float result;
 
-			if (!decimal.TryParse(input, out result))
+			if (!float.TryParse(input, out result))
 			{
 				return false;
 			}
@@ -130,11 +130,11 @@ namespace Views
 			return true;
 		}
 
-		private bool IsValidPositiveDecimal(string input)
+		private bool EsValidoPositivoDecimal(string input)
 		{
-			decimal result;
+			float result;
 
-			if (!decimal.TryParse(input, out result))
+			if (!float.TryParse(input, out result))
 			{
 				return false;
 			}
@@ -150,14 +150,14 @@ namespace Views
 
 		private void CargarGridView()
 		{
-			_ingredientes = _businessLogicLayer.GetIngredientes(tipoIngrediente);
+			_ingredientes = _capaLogicaNegocio.ObtenerIngredientes(tipoIngrediente);
 			dgvIngredientDetails.DataSource = _ingredientes;
 		}
 
 		private void ActualizarGridView()
 		{
 			tipoIngrediente = CmbIngredientType.SelectedItem.ToString();
-			_ingredientes = _businessLogicLayer.GetIngredientes(tipoIngrediente);
+			_ingredientes = _capaLogicaNegocio.ObtenerIngredientes(tipoIngrediente);
 			dgvIngredientDetails.DataSource = _ingredientes;
 		}
 
@@ -175,7 +175,7 @@ namespace Views
 
 		public void EliminarIngrediente(int id)
 		{
-			_businessLogicLayer.DeleteIngredient(id, tipoIngrediente);
+			_capaLogicaNegocio.EliminarIngrediente(id, tipoIngrediente);
 		}
 	}
 }

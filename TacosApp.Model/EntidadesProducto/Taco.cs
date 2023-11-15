@@ -5,33 +5,33 @@ namespace Model.Productos
 	public class Taco : ITaco
 	{
 		public int Id { get; private set; }
-		private List<Ingrediente> _ingredientesTaco;
-		public readonly DateTime CreatedAt;
+		private List<IIngrediente>? _ingredientesTaco;
+		public readonly DateTime CreadoEn;
 
 		public Taco() { }
 
 		public Taco(int id)
 		{
-			CreatedAt = DateTime.Now;
+			CreadoEn = DateTime.Now;
 			Id = id;
 		}
 
-		public Taco(int id, IEnumerable<Ingrediente> lista)
+		public Taco(int id, IEnumerable<IIngrediente> lista)
 		{
 			Id = id;
-			CreatedAt = DateTime.Now;
-			_ingredientesTaco = new List<Ingrediente>(lista);
+			CreadoEn = DateTime.Now;
+			_ingredientesTaco = new List<IIngrediente>(lista);
 		}
-		public Taco(IEnumerable<Ingrediente> lista)
+		public Taco(IEnumerable<IIngrediente> lista)
 		{
-			CreatedAt = DateTime.Now;
-			_ingredientesTaco = new List<Ingrediente>(lista);
+			CreadoEn = DateTime.Now;
+			_ingredientesTaco = new List<IIngrediente>(lista);
 		}
 
-		public decimal GetPrecio()
+		public float ObtenerPrecio()
 		{
-			decimal precioTaco = 0;
-			foreach (var ingred in _ingredientesTaco)
+			float precioTaco = 0;
+			foreach (Ingrediente ingred in _ingredientesTaco)
 			{
 				precioTaco += ingred.Precio;
 			}
@@ -40,19 +40,19 @@ namespace Model.Productos
 
 		public void PrecioToString()
 		{
-			decimal precioTaco = GetPrecio();
+			float precioTaco = ObtenerPrecio();
 			Console.WriteLine(string.Format("\nTotal a Pagar: {0,40:C}", precioTaco));
 		}
 
-		public void ShowIngredientes()
+		public void MostrarIngredientes()
 		{
-			foreach (var ingrediente in _ingredientesTaco)
+			foreach (Ingrediente ingrediente in _ingredientesTaco)
 			{
 				Console.WriteLine(ingrediente.ToString());
 			}
 		}
 
-		public IEnumerable<Ingrediente> GetIngredientes()
+		public IEnumerable<IIngrediente> ObtenerIngredientes()
 		{
 			return _ingredientesTaco;
 		}
@@ -60,27 +60,30 @@ namespace Model.Productos
 		public void Info()
 		{
 			Console.WriteLine($"\nTaco Nro: {Id}");
-			Console.WriteLine($"Creado: {CreatedAt,50:D}");
-			ShowIngredientes();
+			Console.WriteLine($"Creado: {CreadoEn,50:D}");
+			MostrarIngredientes();
 			PrecioToString();
 		}
 
-		public void AddIngrediente(Ingrediente ingrediente)
-		{
-			if (_ingredientesTaco == null)
-			{
-				_ingredientesTaco = new List<Ingrediente>();
-			}
 
-			var ingredientesCount = _ingredientesTaco.Count(i => i.Id == ingrediente.Id);
+		/*		public void AddIngrediente(Ingrediente ingrediente)
+				{
+					if (_ingredientesTaco == null)
+					{
+						_ingredientesTaco = new List<Ingrediente>();
+					}
 
-			if (ingredientesCount >= ingrediente.CantidadMaxima)
-				throw new Exception($"No se puede agregar más de {ingrediente.CantidadMaxima} elementos del tipo {ingrediente.GetType().Name}");
+					var ingredientesCount = _ingredientesTaco.Count(i => i.GetType().Name == ingrediente.GetType().Name);
 
-			if (_ingredientesTaco.Any(i => i.Id == ingrediente.Id))
-				throw new Exception($"Ya existe un elemento del tipo {ingrediente.Nombre}");
+					if (ingredientesCount >= ingrediente.CantidadMaxima)
+						throw new Exception($"No se puede agregar más de {ingrediente.CantidadMaxima} elementos del tipo {ingrediente.GetType().Name}");
 
-			_ingredientesTaco.Add(ingrediente);
-		}
+					if (_ingredientesTaco.Any(i => i.Id == ingrediente.Id))
+						throw new Exception($"Ya existe un elemento del tipo {ingrediente.Nombre}");
+
+					_ingredientesTaco.Add(ingrediente);
+				}
+
+		*/
 	}
 }

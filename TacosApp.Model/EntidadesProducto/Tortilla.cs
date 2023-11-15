@@ -4,17 +4,17 @@
 	{
 		public Tortilla() { }
 
-		public Tortilla(string name, decimal precio)
+		public Tortilla(string nombre, float precio)
 		{
 			CantidadMaxima = 2;
-			Nombre = name;
+			Nombre = nombre;
 			Precio = precio;
 		}
 
-		public Tortilla(string name, decimal precio, int id)
+		public Tortilla(string nombre, float precio, int id)
 		{
 			CantidadMaxima = 2;
-			Nombre = name;
+			Nombre = nombre;
 			Precio = precio;
 			Id = id;
 		}

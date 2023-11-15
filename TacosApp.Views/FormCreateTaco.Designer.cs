@@ -64,9 +64,9 @@
 			// 
 			// btnAgregarIngrediente
 			// 
-			btnAgregarIngrediente.Location = new Point(654, 66);
+			btnAgregarIngrediente.Location = new Point(378, 329);
 			btnAgregarIngrediente.Name = "btnAgregarIngrediente";
-			btnAgregarIngrediente.Size = new Size(183, 29);
+			btnAgregarIngrediente.Size = new Size(257, 29);
 			btnAgregarIngrediente.TabIndex = 8;
 			btnAgregarIngrediente.Text = "Agregar Ingrediente";
 			btnAgregarIngrediente.UseVisualStyleBackColor = true;
@@ -306,7 +306,6 @@
 			// 
 			// IngredienteTacoGroup
 			// 
-			IngredienteTacoGroup.Controls.Add(btnAgregarIngrediente);
 			IngredienteTacoGroup.Controls.Add(label1);
 			IngredienteTacoGroup.Controls.Add(cmbIngrediente);
 			IngredienteTacoGroup.Controls.Add(cmbTipoIngrediente);
@@ -323,6 +322,7 @@
 			AutoScaleDimensions = new SizeF(9F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(854, 797);
+			Controls.Add(btnAgregarIngrediente);
 			Controls.Add(txtMenorValorTaco);
 			Controls.Add(txtPromedioValorTaco);
 			Controls.Add(txtMayorValorTaco);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.EntidadesUsuario
 {
-    public class Cliente : User
+    public class Cliente : Usuario
     {
 
     }

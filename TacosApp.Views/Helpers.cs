@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Views
+﻿namespace Views
 {
 	public static class Helpers
 	{
-		public static void OpenChildForm(Form formHijo, object pan)
+		public static void AbrirFormularioHijo(Form formHijo, object pan)
 		{
 			Panel p = pan as Panel;
 			formHijo.TopLevel = false;

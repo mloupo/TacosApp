@@ -1,20 +1,20 @@
 ﻿namespace Model.Productos
 {
 	public class Relleno : Ingrediente
-	{	
+	{
 		public Relleno() { }
 
-		public Relleno(string name, decimal precio)
+		public Relleno(string nombre, float precio)
 		{
-			CantidadMaxima = 5;	
-			Nombre = name;
+			CantidadMaxima = 5;
+			Nombre = nombre;
 			Precio = precio;
 		}
 
-		public Relleno(string name, decimal precio, int id)
+		public Relleno(string nombre, float precio, int id)
 		{
 			CantidadMaxima = 5;
-			Nombre = name;
+			Nombre = nombre;
 			Precio = precio;
 			Id = id;
 		}

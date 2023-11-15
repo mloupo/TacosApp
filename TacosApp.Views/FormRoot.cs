@@ -22,19 +22,19 @@ namespace Views
 
 		private void BtnManageIngredient_Click(object sender, EventArgs e)
 		{
-			Helpers.OpenChildForm(OpenManageIngredientForm(), RootPanel);
+			Helpers.AbrirFormularioHijo(OpenManageIngredientForm(), RootPanel);
 		}
 
 
 		private void BtnCreateOrder_Click(object sender, EventArgs e)
 		{
-			Helpers.OpenChildForm(OpenCreateTacoForm(), RootPanel);
+			Helpers.AbrirFormularioHijo(OpenCreateTacoForm(), RootPanel);
 
 		}
 
 		private void BtnMostrarPedido_Click(object sender, EventArgs e)
 		{
-			Helpers.OpenChildForm(OpenShowOrderForm(), RootPanel);
+			Helpers.AbrirFormularioHijo(OpenShowOrderForm(), RootPanel);
 		}
 
 
