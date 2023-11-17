@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vj7q4P28twEs3eICaC4nX3B32JYUva+fw2EuFNO7OWzJlVGLbSda41kasJeBf9BUJs0n338bDTQGkXP00oiZAQ==",
+  "dgSpecHash": "NusEqvrpfw/MosS0GnRrCuVKNsyRm0MAdgcZ8Twa7sAk9+oCnWAHKQ3rCu+IdX5Vm1xctLGfX0sGx1PJXyjXHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Practica Profesional\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj",
+  "projectFilePath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zen\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Zen\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

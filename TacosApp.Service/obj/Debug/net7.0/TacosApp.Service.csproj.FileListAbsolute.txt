@@ -9,3 +9,14 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\TacosApp
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\TacosApp.Service\obj\Debug\net7.0\refint\TacosApp.Service.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\TacosApp.Service\obj\Debug\net7.0\ref\TacosApp.Service.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\bin\Debug\net7.0\TacosApp.Service.deps.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\bin\Debug\net7.0\TacosApp.Service.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\bin\Debug\net7.0\TacosApp.Service.pdb
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.AssemblyInfoInputs.cache
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.AssemblyInfo.cs
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.csproj.CoreCompileInputs.cache
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\refint\TacosApp.Service.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\TacosApp.Service.pdb
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Service\obj\Debug\net7.0\ref\TacosApp.Service.dll

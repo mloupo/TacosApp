@@ -2,7 +2,7 @@
 {
 	public class Venta : VentaConImpuestos
 	{
-		public Venta(decimal importe, string consumidor, decimal impuestos)
+		public Venta(float importe, string consumidor, decimal impuestos)
 		{
 			this.importe = importe;
 			this.consumidor = consumidor;

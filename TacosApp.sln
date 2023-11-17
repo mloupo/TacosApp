@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TacosApp.Model", "TacosApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolidServices", "SolidServices\SolidServices.csproj", "{7925F300-8BC0-4A0C-846E-295E960A6F84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD", "CRUD\CRUD.csproj", "{881A555E-4CE8-4992-8442-E0BF158BB06A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{881A555E-4CE8-4992-8442-E0BF158BB06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{881A555E-4CE8-4992-8442-E0BF158BB06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{881A555E-4CE8-4992-8442-E0BF158BB06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{881A555E-4CE8-4992-8442-E0BF158BB06A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
