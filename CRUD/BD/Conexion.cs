@@ -5,6 +5,6 @@
 		protected string server = "localhost";
 		protected string database = "productos";
 		protected string user = "root";
-		protected string password = "";
+		protected string password = "1234";
 	}
 }

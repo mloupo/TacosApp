@@ -1,4 +1,4 @@
-﻿using TacosApp.Model.EntidadesProducto;
+﻿using Model.Interfaces;
 
 namespace Model.Controllers
 {
@@ -6,8 +6,8 @@ namespace Model.Controllers
 	public class ControladorPedido
 	{
 		private Pedido _pedido;
-		private List<Taco> _listaTacos;
-		private List<Bebida> _listaBebidas;
+		private List<ITaco> _listaTacos;
+		private List<IBebida> _listaBebidas;
 		private static ControladorPedido _controladorPedido;
 		private int contadorPedidos;
 
@@ -18,12 +18,10 @@ namespace Model.Controllers
 
 		public static ControladorPedido ObtenerInstancia()
 		{
-
 			if (_controladorPedido == null)
 			{
 				_controladorPedido = new ControladorPedido();
 			}
-
 			return _controladorPedido;
 		}
 
@@ -34,7 +32,6 @@ namespace Model.Controllers
 			// generar metodo para agregar un nuevo pedido
 			// generar metodo para evaluar el input
 			// manejo de excepciones
-
 		}
 	}
 }
