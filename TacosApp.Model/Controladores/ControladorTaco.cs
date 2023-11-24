@@ -1,12 +1,22 @@
 ﻿using Model.Interfaces;
-using Model.Productos;
+using TacosApp.Model.EntidadesProducto;
 
 namespace Model.Controllers
 {
 	public class ControladorTaco
 	{
-		// List<Taco> _listaTacos = new();
+		private static ControladorTaco? _controladorTaco;
 
+
+		public static ControladorTaco ObtenerInstancia()
+		{
+			if (_controladorTaco == null)
+			{
+				_controladorTaco = new();
+			}
+
+			return _controladorTaco;
+		}
 
 		public Taco Crear(int id, List<IIngrediente> lista)
 		{
@@ -19,11 +29,13 @@ namespace Model.Controllers
 			Taco taco = new(id);
 			return taco;
 		}
+
 		public Taco Crear(List<IIngrediente> lista)
 		{
 			Taco taco = new(lista);
 			return taco;
 		}
+
 		public IEnumerable<IIngrediente> GetTacoIngredients(Taco taco)
 		{
 			return taco.ObtenerIngredientes();

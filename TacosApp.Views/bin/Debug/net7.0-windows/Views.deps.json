@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Views/1.0.0": {
         "dependencies": {
-          "Model": "1.0.0"
+          "Model": "1.0.0",
+          "Service": "1.0.0"
         },
         "runtime": {
           "Views.dll": {}
@@ -96,6 +97,14 @@
         "runtime": {
           "Model.dll": {}
         }
+      },
+      "Service/1.0.0": {
+        "dependencies": {
+          "Model": "1.0.0"
+        },
+        "runtime": {
+          "Service.dll": {}
+        }
       }
     }
   },
@@ -169,6 +178,11 @@
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
     "Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

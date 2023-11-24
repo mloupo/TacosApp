@@ -1,7 +1,7 @@
 ﻿using Model.Controllers;
 using Model.Interfaces;
-using Model.Productos;
 using System.Text.RegularExpressions;
+using TacosApp.Model.EntidadesProducto;
 
 namespace Model
 {

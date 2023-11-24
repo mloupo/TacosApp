@@ -84,11 +84,11 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\De
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\TacosApp.Model.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\TacosApp.Model.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\TacosApp.Views.csproj.AssemblyReference.cache
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormCreateTaco.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormIngredient.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormIngredientDetails.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormRoot.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormShowOrders.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormCrearIngrediente.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormCrearPedido.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormMostrarIngrediente.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormMostrarPedidos.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormRaiz.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\TacosApp.Views.csproj.GenerateResource.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\TacosApp.Views.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\TacosApp.Views.AssemblyInfoInputs.cache

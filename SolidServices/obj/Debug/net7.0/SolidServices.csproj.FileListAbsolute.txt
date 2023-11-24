@@ -9,14 +9,15 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\SolidSer
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\SolidServices\obj\Debug\net7.0\refint\SolidServices.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\SolidServices\obj\Debug\net7.0\ref\SolidServices.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\bin\Debug\net7.0\SolidServices.deps.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\bin\Debug\net7.0\SolidServices.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\bin\Debug\net7.0\SolidServices.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.AssemblyInfoInputs.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.AssemblyInfo.cs
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.csproj.CoreCompileInputs.cache
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.sourcelink.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\refint\SolidServices.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\SolidServices.pdb
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\bin\Debug\net7.0\SolidServices.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\bin\Debug\net7.0\SolidServices.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\bin\Debug\net7.0\SolidServices.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\SolidServices\obj\Debug\net7.0\ref\SolidServices.dll

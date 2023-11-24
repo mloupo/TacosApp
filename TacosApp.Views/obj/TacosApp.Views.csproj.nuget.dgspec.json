@@ -4,12 +4,12 @@
     "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\TacosApp.Views.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj": {
+    "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj",
-        "projectName": "TacosApp.Model",
-        "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj",
+        "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\obj\\",
         "projectStyle": "PackageReference",
@@ -89,8 +89,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj": {
-                "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj"
+              "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj"
               }
             }
           }

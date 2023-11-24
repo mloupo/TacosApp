@@ -9,7 +9,7 @@ namespace Model.Productos
 		public int Id { get; set; }
 		public int CantidadMaxima { get; set; }
 
-		public void ObtenerPrecioConsola()
+		public void PrecioConsola()
 		{
 			Console.WriteLine(Precio);
 		}

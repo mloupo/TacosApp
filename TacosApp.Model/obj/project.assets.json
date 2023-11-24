@@ -475,9 +475,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj",
-      "projectName": "TacosApp.Model",
-      "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj",
+      "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj",
+      "projectName": "Model",
+      "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj",
       "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\obj\\",
       "projectStyle": "PackageReference",
@@ -529,7 +529,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

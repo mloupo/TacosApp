@@ -147,17 +147,30 @@
           }
         }
       },
-      "TacosApp.Model/1.0.0": {
+      "Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
-          "bin/placeholder/TacosApp.Model.dll": {}
+          "bin/placeholder/Model.dll": {}
         },
         "runtime": {
-          "bin/placeholder/TacosApp.Model.dll": {}
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Service.dll": {}
         }
       }
     }
@@ -476,15 +489,21 @@
         "version.txt"
       ]
     },
-    "TacosApp.Model/1.0.0": {
+    "Model/1.0.0": {
       "type": "project",
-      "path": "../TacosApp.Model/TacosApp.Model.csproj",
-      "msbuildProject": "../TacosApp.Model/TacosApp.Model.csproj"
+      "path": "../TacosApp.Model/Model.csproj",
+      "msbuildProject": "../TacosApp.Model/Model.csproj"
+    },
+    "Service/1.0.0": {
+      "type": "project",
+      "path": "../TacosApp.Service/Service.csproj",
+      "msbuildProject": "../TacosApp.Service/Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "TacosApp.Model >= 1.0.0"
+      "Model >= 1.0.0",
+      "Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -493,9 +512,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\TacosApp.Views.csproj",
-      "projectName": "TacosApp.Views",
-      "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\TacosApp.Views.csproj",
+      "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\Views.csproj",
+      "projectName": "Views",
+      "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\Views.csproj",
       "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\obj\\",
       "projectStyle": "PackageReference",
@@ -514,8 +533,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj": {
-              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\TacosApp.Model.csproj"
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj"
+            },
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Service\\Service.csproj"
             }
           }
         }
@@ -548,7 +570,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

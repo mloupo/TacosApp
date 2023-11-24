@@ -3,10 +3,10 @@
 	public interface ITaco
 	{
 		public float ObtenerPrecio();
-		public void PrecioToString();
+		public void PrecioConsola();
 		public void MostrarIngredientes();
 		public IEnumerable<IIngrediente> ObtenerIngredientes();
-		public void Info();
+		public void InfoConsola();
 
 	}
 }

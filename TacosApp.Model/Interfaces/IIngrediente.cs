@@ -3,6 +3,6 @@
 	public interface IIngrediente
 	{
 		public string DatosIngrediente();
-		public void ObtenerPrecioConsola();
+		public void PrecioConsola();
 	}
 }

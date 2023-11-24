@@ -1,6 +1,7 @@
 ﻿using Model.Interfaces;
+using Model.Productos;
 
-namespace Model.Productos
+namespace TacosApp.Model.EntidadesProducto
 {
 	public class Taco : ITaco
 	{
@@ -38,7 +39,7 @@ namespace Model.Productos
 			return precioTaco;
 		}
 
-		public void PrecioToString()
+		public void PrecioConsola()
 		{
 			float precioTaco = ObtenerPrecio();
 			Console.WriteLine(string.Format("\nTotal a Pagar: {0,40:C}", precioTaco));
@@ -49,41 +50,18 @@ namespace Model.Productos
 			foreach (Ingrediente ingrediente in _ingredientesTaco)
 			{
 				Console.WriteLine(ingrediente.ToString());
+				// agregar al panel de detalles de taco (ingredientes)
 			}
 		}
 
-		public IEnumerable<IIngrediente> ObtenerIngredientes()
-		{
-			return _ingredientesTaco;
-		}
+		public IEnumerable<IIngrediente> ObtenerIngredientes() => _ingredientesTaco;
 
-		public void Info()
+		public void InfoConsola()
 		{
 			Console.WriteLine($"\nTaco Nro: {Id}");
 			Console.WriteLine($"Creado: {CreadoEn,50:D}");
 			MostrarIngredientes();
-			PrecioToString();
+			PrecioConsola();
 		}
-
-
-		/*		public void AddIngrediente(Ingrediente ingrediente)
-				{
-					if (_ingredientesTaco == null)
-					{
-						_ingredientesTaco = new List<Ingrediente>();
-					}
-
-					var ingredientesCount = _ingredientesTaco.Count(i => i.GetType().Name == ingrediente.GetType().Name);
-
-					if (ingredientesCount >= ingrediente.CantidadMaxima)
-						throw new Exception($"No se puede agregar más de {ingrediente.CantidadMaxima} elementos del tipo {ingrediente.GetType().Name}");
-
-					if (_ingredientesTaco.Any(i => i.Id == ingrediente.Id))
-						throw new Exception($"Ya existe un elemento del tipo {ingrediente.Nombre}");
-
-					_ingredientesTaco.Add(ingrediente);
-				}
-
-		*/
 	}
 }

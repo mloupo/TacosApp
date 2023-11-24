@@ -7,16 +7,14 @@ namespace Model.Controllers
 	{
 		private static ControladorIngrediente? _controladorIngrediente;
 
-		private FabricaIngrediente _fabrica;
-
-		private ControladorIngrediente()
-		{
-			_fabrica = FabricaIngrediente.ObtenerInstancia();
-		}
 
 		public static ControladorIngrediente ObtenerInstancia()
 		{
-			_controladorIngrediente ??= new ControladorIngrediente();
+			if (_controladorIngrediente == null)
+			{
+				_controladorIngrediente = new();
+			}
+
 			return _controladorIngrediente;
 		}
 
@@ -30,6 +28,7 @@ namespace Model.Controllers
 		public IIngrediente Crear(string pIngrediente, string nombre, float precio, int Id)
 		{
 			IIngrediente creacion = FabricaIngrediente.ObtenerCreacion(pIngrediente, nombre, precio, Id);
+			Console.WriteLine(creacion.ToString());
 			return creacion;
 		}
 	}
