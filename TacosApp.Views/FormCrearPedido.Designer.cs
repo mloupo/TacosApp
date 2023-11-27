@@ -65,10 +65,10 @@ namespace Views
 			ClienteGroup = new GroupBox();
 			gbBebidas = new GroupBox();
 			ckbBebida = new CheckBox();
-			textBox1 = new TextBox();
+			txtTipoBebida = new TextBox();
 			lblTipoBebida = new Label();
 			lblBebida = new Label();
-			textBox2 = new TextBox();
+			txtBebidaSelecionada = new TextBox();
 			gbEstadisticas = new GroupBox();
 			gbConfirmarPedido = new GroupBox();
 			((System.ComponentModel.ISupportInitialize)dgvTacoDetails).BeginInit();
@@ -111,7 +111,7 @@ namespace Views
 			// lblTacoCreated
 			// 
 			lblTacoCreated.AutoSize = true;
-			lblTacoCreated.Location = new Point(11, 110);
+			lblTacoCreated.Location = new Point(11, 126);
 			lblTacoCreated.Name = "lblTacoCreated";
 			lblTacoCreated.Size = new Size(96, 18);
 			lblTacoCreated.TabIndex = 11;
@@ -138,7 +138,7 @@ namespace Views
 			// 
 			dgvTacoDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgvTacoDetails.Columns.AddRange(new DataGridViewColumn[] { dgvIdTaco, dgvPrecio });
-			dgvTacoDetails.Location = new Point(11, 338);
+			dgvTacoDetails.Location = new Point(11, 428);
 			dgvTacoDetails.Name = "dgvTacoDetails";
 			dgvTacoDetails.RowHeadersWidth = 51;
 			dgvTacoDetails.RowTemplate.Height = 29;
@@ -188,7 +188,7 @@ namespace Views
 			// 
 			// btnCreateTaco
 			// 
-			btnCreateTaco.Location = new Point(392, 288);
+			btnCreateTaco.Location = new Point(392, 374);
 			btnCreateTaco.Name = "btnCreateTaco";
 			btnCreateTaco.Size = new Size(163, 26);
 			btnCreateTaco.TabIndex = 18;
@@ -271,7 +271,7 @@ namespace Views
 			IngredienteTacoGroup.Controls.Add(btnCreateTaco);
 			IngredienteTacoGroup.Location = new Point(10, 12);
 			IngredienteTacoGroup.Name = "IngredienteTacoGroup";
-			IngredienteTacoGroup.Size = new Size(566, 518);
+			IngredienteTacoGroup.Size = new Size(566, 586);
 			IngredienteTacoGroup.TabIndex = 32;
 			IngredienteTacoGroup.TabStop = false;
 			IngredienteTacoGroup.Text = "Arma Tu Taco";
@@ -282,7 +282,7 @@ namespace Views
 			dgvIngredientesTacoDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgvIngredientesTacoDetalle.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn });
 			dgvIngredientesTacoDetalle.DataSource = tacoBindingSource;
-			dgvIngredientesTacoDetalle.Location = new Point(11, 131);
+			dgvIngredientesTacoDetalle.Location = new Point(11, 206);
 			dgvIngredientesTacoDetalle.Name = "dgvIngredientesTacoDetalle";
 			dgvIngredientesTacoDetalle.RowHeadersWidth = 51;
 			dgvIngredientesTacoDetalle.RowTemplate.Height = 29;
@@ -370,10 +370,10 @@ namespace Views
 			// gbBebidas
 			// 
 			gbBebidas.Controls.Add(ckbBebida);
-			gbBebidas.Controls.Add(textBox1);
+			gbBebidas.Controls.Add(txtTipoBebida);
 			gbBebidas.Controls.Add(lblTipoBebida);
 			gbBebidas.Controls.Add(lblBebida);
-			gbBebidas.Controls.Add(textBox2);
+			gbBebidas.Controls.Add(txtBebidaSelecionada);
 			gbBebidas.Location = new Point(582, 24);
 			gbBebidas.Name = "gbBebidas";
 			gbBebidas.Size = new Size(564, 132);
@@ -390,13 +390,14 @@ namespace Views
 			ckbBebida.TabIndex = 24;
 			ckbBebida.Text = "Agrega una Bebida";
 			ckbBebida.UseVisualStyleBackColor = true;
+			ckbBebida.CheckedChanged += ckbBebida_CheckedChanged;
 			// 
-			// textBox1
+			// txtTipoBebida
 			// 
-			textBox1.Location = new Point(147, 23);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(408, 25);
-			textBox1.TabIndex = 21;
+			txtTipoBebida.Location = new Point(147, 23);
+			txtTipoBebida.Name = "txtTipoBebida";
+			txtTipoBebida.Size = new Size(408, 25);
+			txtTipoBebida.TabIndex = 21;
 			// 
 			// lblTipoBebida
 			// 
@@ -416,12 +417,12 @@ namespace Views
 			lblBebida.TabIndex = 20;
 			lblBebida.Text = "Bebida";
 			// 
-			// textBox2
+			// txtBebidaSelecionada
 			// 
-			textBox2.Location = new Point(147, 53);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(408, 25);
-			textBox2.TabIndex = 22;
+			txtBebidaSelecionada.Location = new Point(147, 53);
+			txtBebidaSelecionada.Name = "txtBebidaSelecionada";
+			txtBebidaSelecionada.Size = new Size(408, 25);
+			txtBebidaSelecionada.TabIndex = 22;
 			// 
 			// gbEstadisticas
 			// 
@@ -516,10 +517,10 @@ namespace Views
 		private GroupBox ClienteGroup;
 		private GroupBox gbBebidas;
 		private CheckBox ckbBebida;
-		private TextBox textBox1;
+		private TextBox txtTipoBebida;
 		private Label lblTipoBebida;
 		private Label lblBebida;
-		private TextBox textBox2;
+		private TextBox txtBebidaSelecionada;
 		private DataGridView dgvIngredientesTacoDetalle;
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private BindingSource tacoBindingSource;

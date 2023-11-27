@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Views", "TacosApp.Views\Vie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "TacosApp.Model\Model.csproj", "{F60390FD-D687-48E4-92F1-6106AF4734FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolidServices", "SolidServices\SolidServices.csproj", "{7925F300-8BC0-4A0C-846E-295E960A6F84}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validaciones", "Validaciones\Validaciones.csproj", "{72136F94-3189-4E15-9F6E-3A1F9513DE06}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contactos", "Contactos\Contactos.csproj", "{EE3AF935-8225-416B-8569-AD6969DE5E7A}"
@@ -33,10 +31,6 @@ Global
 		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7925F300-8BC0-4A0C-846E-295E960A6F84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72136F94-3189-4E15-9F6E-3A1F9513DE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72136F94-3189-4E15-9F6E-3A1F9513DE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72136F94-3189-4E15-9F6E-3A1F9513DE06}.Release|Any CPU.ActiveCfg = Release|Any CPU

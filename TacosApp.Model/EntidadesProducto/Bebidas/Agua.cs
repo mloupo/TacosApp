@@ -2,8 +2,5 @@
 {
 	public class Agua : Bebida
 	{
-
-
-
 	}
 }

@@ -556,6 +556,9 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contactos\\Contactos.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contactos\\Contactos.csproj"
+            },
             "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contacts\\Contactos.csproj": {
               "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contacts\\Contactos.csproj"
             },

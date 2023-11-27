@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Contactos\Contactos.csproj" />
     <ProjectReference Include="..\Contacts\Contactos.csproj" />
     <ProjectReference Include="..\TacosApp.Model\Model.csproj" />
     <ProjectReference Include="..\TacosApp.Service\Service.csproj" />

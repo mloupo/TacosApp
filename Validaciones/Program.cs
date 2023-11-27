@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using FluentValidation.Results;
-using Model.Productos;
 using TacosApp.Model.EntidadesProducto.Tacos;
 using Validaciones.Ingredientes;
 

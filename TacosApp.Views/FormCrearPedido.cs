@@ -6,7 +6,7 @@ using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Views
 {
-    public partial class FormCrearPedido : Form
+	public partial class FormCrearPedido : Form
 	{
 		private string _tipoIngrediente;
 		private readonly CapaLogicaNegocio _businessLogicLayer;
@@ -123,14 +123,25 @@ namespace Views
 
 		private void ckbDelivery_CheckedChanged(object sender, EventArgs e)
 		{
-			CambiarEstadoTextboxes();
+			CambiarEstadoTextboxesDelivery();
 		}
-		private void CambiarEstadoTextboxes()
+		private void CambiarEstadoTextboxesDelivery()
 		{
 			bool enabled = ckbDelivery.Checked;
 			txtDatosCliente.Enabled = enabled;
 			txtNroContactoCliente.Enabled = enabled;
 			dtPickerDeliveryRequest.Enabled = enabled;
+		}
+
+		private void ckbBebida_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+		private void CambiarEstadoTextboxesBebidas()
+		{
+			bool enabled = ckbBebida.Checked;
+			txtTipoBebida.Enabled = enabled;
+			txtNroContactoCliente.Enabled = enabled;
 		}
 	}
 }

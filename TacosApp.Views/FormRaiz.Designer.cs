@@ -43,7 +43,7 @@
 			RootPanel.Location = new Point(0, 28);
 			RootPanel.Margin = new Padding(2);
 			RootPanel.Name = "RootPanel";
-			RootPanel.Size = new Size(875, 403);
+			RootPanel.Size = new Size(1160, 628);
 			RootPanel.TabIndex = 11;
 			// 
 			// menuStrip1
@@ -53,7 +53,7 @@
 			menuStrip1.Location = new Point(0, 0);
 			menuStrip1.Name = "menuStrip1";
 			menuStrip1.Padding = new Padding(4, 2, 0, 2);
-			menuStrip1.Size = new Size(875, 28);
+			menuStrip1.Size = new Size(1160, 28);
 			menuStrip1.TabIndex = 13;
 			menuStrip1.Text = "menuStrip1";
 			// 
@@ -89,7 +89,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(875, 431);
+			ClientSize = new Size(1160, 656);
 			Controls.Add(RootPanel);
 			Controls.Add(menuStrip1);
 			Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);

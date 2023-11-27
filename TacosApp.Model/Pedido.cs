@@ -24,13 +24,13 @@ namespace Model
 			Importe = ObtenerImporteTotal();
 		}
 
-		private float ObtenerImporteTotal()
+		public float ObtenerImporteTotal()
 		{
 			Importe = ObtenerImporteTacos() + ObtenerImporteBebidas();
 			return Importe;
 		}
 
-		private float ObtenerImporteTacos()
+		public float ObtenerImporteTacos()
 		{
 			foreach (ITaco taco in _listaTacos)
 			{
@@ -39,7 +39,7 @@ namespace Model
 			return Importe;
 		}
 
-		private float ObtenerImporteBebidas()
+		public float ObtenerImporteBebidas()
 		{
 			foreach (IBebida bebida in _listaBebidas)
 			{
