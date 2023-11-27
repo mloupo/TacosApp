@@ -1,9 +1,9 @@
 ﻿using Model.Interfaces;
-using TacosApp.Model.EntidadesProducto;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Model.Controllers
 {
-	public class ControladorTaco
+    public class ControladorTaco
 	{
 		private static ControladorTaco? _controladorTaco;
 

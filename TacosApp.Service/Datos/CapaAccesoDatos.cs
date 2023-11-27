@@ -1,11 +1,11 @@
 ﻿using Model.Controllers;
 using Model.EntidadesUsuario;
-using Model.Productos;
 using System.Data.SqlClient;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Service.Datos
 {
-	public class CapaAccesoDatos
+    public class CapaAccesoDatos
 	{
 		private readonly SqlConnection conn = new("Integrated Security=SSPI;" +
 			"							Persist Security Info=False;" +

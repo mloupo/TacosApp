@@ -1,5 +1,5 @@
-﻿using Model.Productos;
-using Service.Logica;
+﻿using Service.Logica;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Views
 {

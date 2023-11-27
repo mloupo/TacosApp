@@ -1,8 +1,8 @@
-﻿using Model.Productos;
+﻿using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Views
 {
-	partial class FormCrearIngrediente
+    partial class FormCrearIngrediente
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -40,11 +40,11 @@ namespace Views
 			btnCreateIngredient = new Button();
 			btnCancel = new Button();
 			dgvIngredientDetails = new DataGridView();
-			rellenoBindingSource = new BindingSource(components);
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 			Edit = new DataGridViewLinkColumn();
 			Delete = new DataGridViewLinkColumn();
+			rellenoBindingSource = new BindingSource(components);
 			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).BeginInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
@@ -141,13 +141,9 @@ namespace Views
 			dgvIngredientDetails.Name = "dgvIngredientDetails";
 			dgvIngredientDetails.RowHeadersWidth = 51;
 			dgvIngredientDetails.RowTemplate.Height = 29;
-			dgvIngredientDetails.Size = new Size(538, 324);
+			dgvIngredientDetails.Size = new Size(510, 324);
 			dgvIngredientDetails.TabIndex = 12;
 			dgvIngredientDetails.CellContentClick += DgvIngredientDetails_CellContentClick;
-			// 
-			// rellenoBindingSource
-			// 
-			rellenoBindingSource.DataSource = typeof(Relleno);
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -187,11 +183,15 @@ namespace Views
 			Delete.UseColumnTextForLinkValue = true;
 			Delete.Width = 80;
 			// 
+			// rellenoBindingSource
+			// 
+			rellenoBindingSource.DataSource = typeof(Relleno);
+			// 
 			// FormCrearIngrediente
 			// 
 			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(561, 538);
+			ClientSize = new Size(528, 538);
 			Controls.Add(dgvIngredientDetails);
 			Controls.Add(btnCancel);
 			Controls.Add(btnCreateIngredient);
@@ -205,7 +205,7 @@ namespace Views
 			Margin = new Padding(3, 2, 3, 2);
 			Name = "FormCrearIngrediente";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "Detalle Ingredientes";
+			Text = "Crear Ingrediente";
 			Load += FormIngredientDetails_Load;
 			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).EndInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();

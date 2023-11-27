@@ -1,11 +1,11 @@
 ﻿using Model.EntidadesUsuario;
 using Model.Interfaces;
-using Model.Productos;
 using Service.Datos;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Service.Logica
 {
-	public class CapaLogicaNegocio
+    public class CapaLogicaNegocio
 	{
 		private CapaAccesoDatos _capaAccesoDatos;
 

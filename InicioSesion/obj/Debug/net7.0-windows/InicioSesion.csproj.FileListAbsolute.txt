@@ -1,8 +1,0 @@
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.InicioSesionForm.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.Properties.Resources.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.csproj.GenerateResource.cache
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.AssemblyInfoInputs.cache
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.AssemblyInfo.cs
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.csproj.CoreCompileInputs.cache
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\InicioSesion\obj\Debug\net7.0-windows\InicioSesion.sourcelink.json

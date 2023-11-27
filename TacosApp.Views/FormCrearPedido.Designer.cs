@@ -1,6 +1,8 @@
-﻿namespace Views
+﻿using TacosApp.Model.EntidadesProducto.Tacos;
+
+namespace Views
 {
-	partial class FormCrearPedido
+    partial class FormCrearPedido
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -298,7 +300,7 @@
 			// 
 			// tacoBindingSource
 			// 
-			tacoBindingSource.DataSource = typeof(TacosApp.Model.EntidadesProducto.Taco);
+			tacoBindingSource.DataSource = typeof(Taco);
 			// 
 			// txtNroContactoCliente
 			// 

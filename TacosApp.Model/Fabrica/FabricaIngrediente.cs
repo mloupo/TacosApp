@@ -1,5 +1,5 @@
 ﻿using Model.Interfaces;
-using Model.Productos;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Model.Factory
 {

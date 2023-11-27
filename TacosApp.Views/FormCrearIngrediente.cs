@@ -1,7 +1,7 @@
 ﻿using Model;
 using Model.Controllers;
-using Model.Productos;
 using Service.Logica;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Views
 {

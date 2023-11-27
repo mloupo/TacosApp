@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TacosApp.Views/FormCrearIngrediente.cs
+conn.udl
+dbo.Contactos.sql
+Ejecucion_prueba.sql
+WhatsApp Image 2023-05-24 at 22.34.08.jpg

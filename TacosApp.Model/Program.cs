@@ -1,11 +1,11 @@
 ﻿using Model.Controllers;
 using Model.Interfaces;
 using System.Text.RegularExpressions;
-using TacosApp.Model.EntidadesProducto;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Model
 {
-	internal class Program
+    internal class Program
 	{
 
 		static void Main()

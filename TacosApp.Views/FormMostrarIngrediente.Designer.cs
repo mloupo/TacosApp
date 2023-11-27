@@ -1,8 +1,8 @@
-﻿using Model.Productos;
+﻿using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Views
 {
-	partial class FormMostrarIngrediente
+    partial class FormMostrarIngrediente
 	{
 		/// <summary>
 		/// Required designer variable.

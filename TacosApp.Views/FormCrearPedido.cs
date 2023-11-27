@@ -1,9 +1,8 @@
 ﻿using Model;
 using Model.Controllers;
-using Model.Productos;
 using Service.Logica;
 using System.ComponentModel;
-using TacosApp.Model.EntidadesProducto;
+using TacosApp.Model.EntidadesProducto.Tacos;
 
 namespace Views
 {
