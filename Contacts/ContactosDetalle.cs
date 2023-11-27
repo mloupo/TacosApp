@@ -1,9 +1,9 @@
 ﻿using Model.EntidadesUsuario;
-using Service;
+using Service.Logica;
 
 namespace Contactos
 {
-	public partial class ContactosDetalle : Form
+    public partial class ContactosDetalle : Form
 	{
 		private CapaLogicaNegocio _capalogicaNegocio;
 		private Contacto _contacto;
@@ -24,7 +24,7 @@ namespace Contactos
 		{
 			SalvarContacto();
 			this.Close();
-			((Contactos)this.Owner).poblarDataGridView();
+			((ContactosForm)this.Owner).poblarDataGridView();
 		}
 
 

@@ -1,0 +1,6 @@
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.csproj.AssemblyReference.cache
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.AssemblyInfoInputs.cache
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.AssemblyInfo.cs
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.csproj.CoreCompileInputs.cache
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.sourcelink.json

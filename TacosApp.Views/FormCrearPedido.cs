@@ -1,13 +1,13 @@
 ﻿using Model;
 using Model.Controllers;
 using Model.Productos;
-using Service;
+using Service.Logica;
 using System.ComponentModel;
 using TacosApp.Model.EntidadesProducto;
 
 namespace Views
 {
-	public partial class FormCrearPedido : Form
+    public partial class FormCrearPedido : Form
 	{
 		private string _tipoIngrediente;
 		private readonly CapaLogicaNegocio _businessLogicLayer;

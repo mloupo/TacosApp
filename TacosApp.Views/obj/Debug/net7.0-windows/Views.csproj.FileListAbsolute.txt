@@ -32,9 +32,12 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\Views\ob
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\Views\obj\Debug\net7.0-windows\Views.genruntimeconfig.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\Views\obj\Debug\net7.0-windows\ref\Views.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Practica Profesional\TacosApp\Views\obj\Debug\net7.0-windows\Views.FormShowOrders.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Contactos.deps.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Contactos.runtimeconfig.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Model.deps.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Model.runtimeconfig.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Model.exe
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Contactos.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Views.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Views.dll.config
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Views.deps.json
@@ -47,15 +50,17 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\De
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Contactos.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Model.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Service.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Contactos.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Model.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\bin\Debug\net7.0-windows\Service.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.csproj.AssemblyReference.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormCrearIngrediente.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormCrearPedido.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormMostrarBebidas.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormMostrarIngrediente.resources
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormMostrarPedidos.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.FormRaiz.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.csproj.GenerateResource.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.GeneratedMSBuildEditorConfig.editorconfig
@@ -69,3 +74,4 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\De
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\Views.genruntimeconfig.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\ref\Views.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\TacosApp.Views\obj\Debug\net7.0-windows\TacosApp.Views.FormCrearBebida.resources

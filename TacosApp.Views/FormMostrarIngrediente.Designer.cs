@@ -50,12 +50,12 @@ namespace Views
 			dgvFormIngredient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1 });
 			dgvFormIngredient.DataSource = rellenoBindingSource;
-			dgvFormIngredient.Location = new Point(13, 79);
-			dgvFormIngredient.Margin = new Padding(4, 3, 4, 3);
+			dgvFormIngredient.Location = new Point(9, 62);
+			dgvFormIngredient.Margin = new Padding(3, 2, 3, 2);
 			dgvFormIngredient.Name = "dgvFormIngredient";
 			dgvFormIngredient.RowHeadersWidth = 51;
 			dgvFormIngredient.RowTemplate.Height = 29;
-			dgvFormIngredient.Size = new Size(661, 427);
+			dgvFormIngredient.Size = new Size(481, 334);
 			dgvFormIngredient.TabIndex = 0;
 			// 
 			// dataGridViewTextBoxColumn3
@@ -86,18 +86,20 @@ namespace Views
 			// 
 			rellenoBindingSource.DataSource = typeof(Relleno);
 			// 
-			// txtSeachIngredient
+			// txtSearchIngredient
 			// 
-			txtSearchIngredient.Location = new Point(16, 23);
-			txtSearchIngredient.Name = "txtSeachIngredient";
-			txtSearchIngredient.Size = new Size(360, 31);
+			txtSearchIngredient.Location = new Point(12, 18);
+			txtSearchIngredient.Margin = new Padding(2, 2, 2, 2);
+			txtSearchIngredient.Name = "txtSearchIngredient";
+			txtSearchIngredient.Size = new Size(263, 25);
 			txtSearchIngredient.TabIndex = 1;
 			// 
-			// btnSeacrhIngredient
+			// btnSearchIngredient
 			// 
-			btnSearchIngredient.Location = new Point(382, 23);
-			btnSearchIngredient.Name = "btnSeacrhIngredient";
-			btnSearchIngredient.Size = new Size(94, 29);
+			btnSearchIngredient.Location = new Point(278, 18);
+			btnSearchIngredient.Margin = new Padding(2, 2, 2, 2);
+			btnSearchIngredient.Name = "btnSearchIngredient";
+			btnSearchIngredient.Size = new Size(68, 23);
 			btnSearchIngredient.TabIndex = 3;
 			btnSearchIngredient.Text = "Search";
 			btnSearchIngredient.UseVisualStyleBackColor = true;
@@ -105,26 +107,27 @@ namespace Views
 			// 
 			// btnAddIngredient
 			// 
-			btnAddIngredient.Location = new Point(495, 23);
+			btnAddIngredient.Location = new Point(360, 18);
+			btnAddIngredient.Margin = new Padding(2, 2, 2, 2);
 			btnAddIngredient.Name = "btnAddIngredient";
-			btnAddIngredient.Size = new Size(114, 29);
+			btnAddIngredient.Size = new Size(83, 23);
 			btnAddIngredient.TabIndex = 13;
 			btnAddIngredient.Text = "Agregar";
 			btnAddIngredient.UseVisualStyleBackColor = true;
 			btnAddIngredient.Click += BtnAddIngredient_Click;
 			// 
-			// FormIngredient
+			// FormMostrarIngrediente
 			// 
-			AutoScaleDimensions = new SizeF(11F, 23F);
+			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(696, 526);
+			ClientSize = new Size(506, 412);
 			Controls.Add(btnAddIngredient);
 			Controls.Add(btnSearchIngredient);
 			Controls.Add(txtSearchIngredient);
 			Controls.Add(dgvFormIngredient);
-			Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			Margin = new Padding(4, 3, 4, 3);
-			Name = "FormIngredient";
+			Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			Margin = new Padding(3, 2, 3, 2);
+			Name = "FormMostrarIngrediente";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = resources.GetString("$this.Text");
 			Activated += FormIngredient_Activated;

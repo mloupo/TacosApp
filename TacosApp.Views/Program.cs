@@ -11,7 +11,7 @@
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//MessageBox.Show("Hola Marti");
-			Application.Run(new FormRaiz());
+			Application.Run(new FormCrearIngrediente());
 		}
 	}
 }

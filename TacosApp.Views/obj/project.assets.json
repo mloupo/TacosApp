@@ -147,6 +147,23 @@
           }
         }
       },
+      "Contactos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "Service": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contactos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contactos.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -489,6 +506,11 @@
         "version.txt"
       ]
     },
+    "Contactos/1.0.0": {
+      "type": "project",
+      "path": "../Contacts/Contactos.csproj",
+      "msbuildProject": "../Contacts/Contactos.csproj"
+    },
     "Model/1.0.0": {
       "type": "project",
       "path": "../TacosApp.Model/Model.csproj",
@@ -502,6 +524,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "Contactos >= 1.0.0",
       "Model >= 1.0.0",
       "Service >= 1.0.0"
     ]
@@ -533,6 +556,9 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contacts\\Contactos.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contacts\\Contactos.csproj"
+            },
             "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj": {
               "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj"
             },

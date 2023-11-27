@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Validators\\Article\\Extensions",
+    "\\Validators\\Article\\Extensions\\Add",
+    "\\Validators\\Article\\Extensions\\Delete",
+    "\\Validators\\Article\\Extensions\\Update"
   ],
-  "SelectedNode": "\\TacosApp.sln",
+  "SelectedNode": "\\Validators",
   "PreviewInSolutionExplorer": false
 }

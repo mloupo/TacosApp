@@ -28,75 +28,89 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			BtnCrearPedido = new Button();
-			BtnGestionarElementos = new Button();
-			btnBuscarPedido = new Button();
 			RootPanel = new Panel();
+			menuStrip1 = new MenuStrip();
+			administracionToolStripMenuItem = new ToolStripMenuItem();
+			ingredientesToolStripMenuItem = new ToolStripMenuItem();
+			bebidasToolStripMenuItem = new ToolStripMenuItem();
+			contactosToolStripMenuItem = new ToolStripMenuItem();
+			menuStrip1.SuspendLayout();
 			SuspendLayout();
-			// 
-			// BtnCrearPedido
-			// 
-			BtnCrearPedido.Location = new Point(16, 101);
-			BtnCrearPedido.Margin = new Padding(4, 3, 4, 3);
-			BtnCrearPedido.Name = "BtnCrearPedido";
-			BtnCrearPedido.Size = new Size(201, 33);
-			BtnCrearPedido.TabIndex = 2;
-			BtnCrearPedido.Text = "Crear Pedido";
-			BtnCrearPedido.UseVisualStyleBackColor = true;
-			BtnCrearPedido.Click += BtnCrearPedido_Click;
-			// 
-			// BtnGestionarElementos
-			// 
-			BtnGestionarElementos.Location = new Point(16, 61);
-			BtnGestionarElementos.Margin = new Padding(4, 3, 4, 3);
-			BtnGestionarElementos.Name = "BtnGestionarElementos";
-			BtnGestionarElementos.Size = new Size(201, 33);
-			BtnGestionarElementos.TabIndex = 1;
-			BtnGestionarElementos.Text = "Administración";
-			BtnGestionarElementos.UseVisualStyleBackColor = true;
-			BtnGestionarElementos.Click += BtnGestionarElementos_Click;
-			// 
-			// btnBuscarPedido
-			// 
-			btnBuscarPedido.Location = new Point(16, 141);
-			btnBuscarPedido.Margin = new Padding(4, 3, 4, 3);
-			btnBuscarPedido.Name = "btnBuscarPedido";
-			btnBuscarPedido.Size = new Size(201, 33);
-			btnBuscarPedido.TabIndex = 3;
-			btnBuscarPedido.Text = "Buscar Pedido";
-			btnBuscarPedido.UseVisualStyleBackColor = true;
-			btnBuscarPedido.Click += BtnMostrarPedido_Click;
 			// 
 			// RootPanel
 			// 
-			RootPanel.Location = new Point(244, 12);
+			RootPanel.Dock = DockStyle.Fill;
+			RootPanel.Location = new Point(0, 28);
+			RootPanel.Margin = new Padding(2);
 			RootPanel.Name = "RootPanel";
-			RootPanel.Size = new Size(911, 443);
+			RootPanel.Size = new Size(875, 403);
 			RootPanel.TabIndex = 11;
+			// 
+			// menuStrip1
+			// 
+			menuStrip1.ImageScalingSize = new Size(20, 20);
+			menuStrip1.Items.AddRange(new ToolStripItem[] { administracionToolStripMenuItem });
+			menuStrip1.Location = new Point(0, 0);
+			menuStrip1.Name = "menuStrip1";
+			menuStrip1.Padding = new Padding(4, 2, 0, 2);
+			menuStrip1.Size = new Size(875, 28);
+			menuStrip1.TabIndex = 13;
+			menuStrip1.Text = "menuStrip1";
+			// 
+			// administracionToolStripMenuItem
+			// 
+			administracionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ingredientesToolStripMenuItem, bebidasToolStripMenuItem, contactosToolStripMenuItem });
+			administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
+			administracionToolStripMenuItem.Size = new Size(123, 24);
+			administracionToolStripMenuItem.Text = "Administracion";
+			// 
+			// ingredientesToolStripMenuItem
+			// 
+			ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
+			ingredientesToolStripMenuItem.Size = new Size(174, 26);
+			ingredientesToolStripMenuItem.Text = "Ingredientes";
+			ingredientesToolStripMenuItem.Click += ingredientesToolStripMenuItem_Click;
+			// 
+			// bebidasToolStripMenuItem
+			// 
+			bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
+			bebidasToolStripMenuItem.Size = new Size(174, 26);
+			bebidasToolStripMenuItem.Text = "Bebidas";
+			bebidasToolStripMenuItem.Click += bebidasToolStripMenuItem_Click;
+			// 
+			// contactosToolStripMenuItem
+			// 
+			contactosToolStripMenuItem.Name = "contactosToolStripMenuItem";
+			contactosToolStripMenuItem.Size = new Size(174, 26);
+			contactosToolStripMenuItem.Text = "Contactos";
+			contactosToolStripMenuItem.Click += contactosToolStripMenuItem_Click;
 			// 
 			// FormRaiz
 			// 
-			AutoScaleDimensions = new SizeF(11F, 23F);
+			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1167, 463);
+			ClientSize = new Size(875, 431);
 			Controls.Add(RootPanel);
-			Controls.Add(btnBuscarPedido);
-			Controls.Add(BtnGestionarElementos);
-			Controls.Add(BtnCrearPedido);
-			Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			Controls.Add(menuStrip1);
+			Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
 			IsMdiContainer = true;
-			Margin = new Padding(4, 3, 4, 3);
+			MainMenuStrip = menuStrip1;
+			Margin = new Padding(3, 2, 3, 2);
 			Name = "FormRaiz";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "Home";
+			Text = "Raiz";
+			menuStrip1.ResumeLayout(false);
+			menuStrip1.PerformLayout();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
-		private Button BtnCrearPedido;
-
-		private Button btnBuscarPedido;
-		private Button BtnGestionarElementos;
 		private Panel RootPanel;
+		private MenuStrip menuStrip1;
+		private ToolStripMenuItem administracionToolStripMenuItem;
+		private ToolStripMenuItem ingredientesToolStripMenuItem;
+		private ToolStripMenuItem bebidasToolStripMenuItem;
+		private ToolStripMenuItem contactosToolStripMenuItem;
 	}
 }

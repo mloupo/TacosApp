@@ -40,12 +40,11 @@ namespace Views
 			btnCreateIngredient = new Button();
 			btnCancel = new Button();
 			dgvIngredientDetails = new DataGridView();
-			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+			rellenoBindingSource = new BindingSource(components);
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 			Edit = new DataGridViewLinkColumn();
 			Delete = new DataGridViewLinkColumn();
-			rellenoBindingSource = new BindingSource(components);
 			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).BeginInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
@@ -53,69 +52,66 @@ namespace Views
 			// CmbIngredientType
 			// 
 			CmbIngredientType.FormattingEnabled = true;
-			CmbIngredientType.Location = new Point(101, 45);
-			CmbIngredientType.Margin = new Padding(4, 3, 4, 3);
+			CmbIngredientType.Location = new Point(73, 35);
+			CmbIngredientType.Margin = new Padding(3, 2, 3, 2);
 			CmbIngredientType.Name = "CmbIngredientType";
-			CmbIngredientType.Size = new Size(375, 31);
+			CmbIngredientType.Size = new Size(274, 26);
 			CmbIngredientType.TabIndex = 0;
 			CmbIngredientType.SelectedIndexChanged += CmbIngredientType_SelectedIndexChanged;
 			// 
 			// lblIngredientType
 			// 
 			lblIngredientType.AutoSize = true;
-			lblIngredientType.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			lblIngredientType.Location = new Point(17, 53);
-			lblIngredientType.Margin = new Padding(4, 0, 4, 0);
+			lblIngredientType.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			lblIngredientType.Location = new Point(12, 41);
 			lblIngredientType.Name = "lblIngredientType";
-			lblIngredientType.Size = new Size(54, 23);
+			lblIngredientType.Size = new Size(40, 18);
 			lblIngredientType.TabIndex = 2;
 			lblIngredientType.Text = "Tipo";
 			// 
 			// txtIngredientName
 			// 
-			txtIngredientName.Location = new Point(101, 94);
-			txtIngredientName.Margin = new Padding(4, 3, 4, 3);
+			txtIngredientName.Location = new Point(73, 74);
+			txtIngredientName.Margin = new Padding(3, 2, 3, 2);
 			txtIngredientName.Name = "txtIngredientName";
-			txtIngredientName.Size = new Size(375, 31);
+			txtIngredientName.Size = new Size(274, 25);
 			txtIngredientName.TabIndex = 3;
 			// 
 			// txtIngredientPrice
 			// 
-			txtIngredientPrice.Location = new Point(101, 147);
-			txtIngredientPrice.Margin = new Padding(4, 3, 4, 3);
+			txtIngredientPrice.Location = new Point(73, 115);
+			txtIngredientPrice.Margin = new Padding(3, 2, 3, 2);
 			txtIngredientPrice.Name = "txtIngredientPrice";
-			txtIngredientPrice.Size = new Size(375, 31);
+			txtIngredientPrice.Size = new Size(274, 25);
 			txtIngredientPrice.TabIndex = 4;
 			// 
 			// lblIngredientName
 			// 
 			lblIngredientName.AutoSize = true;
-			lblIngredientName.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			lblIngredientName.Location = new Point(17, 103);
-			lblIngredientName.Margin = new Padding(4, 0, 4, 0);
+			lblIngredientName.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			lblIngredientName.Location = new Point(12, 81);
 			lblIngredientName.Name = "lblIngredientName";
-			lblIngredientName.Size = new Size(76, 23);
+			lblIngredientName.Size = new Size(56, 18);
 			lblIngredientName.TabIndex = 5;
 			lblIngredientName.Text = "Nombre";
 			// 
 			// lblIngredientPrice
 			// 
 			lblIngredientPrice.AutoSize = true;
-			lblIngredientPrice.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			lblIngredientPrice.Location = new Point(17, 155);
-			lblIngredientPrice.Margin = new Padding(4, 0, 4, 0);
+			lblIngredientPrice.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			lblIngredientPrice.Location = new Point(12, 121);
 			lblIngredientPrice.Name = "lblIngredientPrice";
-			lblIngredientPrice.Size = new Size(76, 23);
+			lblIngredientPrice.Size = new Size(56, 18);
 			lblIngredientPrice.TabIndex = 6;
 			lblIngredientPrice.Text = "Precio";
 			// 
 			// btnCreateIngredient
 			// 
-			btnCreateIngredient.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			btnCreateIngredient.Location = new Point(525, 92);
-			btnCreateIngredient.Margin = new Padding(4, 3, 4, 3);
+			btnCreateIngredient.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			btnCreateIngredient.Location = new Point(382, 72);
+			btnCreateIngredient.Margin = new Padding(3, 2, 3, 2);
 			btnCreateIngredient.Name = "btnCreateIngredient";
-			btnCreateIngredient.Size = new Size(153, 33);
+			btnCreateIngredient.Size = new Size(111, 26);
 			btnCreateIngredient.TabIndex = 7;
 			btnCreateIngredient.Text = "Save";
 			btnCreateIngredient.UseVisualStyleBackColor = true;
@@ -123,11 +119,11 @@ namespace Views
 			// 
 			// btnCancel
 			// 
-			btnCancel.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			btnCancel.Location = new Point(525, 137);
-			btnCancel.Margin = new Padding(4, 3, 4, 3);
+			btnCancel.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			btnCancel.Location = new Point(382, 107);
+			btnCancel.Margin = new Padding(3, 2, 3, 2);
 			btnCancel.Name = "btnCancel";
-			btnCancel.Size = new Size(153, 33);
+			btnCancel.Size = new Size(111, 26);
 			btnCancel.TabIndex = 11;
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
@@ -138,39 +134,38 @@ namespace Views
 			dgvIngredientDetails.AllowUserToOrderColumns = true;
 			dgvIngredientDetails.AutoGenerateColumns = false;
 			dgvIngredientDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvIngredientDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, Edit, Delete });
+			dgvIngredientDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, Edit, Delete });
 			dgvIngredientDetails.DataSource = rellenoBindingSource;
-			dgvIngredientDetails.Location = new Point(17, 260);
-			dgvIngredientDetails.Name = "dgvFormIngredienteDetails";
+			dgvIngredientDetails.Location = new Point(12, 203);
+			dgvIngredientDetails.Margin = new Padding(2);
+			dgvIngredientDetails.Name = "dgvIngredientDetails";
 			dgvIngredientDetails.RowHeadersWidth = 51;
 			dgvIngredientDetails.RowTemplate.Height = 29;
-			dgvIngredientDetails.Size = new Size(678, 347);
+			dgvIngredientDetails.Size = new Size(538, 324);
 			dgvIngredientDetails.TabIndex = 12;
 			dgvIngredientDetails.CellContentClick += DgvIngredientDetails_CellContentClick;
 			// 
-			// dataGridViewTextBoxColumn3
+			// rellenoBindingSource
 			// 
-			dataGridViewTextBoxColumn3.DataPropertyName = "Id";
-			dataGridViewTextBoxColumn3.HeaderText = "Id";
-			dataGridViewTextBoxColumn3.MinimumWidth = 6;
-			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			dataGridViewTextBoxColumn3.Width = 125;
+			rellenoBindingSource.DataSource = typeof(Relleno);
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
+			dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
 			dataGridViewTextBoxColumn2.HeaderText = "Nombre";
 			dataGridViewTextBoxColumn2.MinimumWidth = 6;
 			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			dataGridViewTextBoxColumn2.Width = 125;
+			dataGridViewTextBoxColumn2.Width = 85;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
+			dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			dataGridViewTextBoxColumn1.DataPropertyName = "Precio";
 			dataGridViewTextBoxColumn1.HeaderText = "Precio";
 			dataGridViewTextBoxColumn1.MinimumWidth = 6;
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			dataGridViewTextBoxColumn1.Width = 125;
+			dataGridViewTextBoxColumn1.Width = 85;
 			// 
 			// Edit
 			// 
@@ -192,15 +187,11 @@ namespace Views
 			Delete.UseColumnTextForLinkValue = true;
 			Delete.Width = 80;
 			// 
-			// rellenoBindingSource
+			// FormCrearIngrediente
 			// 
-			rellenoBindingSource.DataSource = typeof(Relleno);
-			// 
-			// FormIngredientDetails
-			// 
-			AutoScaleDimensions = new SizeF(11F, 23F);
+			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(706, 619);
+			ClientSize = new Size(561, 538);
 			Controls.Add(dgvIngredientDetails);
 			Controls.Add(btnCancel);
 			Controls.Add(btnCreateIngredient);
@@ -210,9 +201,9 @@ namespace Views
 			Controls.Add(txtIngredientName);
 			Controls.Add(lblIngredientType);
 			Controls.Add(CmbIngredientType);
-			Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			Margin = new Padding(4, 3, 4, 3);
-			Name = "FormIngredientDetails";
+			Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			Margin = new Padding(3, 2, 3, 2);
+			Name = "FormCrearIngrediente";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Detalle Ingredientes";
 			Load += FormIngredientDetails_Load;
@@ -239,11 +230,10 @@ namespace Views
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
-		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private BindingSource rellenoBindingSource;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private DataGridViewLinkColumn Edit;
 		private DataGridViewLinkColumn Delete;
-		private BindingSource rellenoBindingSource;
 	}
 }

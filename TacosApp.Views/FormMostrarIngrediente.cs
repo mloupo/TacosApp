@@ -1,9 +1,9 @@
 ﻿using Model.Productos;
-using Service;
+using Service.Logica;
 
 namespace Views
 {
-	public partial class FormMostrarIngrediente : Form
+    public partial class FormMostrarIngrediente : Form
 	{
 		private readonly List<Ingrediente> _allIngredientes;
 		private readonly List<Ingrediente> _tortillas;

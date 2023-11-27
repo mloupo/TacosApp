@@ -1,10 +1,13 @@
-﻿namespace Views
+﻿using Contactos;
+
+namespace Views
 {
 	public partial class FormRaiz : Form
 	{
 		public FormRaiz()
 		{
 			InitializeComponent();
+			BtnCrearPedido_Click(null, null);
 		}
 
 		#region EVENTS
@@ -34,19 +37,19 @@
 
 		private Form AbrirFormularioCrearPedido()
 		{
-			FormCrearPedido frmTaco = new();
-			return frmTaco;
+			FormCrearPedido frmPedido = new();
+			return frmPedido;
 		}
 
 		private Form AbrirFormularioGestorElementos()
 		{
-			FormMostrarIngrediente frmIngredient = new();
-			return frmIngredient;
+			FormMostrarIngrediente frmIngrediente = new();
+			return frmIngrediente;
 		}
 
 		private Form AbrirFormularioBuscarPedidos()
 		{
-			FormMostrarPedidos frmOrder = new();
+			FormMostrarBebidas frmOrder = new();
 			return frmOrder;
 		}
 
@@ -56,5 +59,21 @@
 
 
 
+		private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormMostrarIngrediente ingredientes = new();
+			ingredientes.ShowDialog();
+		}
+
+		private void bebidasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void contactosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ContactosForm contactos = new();
+			contactos.ShowDialog();
+		}
 	}
 }

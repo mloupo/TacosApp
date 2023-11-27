@@ -17,8 +17,8 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\bin\Debug\ne
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\bin\Debug\net7.0-windows\Model.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\bin\Debug\net7.0-windows\Service.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.csproj.AssemblyReference.cache
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.Contactos.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.ContactosDetalle.resources
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.ContactosForm.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.csproj.GenerateResource.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.AssemblyInfoInputs.cache

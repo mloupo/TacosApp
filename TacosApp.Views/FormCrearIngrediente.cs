@@ -1,11 +1,11 @@
 ﻿using Model;
 using Model.Controllers;
 using Model.Productos;
-using Service;
+using Service.Logica;
 
 namespace Views
 {
-	public partial class FormCrearIngrediente : Form
+    public partial class FormCrearIngrediente : Form
 	{
 		private string tipoIngrediente;
 		private Ingrediente _ingrediente;
