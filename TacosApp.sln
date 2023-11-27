@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "TacosApp.Service\Service.csproj", "{96FBD5E6-D803-434C-86F3-DE9D9F49CED7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Views", "TacosApp.Views\Views.csproj", "{1C34DDCC-56B7-49AA-B3DB-2EECF9C3DAE9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "TacosApp.Model\Model.csproj", "{F60390FD-D687-48E4-92F1-6106AF4734FA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validaciones", "Validaciones\Validaciones.csproj", "{72136F94-3189-4E15-9F6E-3A1F9513DE06}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contactos", "Contactos\Contactos.csproj", "{EE3AF935-8225-416B-8569-AD6969DE5E7A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo\Modelo.csproj", "{61DD2403-4846-4DAA-9E34-0E3D2FD6CDC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vistas", "Vistas\Vistas.csproj", "{7D26F400-485B-44FD-9B96-1C00C0753997}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicio", "Servicio\Servicio.csproj", "{8172E5E4-941D-4189-BD49-54A5DA6FD06A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96FBD5E6-D803-434C-86F3-DE9D9F49CED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96FBD5E6-D803-434C-86F3-DE9D9F49CED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96FBD5E6-D803-434C-86F3-DE9D9F49CED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96FBD5E6-D803-434C-86F3-DE9D9F49CED7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C34DDCC-56B7-49AA-B3DB-2EECF9C3DAE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C34DDCC-56B7-49AA-B3DB-2EECF9C3DAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C34DDCC-56B7-49AA-B3DB-2EECF9C3DAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C34DDCC-56B7-49AA-B3DB-2EECF9C3DAE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F60390FD-D687-48E4-92F1-6106AF4734FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72136F94-3189-4E15-9F6E-3A1F9513DE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72136F94-3189-4E15-9F6E-3A1F9513DE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72136F94-3189-4E15-9F6E-3A1F9513DE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +27,18 @@ Global
 		{EE3AF935-8225-416B-8569-AD6969DE5E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE3AF935-8225-416B-8569-AD6969DE5E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE3AF935-8225-416B-8569-AD6969DE5E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DD2403-4846-4DAA-9E34-0E3D2FD6CDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DD2403-4846-4DAA-9E34-0E3D2FD6CDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DD2403-4846-4DAA-9E34-0E3D2FD6CDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DD2403-4846-4DAA-9E34-0E3D2FD6CDC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D26F400-485B-44FD-9B96-1C00C0753997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D26F400-485B-44FD-9B96-1C00C0753997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D26F400-485B-44FD-9B96-1C00C0753997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D26F400-485B-44FD-9B96-1C00C0753997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8172E5E4-941D-4189-BD49-54A5DA6FD06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8172E5E4-941D-4189-BD49-54A5DA6FD06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8172E5E4-941D-4189-BD49-54A5DA6FD06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8172E5E4-941D-4189-BD49-54A5DA6FD06A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

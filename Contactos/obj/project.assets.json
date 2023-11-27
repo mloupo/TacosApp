@@ -147,30 +147,30 @@
           }
         }
       },
-      "Model/1.0.0": {
+      "Modelo/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
-          "bin/placeholder/Model.dll": {}
+          "bin/placeholder/Modelo.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Model.dll": {}
+          "bin/placeholder/Modelo.dll": {}
         }
       },
-      "Service/1.0.0": {
+      "Servicio/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Model": "1.0.0"
+          "Modelo": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Service.dll": {}
+          "bin/placeholder/Servicio.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Service.dll": {}
+          "bin/placeholder/Servicio.dll": {}
         }
       }
     }
@@ -489,21 +489,21 @@
         "version.txt"
       ]
     },
-    "Model/1.0.0": {
+    "Modelo/1.0.0": {
       "type": "project",
-      "path": "../TacosApp.Model/Model.csproj",
-      "msbuildProject": "../TacosApp.Model/Model.csproj"
+      "path": "../Modelo/Modelo.csproj",
+      "msbuildProject": "../Modelo/Modelo.csproj"
     },
-    "Service/1.0.0": {
+    "Servicio/1.0.0": {
       "type": "project",
-      "path": "../TacosApp.Service/Service.csproj",
-      "msbuildProject": "../TacosApp.Service/Service.csproj"
+      "path": "../Servicio/Servicio.csproj",
+      "msbuildProject": "../Servicio/Servicio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Model >= 1.0.0",
-      "Service >= 1.0.0"
+      "Modelo >= 1.0.0",
+      "Servicio >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -533,11 +533,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj"
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Modelo\\Modelo.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Modelo\\Modelo.csproj"
             },
-            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Service\\Service.csproj"
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj"
             }
           }
         }

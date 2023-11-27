@@ -151,8 +151,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Model": "1.0.0",
-          "Service": "1.0.0"
+          "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj": "1.0.0",
+          "Modelo": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Contactos.dll": {}
@@ -164,30 +164,17 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
-      "Model/1.0.0": {
+      "Modelo/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
-          "bin/placeholder/Model.dll": {}
+          "bin/placeholder/Modelo.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Model.dll": {}
-        }
-      },
-      "Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Model": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Service.dll": {}
+          "bin/placeholder/Modelo.dll": {}
         }
       }
     }
@@ -508,25 +495,20 @@
     },
     "Contactos/1.0.0": {
       "type": "project",
-      "path": "../Contacts/Contactos.csproj",
-      "msbuildProject": "../Contacts/Contactos.csproj"
+      "path": "../Contactos/Contactos.csproj",
+      "msbuildProject": "../Contactos/Contactos.csproj"
     },
-    "Model/1.0.0": {
+    "Modelo/1.0.0": {
       "type": "project",
-      "path": "../TacosApp.Model/Model.csproj",
-      "msbuildProject": "../TacosApp.Model/Model.csproj"
-    },
-    "Service/1.0.0": {
-      "type": "project",
-      "path": "../TacosApp.Service/Service.csproj",
-      "msbuildProject": "../TacosApp.Service/Service.csproj"
+      "path": "../Modelo/Modelo.csproj",
+      "msbuildProject": "../Modelo/Modelo.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj",
       "Contactos >= 1.0.0",
-      "Model >= 1.0.0",
-      "Service >= 1.0.0"
+      "Modelo >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -535,9 +517,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\Views.csproj",
-      "projectName": "Views",
-      "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\Views.csproj",
+      "projectUniqueName": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\Vistas.csproj",
+      "projectName": "Vistas",
+      "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\Vistas.csproj",
       "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Views\\obj\\",
       "projectStyle": "PackageReference",
@@ -559,14 +541,11 @@
             "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contactos\\Contactos.csproj": {
               "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contactos\\Contactos.csproj"
             },
-            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contacts\\Contactos.csproj": {
-              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Contacts\\Contactos.csproj"
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Modelo\\Modelo.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Modelo\\Modelo.csproj"
             },
-            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Model\\Model.csproj"
-            },
-            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\TacosApp.Service\\Service.csproj"
+            "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj": {
+              "projectPath": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj"
             }
           }
         }
@@ -602,5 +581,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Zen\\ITEC\\AnalistaProgramador\\3er\\Finales\\TacosApp\\Servicio\\Servicio.csproj",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

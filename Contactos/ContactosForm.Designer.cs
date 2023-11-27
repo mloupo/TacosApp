@@ -68,11 +68,11 @@
 			// 
 			// contactoBindingSource1
 			// 
-			contactoBindingSource1.DataSource = typeof(Model.EntidadesUsuario.Contacto);
+			contactoBindingSource1.DataSource = typeof(Modelo.EntidadesUsuario.Contacto);
 			// 
 			// contactoBindingSource
 			// 
-			contactoBindingSource.DataSource = typeof(Model.EntidadesUsuario.Contacto);
+			contactoBindingSource.DataSource = typeof(Modelo.EntidadesUsuario.Contacto);
 			// 
 			// label1
 			// 
@@ -112,7 +112,7 @@
 			// 
 			// contactoBindingSource2
 			// 
-			contactoBindingSource2.DataSource = typeof(Model.EntidadesUsuario.Contacto);
+			contactoBindingSource2.DataSource = typeof(Modelo.EntidadesUsuario.Contacto);
 			// 
 			// idDataGridViewTextBoxColumn
 			// 

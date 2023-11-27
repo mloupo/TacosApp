@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -12,12 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\TacosApp.Model\Model.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Contactos\" />
-		<Folder Include="Bebidas\" />
+		<ProjectReference Include="..\Modelo\Modelo.csproj" />
 	</ItemGroup>
 
 </Project>

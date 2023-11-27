@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using FluentValidation.Results;
-using TacosApp.Model.EntidadesProducto.Tacos;
+using Modelo.EntidadesProducto.Tacos;
 using Validaciones.Ingredientes;
 
 Console.WriteLine("Hello, World!");

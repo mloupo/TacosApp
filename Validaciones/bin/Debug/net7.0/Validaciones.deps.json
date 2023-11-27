@@ -9,7 +9,7 @@
       "Validaciones/1.0.0": {
         "dependencies": {
           "FluentValidation": "11.8.1",
-          "Model": "1.0.0"
+          "Modelo": "1.0.0"
         },
         "runtime": {
           "Validaciones.dll": {}
@@ -98,12 +98,12 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
-      "Model/1.0.0": {
+      "Modelo/1.0.0": {
         "dependencies": {
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
-          "Model.dll": {}
+          "Modelo.dll": {}
         }
       }
     }
@@ -184,7 +184,7 @@
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
-    "Model/1.0.0": {
+    "Modelo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

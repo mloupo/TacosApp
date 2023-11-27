@@ -31,9 +31,9 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\ne
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\Contactos.genruntimeconfig.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contacts\obj\Debug\net7.0-windows\ref\Contactos.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Model.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Model.runtimeconfig.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Model.exe
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Modelo.deps.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Modelo.runtimeconfig.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Modelo.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Contactos.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Contactos.deps.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Contactos.runtimeconfig.json
@@ -45,10 +45,10 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\n
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Model.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Service.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Model.pdb
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Service.pdb
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Modelo.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Servicio.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Modelo.pdb
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\bin\Debug\net7.0-windows\Servicio.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\obj\Debug\net7.0-windows\Contactos.csproj.AssemblyReference.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\obj\Debug\net7.0-windows\Contactos.ContactosDetalle.resources
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Contactos\obj\Debug\net7.0-windows\Contactos.ContactosForm.resources

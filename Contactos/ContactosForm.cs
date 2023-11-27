@@ -1,9 +1,9 @@
-using Model.EntidadesUsuario;
-using Service.Logica;
+using Modelo.EntidadesUsuario;
+using Servicio.Logica;
 
 namespace Contactos
 {
-    public partial class ContactosForm : Form
+	public partial class ContactosForm : Form
 	{
 		private CapaLogicaNegocio _capalogicaNegocio;
 		public ContactosForm()

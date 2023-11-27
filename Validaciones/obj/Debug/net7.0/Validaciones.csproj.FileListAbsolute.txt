@@ -1,6 +1,6 @@
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Model.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Model.runtimeconfig.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Model.exe
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.deps.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.runtimeconfig.json
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Validaciones.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Validaciones.deps.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Validaciones.runtimeconfig.json
@@ -13,8 +13,8 @@ C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debu
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Model.dll
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Model.pdb
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.dll
+C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.pdb
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.csproj.AssemblyReference.cache
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\obj\Debug\net7.0\Validaciones.AssemblyInfoInputs.cache

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<RootNamespace>TacosApp.Vistas</RootNamespace>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="FormLogin.cs" />
+		<Compile Remove="FormLogin.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Remove="FormLogin.resx" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Contactos\Contactos.csproj" />
+		<ProjectReference Include="..\Modelo\Modelo.csproj" />
+		<ProjectReference Include="..\Servicio\Servicio.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{3259aa49-8aa1-44d3-9025-a0b520596a8c}" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="ModelDatos.designer.cs">
+			<DependentUpon>ModelDatos.dbml</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

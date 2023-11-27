@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using TacosApp.Model.EntidadesProducto.Tacos;
+using Modelo.EntidadesProducto.Tacos;
 
 namespace Validaciones.Ingredientes
 {
-    public class IngredienteValidador : AbstractValidator<Ingrediente>
+	public class IngredienteValidador : AbstractValidator<Ingrediente>
 	{
 		public IngredienteValidador()
 		{
