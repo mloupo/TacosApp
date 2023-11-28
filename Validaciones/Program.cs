@@ -5,7 +5,7 @@ using Validaciones.Ingredientes;
 
 Console.WriteLine("Hello, World!");
 Ingrediente ingrediente = new Tortilla();
-IngredienteValidador validadorIngrediente = new IngredienteValidador();
+CrearIngredienteValidador validadorIngrediente = new CrearIngredienteValidador();
 ValidationResult res = validadorIngrediente.Validate(ingrediente);
 
 if (!res.IsValid)

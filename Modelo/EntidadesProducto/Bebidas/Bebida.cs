@@ -4,12 +4,13 @@ namespace Modelo.EntidadesProducto.Bebidas
 {
 	public abstract class Bebida : IBebida
 	{
+		public int Id { get; set; }
 		public string? Nombre { get; set; }
 		public float Precio { get; set; }
 
 		public string DatosBebida()
 		{
-			return $"Nombre: {Nombre} Precio: {Precio}";
+			return $" Nro: {Id} de {Nombre}, Precio: {Precio}";
 		}
 
 		public float ObtenerPrecio()

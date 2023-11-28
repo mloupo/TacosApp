@@ -3,9 +3,9 @@ using Modelo.EntidadesProducto.Tacos;
 
 namespace Validaciones.Ingredientes
 {
-	public class IngredienteValidador : AbstractValidator<Ingrediente>
+	public class CrearIngredienteValidador : AbstractValidator<Ingrediente>
 	{
-		public IngredienteValidador()
+		public CrearIngredienteValidador()
 		{
 			RuleFor(i => i.Nombre).NotEmpty().WithMessage("El nombre no puede estar vacio");
 			RuleFor(i => i.Nombre).MaximumLength(20).WithMessage("El nombre no puede tener mas de 20 caracteres");

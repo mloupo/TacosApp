@@ -33,13 +33,14 @@ namespace Vistas
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMostrarIngrediente));
 			dgvFormIngredient = new DataGridView();
-			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 			rellenoBindingSource = new BindingSource(components);
 			txtSearchIngredient = new TextBox();
 			btnSearchIngredient = new Button();
 			btnAddIngredient = new Button();
+			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+			CantidadMaxima = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgvFormIngredient).BeginInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
@@ -48,7 +49,7 @@ namespace Vistas
 			// 
 			dgvFormIngredient.AutoGenerateColumns = false;
 			dgvFormIngredient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1 });
+			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, CantidadMaxima });
 			dgvFormIngredient.DataSource = rellenoBindingSource;
 			dgvFormIngredient.Location = new Point(9, 62);
 			dgvFormIngredient.Margin = new Padding(3, 2, 3, 2);
@@ -58,12 +59,47 @@ namespace Vistas
 			dgvFormIngredient.Size = new Size(481, 334);
 			dgvFormIngredient.TabIndex = 0;
 			// 
+			// rellenoBindingSource
+			// 
+			rellenoBindingSource.DataSource = typeof(Relleno);
+			// 
+			// txtSearchIngredient
+			// 
+			txtSearchIngredient.Location = new Point(12, 18);
+			txtSearchIngredient.Margin = new Padding(2);
+			txtSearchIngredient.Name = "txtSearchIngredient";
+			txtSearchIngredient.Size = new Size(263, 25);
+			txtSearchIngredient.TabIndex = 1;
+			// 
+			// btnSearchIngredient
+			// 
+			btnSearchIngredient.Location = new Point(288, 18);
+			btnSearchIngredient.Margin = new Padding(2);
+			btnSearchIngredient.Name = "btnSearchIngredient";
+			btnSearchIngredient.Size = new Size(68, 25);
+			btnSearchIngredient.TabIndex = 3;
+			btnSearchIngredient.Text = "Search";
+			btnSearchIngredient.UseVisualStyleBackColor = true;
+			btnSearchIngredient.Click += btnSearchIngredient_Click;
+			// 
+			// btnAddIngredient
+			// 
+			btnAddIngredient.Location = new Point(360, 18);
+			btnAddIngredient.Margin = new Padding(2);
+			btnAddIngredient.Name = "btnAddIngredient";
+			btnAddIngredient.Size = new Size(83, 25);
+			btnAddIngredient.TabIndex = 13;
+			btnAddIngredient.Text = "Agregar";
+			btnAddIngredient.UseVisualStyleBackColor = true;
+			btnAddIngredient.Click += BtnAddIngredient_Click;
+			// 
 			// dataGridViewTextBoxColumn3
 			// 
 			dataGridViewTextBoxColumn3.DataPropertyName = "Id";
 			dataGridViewTextBoxColumn3.HeaderText = "Id";
 			dataGridViewTextBoxColumn3.MinimumWidth = 6;
 			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			dataGridViewTextBoxColumn3.Visible = false;
 			dataGridViewTextBoxColumn3.Width = 125;
 			// 
 			// dataGridViewTextBoxColumn2
@@ -82,39 +118,14 @@ namespace Vistas
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			dataGridViewTextBoxColumn1.Width = 125;
 			// 
-			// rellenoBindingSource
+			// CantidadMaxima
 			// 
-			rellenoBindingSource.DataSource = typeof(Relleno);
-			// 
-			// txtSearchIngredient
-			// 
-			txtSearchIngredient.Location = new Point(12, 18);
-			txtSearchIngredient.Margin = new Padding(2, 2, 2, 2);
-			txtSearchIngredient.Name = "txtSearchIngredient";
-			txtSearchIngredient.Size = new Size(263, 25);
-			txtSearchIngredient.TabIndex = 1;
-			// 
-			// btnSearchIngredient
-			// 
-			btnSearchIngredient.Location = new Point(278, 18);
-			btnSearchIngredient.Margin = new Padding(2, 2, 2, 2);
-			btnSearchIngredient.Name = "btnSearchIngredient";
-			btnSearchIngredient.Size = new Size(68, 23);
-			btnSearchIngredient.TabIndex = 3;
-			btnSearchIngredient.Text = "Search";
-			btnSearchIngredient.UseVisualStyleBackColor = true;
-			btnSearchIngredient.Click += btnSearchIngredient_Click;
-			// 
-			// btnAddIngredient
-			// 
-			btnAddIngredient.Location = new Point(360, 18);
-			btnAddIngredient.Margin = new Padding(2, 2, 2, 2);
-			btnAddIngredient.Name = "btnAddIngredient";
-			btnAddIngredient.Size = new Size(83, 23);
-			btnAddIngredient.TabIndex = 13;
-			btnAddIngredient.Text = "Agregar";
-			btnAddIngredient.UseVisualStyleBackColor = true;
-			btnAddIngredient.Click += BtnAddIngredient_Click;
+			CantidadMaxima.DataPropertyName = "CantidadMaxima";
+			CantidadMaxima.HeaderText = "Cant Max";
+			CantidadMaxima.MinimumWidth = 6;
+			CantidadMaxima.Name = "CantidadMaxima";
+			CantidadMaxima.ReadOnly = true;
+			CantidadMaxima.Width = 125;
 			// 
 			// FormMostrarIngrediente
 			// 
@@ -146,10 +157,11 @@ namespace Vistas
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+		private BindingSource rellenoBindingSource;
+		private Button btnAddIngredient;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private BindingSource rellenoBindingSource;
-		private Button btnAddIngredient;
+		private DataGridViewTextBoxColumn CantidadMaxima;
 	}
 }

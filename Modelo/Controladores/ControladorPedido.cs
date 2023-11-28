@@ -1,5 +1,6 @@
 ﻿using Modelo;
-using Modelo.Interfaces;
+using Modelo.EntidadesProducto.Bebidas;
+using Modelo.EntidadesProducto.Tacos;
 
 namespace Model.Controllers
 {
@@ -7,14 +8,15 @@ namespace Model.Controllers
 	public class ControladorPedido
 	{
 		private Pedido _pedido;
-		private List<ITaco> _listaTacos;
-		private List<IBebida> _listaBebidas;
+		private List<Taco> _listaTacos;
+		private List<Bebida> _listaBebidas;
 		private static ControladorPedido _controladorPedido;
 		private static int contadorPedidos = 0;
 
 		private ControladorPedido()
 		{
-			// constructor code
+			_listaTacos = new List<Taco>();
+			_listaBebidas = new List<Bebida>();
 		}
 
 		public static ControladorPedido ObtenerInstancia()
@@ -26,14 +28,17 @@ namespace Model.Controllers
 			return _controladorPedido;
 		}
 
-		public void AgregarNuevoPedido()
+		public Pedido AgregarNuevoPedido(List<Taco> listaTacos, List<Bebida> listaBebidas)
 		{
 			contadorPedidos += 1;
 			Console.WriteLine($"Este es el pedido numero: {contadorPedidos}");
+			_listaTacos = listaTacos;
+			_listaBebidas = listaBebidas;
 			_pedido = new(contadorPedidos, _listaTacos, _listaBebidas);
 			// generar metodo para agregar un nuevo pedido
 			// generar metodo para evaluar el input
 			// manejo de excepciones
+			return _pedido;
 		}
 	}
 }

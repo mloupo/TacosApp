@@ -13,6 +13,4 @@ namespace Validaciones.Bebidas
 			RuleFor(b => b.Precio).GreaterThan(0).WithMessage("El precio debe ser mayor a 0");
 		}
 	}
-
-
 }

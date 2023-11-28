@@ -1,4 +1,5 @@
-﻿using Modelo.EntidadesProducto.Tacos;
+﻿using Modelo.EntidadesProducto.Bebidas;
+using Modelo.EntidadesProducto.Tacos;
 using Modelo.EntidadesUsuario;
 using Modelo.Interfaces;
 using Servicio.Datos;
@@ -59,9 +60,19 @@ namespace Servicio.Logica
 
 		#endregion
 
-		public object ObtenerBebidas(string v)
+		public List<Bebida> ObtenerBebidas(string tipoBebida)
 		{
-			return _capaAccesoDatos.ObtenerBebidas();
+			return _capaAccesoDatos.ObtenerBebidas(tipoBebida);
+		}
+
+		public void AlmacenarBebida(Bebida creacion, string tipoBebida)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void EliminarBebida(int id, string? tipoBebida)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

@@ -1,17 +1,19 @@
-﻿using Modelo.Interfaces;
+﻿using Modelo.EntidadesProducto.Bebidas;
+using Modelo.EntidadesProducto.Tacos;
+using Modelo.Interfaces;
 namespace Modelo
 {
 	public class Pedido : IPedido
 	{
-		private readonly List<ITaco> _listaTacos;
-		private readonly List<IBebida> _listaBebidas;
+		private readonly List<Taco> _listaTacos;
+		private readonly List<Bebida> _listaBebidas;
 		public float Importe { get; set; }
 
 		public int Id { get; set; }
 		public readonly DateTime CreadoEn;
 		public readonly DateTime EntregadEn;
 
-		public Pedido(int id, List<ITaco> listaTacos, List<IBebida> listaBebidas)
+		public Pedido(int id, List<Taco> listaTacos, List<Bebida> listaBebidas)
 		{
 			Id = id;
 			CreadoEn = DateTime.Now;
@@ -32,7 +34,7 @@ namespace Modelo
 
 		public float ObtenerImporteTacos()
 		{
-			foreach (ITaco taco in _listaTacos)
+			foreach (Taco taco in _listaTacos)
 			{
 				Importe += taco.ObtenerPrecio();
 			}

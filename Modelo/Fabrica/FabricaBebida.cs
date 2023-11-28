@@ -1,5 +1,4 @@
 ﻿using Modelo.EntidadesProducto.Bebidas;
-using Modelo.Interfaces;
 
 namespace Modelo.Fabrica
 {
@@ -14,9 +13,9 @@ namespace Modelo.Fabrica
 			return _instancia;
 		}
 
-		public static IBebida ObtenerCreacion(string pProducto, string nombre, float precio)
+		public static Bebida ObtenerCreacion(string pProducto, string nombre, float precio)
 		{
-			IBebida? producto = null;
+			Bebida? producto = null;
 			switch (pProducto)
 			{
 				case "Agua":
@@ -34,9 +33,9 @@ namespace Modelo.Fabrica
 			return producto;
 		}
 
-		public static IBebida ObtenerCreacion(string pProducto, string nombre, float precio, int id)
+		public static Bebida ObtenerCreacion(string pProducto, string nombre, float precio, int id)
 		{
-			IBebida? producto = null;
+			Bebida? producto = null;
 			switch (pProducto)
 			{
 				case "Agua":

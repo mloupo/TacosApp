@@ -1,7 +1,9 @@
-﻿using Modelo;
-using Modelo.Controladores;
+﻿using Model.Controllers;
+using Modelo;
+using Modelo.EntidadesProducto.Bebidas;
 using Modelo.EntidadesProducto.Tacos;
 using Servicio.Logica;
+using Validaciones.Ingredientes;
 
 namespace Vistas
 {
@@ -9,55 +11,34 @@ namespace Vistas
 	{
 		private string _tipoIngrediente;
 		private string _tipoBebida;
-		private List<Ingrediente> _ingredientes;
+
 		private Ingrediente _ingrediente;
-		private Taco taco;
+		private Bebida _bebida;
+		private Taco _taco;
+
+		private List<Ingrediente> _listaIngredientes;
+		private List<Bebida> _listaBebidas;
+		private List<Taco> _listaTacos;
+
+		private Pedido _pedido;
 
 		private readonly CapaLogicaNegocio _businessLogicLayer;
-
-		private readonly ControladorTaco _tacoController;
-		private readonly ControladorIngrediente _ingredienteController;
-		private readonly ControladorBebida _bebidaController;
-
-		private List<Taco> listaTacos;
+		private readonly ControladorPedido _pedidoController;
+		//private readonly ControladorTaco _tacoController;
+		//private readonly ControladorIngrediente _ingredienteController;
+		//private readonly ControladorBebida _bebidaController;
+		private readonly AgregarIngredienteValidador _agregarIngredienteValidador;
 
 		public FormCrearPedido()
 		{
 			InitializeComponent();
-			_businessLogicLayer = new();
-			_tacoController = new();
-			_ingredienteController = new();
-			_bebidaController = new();
-			listaTacos = new();
-			_ingredientes = new();
-		}
-
-		private void btnAgregarIngrediente_Click(object sender, EventArgs e)
-		{
-			List<Ingrediente> listaIngredientesTaco = new();
-			switch (cmbIngrediente.SelectedItem.ToString())
-			{
-				case "Salsa":
-					listaIngredientesTaco = _businessLogicLayer.ObtenerIngredientes("Salsa").ToList();
-					_ingrediente = _ingredientes.Find(ingrediente => ingrediente.Nombre == cmbIngrediente.SelectedItem.ToString());
-					break;
-				case "Relleno":
-					listaIngredientesTaco = _businessLogicLayer.ObtenerIngredientes("Relleno").ToList();
-					_ingrediente = _ingredientes.Find(ingrediente => ingrediente.Nombre == cmbIngrediente.SelectedItem.ToString());
-					break;
-				case "Tortilla":
-					listaIngredientesTaco = _businessLogicLayer.ObtenerIngredientes("Tortilla").ToList();
-					_ingrediente = _ingredientes.Find(ingrediente => ingrediente.Nombre == cmbIngrediente.SelectedItem.ToString());
-					break;
-			}
-			listaIngredientesTaco.Add(_ingrediente);
-			_ingredientes = listaIngredientesTaco;
-			ActualizarDgvListaIngredientesTaco(_ingredientes);
-
-		}
-		private void ActualizarDgvListaIngredientesTaco(List<Ingrediente> list)
-		{
-			dgvTacoDetails.DataSource = list;
+			_businessLogicLayer = new CapaLogicaNegocio();
+			_pedidoController = ControladorPedido.ObtenerInstancia();
+			//_tacoController = new ControladorTaco();
+			//_ingredienteController = new ControladorIngrediente();
+			//_bebidaController = new ControladorBebida();
+			_listaTacos = new List<Taco>();
+			_listaIngredientes = new List<Ingrediente>();
 		}
 
 		private void cmbTipoIngrediente_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,40 +49,54 @@ namespace Vistas
 
 		private void CargarIngredientesCmb()
 		{
-			switch (_tipoIngrediente)
-			{
-				case "Salsa":
-					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes("Salsa");
-					break;
-				case "Relleno":
-					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes("Relleno");
-					break;
-				case "Tortilla":
-					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes("Tortilla");
-					break;
-				default:
-					cmbIngrediente.DataSource = null;
-					break;
-			}
-
+			cmbIngrediente.DataSource = _businessLogicLayer.ObtenerIngredientes(_tipoIngrediente);
 			cmbIngrediente.ValueMember = "Nombre";
 			cmbIngrediente.DisplayMember = "Nombre";
 			cmbIngrediente.SelectedIndex = 0;
 		}
 
+		private void btnAgregarIngrediente_Click(object sender, EventArgs e)
+		{
+
+			_ingrediente = _businessLogicLayer.ObtenerIngredientes(cmbTipoIngrediente.SelectedItem.ToString())
+				.FirstOrDefault(i => i.Nombre == cmbIngrediente.SelectedItem.ToString());
+			Console.WriteLine(cmbIngrediente.SelectedItem.ToString());
+			Console.WriteLine(_ingrediente);
+			Console.ReadLine();
+			var validationResults = _agregarIngredienteValidador.Validate(_ingrediente);
+
+			if (validationResults.IsValid)
+			{
+				_listaIngredientes.Add(_ingrediente);
+				ActualizarDgvListaIngredientesTaco(_listaIngredientes);
+			}
+		}
+
+		private void ActualizarDgvListaIngredientesTaco(List<Ingrediente> list)
+		{
+			dgvIngredientesTacoDetalle.DataSource = null;
+			dgvIngredientesTacoDetalle.DataSource = list;
+		}
+
 		private void btnCrearTaco_Click(object sender, EventArgs e)
 		{
-			taco = new Taco(_ingredientes);
-			listaTacos.Add(taco);
-			ActualizarDgvListaTacos(listaTacos);
-			CalcularValorTacos(listaTacos);
+			if (_listaIngredientes.Any())
+			{
+				_taco = new Taco(_listaIngredientes);
+				_listaTacos.Add(_taco);
+				ActualizarDgvListaTacos(_listaTacos);
+				CalcularValorTacos(_listaTacos);
+			}
+			else
+			{
+				MessageBox.Show("Debe agregar ingredientes al taco");
+			}
 		}
 
 		private void ActualizarDgvListaTacos(List<Taco> listaTacos)
 		{
 			dgvTacoDetails.DataSource = null;
 			dgvTacoDetails.DataSource = listaTacos;
-			dgvTacoDetails.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 		}
 
 		private void CalcularValorTacos(List<Taco> tacos)
@@ -126,8 +121,7 @@ namespace Vistas
 
 		public void GenerarNuevoPedido()
 		{
-			// Code to generate a new order 
-
+			_pedidoController.AgregarNuevoPedido(_listaTacos, _listaBebidas);
 		}
 
 		private void FormCreateTaco_Load(object sender, EventArgs e)
@@ -136,10 +130,10 @@ namespace Vistas
 			txtDatosCliente.Enabled = false;
 			txtNroContactoCliente.Enabled = false;
 			dtPickerDeliveryRequest.Enabled = false;
+			cmbTipoBebida.DataSource = Enum.GetNames(typeof(Enums.TipoBebida));
 			cmbTipoBebida.Enabled = false;
 			cmbBebidaSeleccionada.Enabled = false;
 		}
-
 
 		private void ckbDelivery_CheckedChanged(object sender, EventArgs e)
 		{
@@ -166,32 +160,16 @@ namespace Vistas
 
 		private void cmbTipoBebida_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			_tipoBebida = cmbTipoIngrediente.SelectedItem.ToString();
+			_tipoBebida = cmbTipoBebida.SelectedItem.ToString();
 			CargarTipoBebidasCmb();
 		}
 
 		private void CargarTipoBebidasCmb()
 		{
-			switch (_tipoIngrediente)
-			{
-				case "Agua":
-					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerBebidas("Agua");
-					break;
-				case "Gaseosa":
-					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerBebidas("Gaseosa");
-					break;
-				case "Cerveza":
-					cmbIngrediente.DataSource = _businessLogicLayer.ObtenerBebidas("Cerveza");
-					break;
-				default:
-					cmbIngrediente.DataSource = null;
-					break;
-			}
-
-			cmbIngrediente.ValueMember = "Nombre";
-			cmbIngrediente.DisplayMember = "Nombre";
-			cmbIngrediente.SelectedIndex = 0;
+			cmbBebidaSeleccionada.DataSource = _businessLogicLayer.ObtenerBebidas(_tipoBebida);
+			cmbBebidaSeleccionada.ValueMember = "Nombre";
+			cmbBebidaSeleccionada.DisplayMember = "Nombre";
+			cmbBebidaSeleccionada.SelectedIndex = 0;
 		}
-
 	}
 }

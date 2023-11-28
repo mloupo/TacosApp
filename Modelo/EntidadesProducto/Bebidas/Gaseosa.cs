@@ -8,11 +8,11 @@
 			Precio = precio;
 		}
 
-		public Gaseosa(string nombre, float precio, int id) : this(nombre, precio)
+		public Gaseosa(string nombre, float precio, int id)
 		{
 			Id = id;
+			Nombre = nombre;
+			Precio = precio;
 		}
-
-		public int Id { get; }
 	}
 }

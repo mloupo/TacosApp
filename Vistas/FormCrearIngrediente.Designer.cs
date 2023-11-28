@@ -32,14 +32,14 @@ namespace Vistas
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			CmbIngredientType = new ComboBox();
+			cmbTipoIngrediente = new ComboBox();
 			lblIngredientType = new Label();
 			txtIngredientName = new TextBox();
 			txtIngredientPrice = new TextBox();
 			lblIngredientName = new Label();
 			lblIngredientPrice = new Label();
-			btnCreateIngredient = new Button();
-			btnCancel = new Button();
+			btnCrearIngrediente = new Button();
+			btnCancelarCreacion = new Button();
 			dgvIngredientDetails = new DataGridView();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -50,15 +50,15 @@ namespace Vistas
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
 			// 
-			// CmbIngredientType
+			// cmbTipoIngrediente
 			// 
-			CmbIngredientType.FormattingEnabled = true;
-			CmbIngredientType.Location = new Point(73, 35);
-			CmbIngredientType.Margin = new Padding(3, 2, 3, 2);
-			CmbIngredientType.Name = "CmbIngredientType";
-			CmbIngredientType.Size = new Size(274, 26);
-			CmbIngredientType.TabIndex = 0;
-			CmbIngredientType.SelectedIndexChanged += CmbIngredientType_SelectedIndexChanged;
+			cmbTipoIngrediente.FormattingEnabled = true;
+			cmbTipoIngrediente.Location = new Point(73, 35);
+			cmbTipoIngrediente.Margin = new Padding(3, 2, 3, 2);
+			cmbTipoIngrediente.Name = "cmbTipoIngrediente";
+			cmbTipoIngrediente.Size = new Size(274, 26);
+			cmbTipoIngrediente.TabIndex = 0;
+			cmbTipoIngrediente.SelectedIndexChanged += cmbTipoIngrediente_SelectedIndexChanged;
 			// 
 			// lblIngredientType
 			// 
@@ -106,29 +106,29 @@ namespace Vistas
 			lblIngredientPrice.TabIndex = 6;
 			lblIngredientPrice.Text = "Precio";
 			// 
-			// btnCreateIngredient
+			// btnCrearIngrediente
 			// 
-			btnCreateIngredient.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btnCreateIngredient.Location = new Point(382, 72);
-			btnCreateIngredient.Margin = new Padding(3, 2, 3, 2);
-			btnCreateIngredient.Name = "btnCreateIngredient";
-			btnCreateIngredient.Size = new Size(111, 26);
-			btnCreateIngredient.TabIndex = 7;
-			btnCreateIngredient.Text = "Save";
-			btnCreateIngredient.UseVisualStyleBackColor = true;
-			btnCreateIngredient.Click += BtnCreateIngredient_Click;
+			btnCrearIngrediente.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			btnCrearIngrediente.Location = new Point(382, 72);
+			btnCrearIngrediente.Margin = new Padding(3, 2, 3, 2);
+			btnCrearIngrediente.Name = "btnCrearIngrediente";
+			btnCrearIngrediente.Size = new Size(111, 26);
+			btnCrearIngrediente.TabIndex = 7;
+			btnCrearIngrediente.Text = "Crear";
+			btnCrearIngrediente.UseVisualStyleBackColor = true;
+			btnCrearIngrediente.Click += BtnCreateIngredient_Click;
 			// 
-			// btnCancel
+			// btnCancelarCreacion
 			// 
-			btnCancel.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btnCancel.Location = new Point(382, 107);
-			btnCancel.Margin = new Padding(3, 2, 3, 2);
-			btnCancel.Name = "btnCancel";
-			btnCancel.Size = new Size(111, 26);
-			btnCancel.TabIndex = 11;
-			btnCancel.Text = "Cancel";
-			btnCancel.UseVisualStyleBackColor = true;
-			btnCancel.Click += BtnCancel_Click;
+			btnCancelarCreacion.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			btnCancelarCreacion.Location = new Point(382, 107);
+			btnCancelarCreacion.Margin = new Padding(3, 2, 3, 2);
+			btnCancelarCreacion.Name = "btnCancelarCreacion";
+			btnCancelarCreacion.Size = new Size(111, 26);
+			btnCancelarCreacion.TabIndex = 11;
+			btnCancelarCreacion.Text = "Cancelar";
+			btnCancelarCreacion.UseVisualStyleBackColor = true;
+			btnCancelarCreacion.Click += btnCancelarCreacion_Click;
 			// 
 			// dgvIngredientDetails
 			// 
@@ -194,14 +194,14 @@ namespace Vistas
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(528, 538);
 			Controls.Add(dgvIngredientDetails);
-			Controls.Add(btnCancel);
-			Controls.Add(btnCreateIngredient);
+			Controls.Add(btnCancelarCreacion);
+			Controls.Add(btnCrearIngrediente);
 			Controls.Add(lblIngredientPrice);
 			Controls.Add(lblIngredientName);
 			Controls.Add(txtIngredientPrice);
 			Controls.Add(txtIngredientName);
 			Controls.Add(lblIngredientType);
-			Controls.Add(CmbIngredientType);
+			Controls.Add(cmbTipoIngrediente);
 			Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
 			Margin = new Padding(3, 2, 3, 2);
 			Name = "FormCrearIngrediente";
@@ -216,14 +216,14 @@ namespace Vistas
 
 		#endregion
 
-		private ComboBox CmbIngredientType;
+		private ComboBox cmbTipoIngrediente;
 		private Label lblIngredientType;
 		private TextBox txtIngredientName;
 		private TextBox txtIngredientPrice;
 		private Label lblIngredientName;
 		private Label lblIngredientPrice;
-		private Button btnCreateIngredient;
-		private Button btnCancel;
+		private Button btnCrearIngrediente;
+		private Button btnCancelarCreacion;
 		private DataGridViewTextBoxColumn preciounitarioDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private BindingSource salsaBindingSource;

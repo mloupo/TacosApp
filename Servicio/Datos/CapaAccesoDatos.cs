@@ -1,4 +1,5 @@
 ﻿using Modelo.Controladores;
+using Modelo.EntidadesProducto.Bebidas;
 using Modelo.EntidadesProducto.Tacos;
 using Modelo.EntidadesUsuario;
 using System.Data.SqlClient;
@@ -12,6 +13,7 @@ namespace Servicio.Datos
 			"Initial Catalog=TacosAppDB;Data Source=LAPTOP-07CMGR4R\\SQLEXPRESS01");
 
 		private ControladorIngrediente? _ingredientController;
+		private ControladorBebida? _bebidaController;
 
 		#region Ingredientes
 		public void InsertarIngrediente(Ingrediente ingrediente, string tipoIngrediente)
@@ -59,7 +61,7 @@ namespace Servicio.Datos
 					int Id = int.Parse(reader["Id"].ToString());
 					string Nombre = reader["Nombre"].ToString();
 					float Precio = float.Parse(reader["Precio"].ToString());
-					Ingrediente ingred = (Ingrediente)_ingredientController.Crear(tipoIngrediente, Nombre, Precio, Id);
+					Ingrediente ingred = _ingredientController.Crear(tipoIngrediente, Nombre, Precio, Id);
 					ingredientes.Add(ingred);
 				}
 			}
@@ -248,7 +250,6 @@ namespace Servicio.Datos
 			finally { conn.Close(); }
 			return contactos;
 		}
-
 		public void EliminarContacto(int idContacto)
 		{
 			try
@@ -266,47 +267,31 @@ namespace Servicio.Datos
 			finally { conn.Close(); }
 		}
 
-		internal object ObtenerBebidas(string textoObjetivo = null)
+		#endregion
+
+		#region Bebidas
+		public List<Bebida> ObtenerBebidas(string tipoBebida)
 		{
-			List<Contacto> bebidas = new();
+
+			List<Bebida> bebidas = new();
 			try
 			{
 				conn.Open();
-				string query = @"SELECT Id, Nombre, Apellido, NroContacto, CorreoElectronico, DireccionEnvio, Contraseña 
-									FROM Contactos";
+				string query = $@"SELECT Id, Nombre, Precio 
+									FROM {tipoBebida}";
 				SqlCommand cmd = new();
-
-				if (!string.IsNullOrEmpty(textoObjetivo))
-				{
-					query += @" WHERE Nombre LIKE @TextoObjetivo 
-								OR Apellido LIKE @TextoObjetivo 
-								OR NroContacto LIKE @TextoObjetivo 
-								OR CorreoElectronico LIKE @TextoObjetivo
-								OR DireccionEnvio LIKE @TextoObjetivo";
-
-					cmd = new(query, conn);
-					cmd.Parameters.Add(new SqlParameter("@TextoObjetivo", $"%{textoObjetivo}%"));
-				}
 
 				cmd.CommandText = query;
 				cmd.Connection = conn;
 
-
 				SqlDataReader reader = cmd.ExecuteReader();
-
 				while (reader.Read())
 				{
-					bebidas.Add(new Contacto
-					{
-						Id = int.Parse(reader["Id"].ToString()),
-						Nombre = reader["Nombre"].ToString(),
-						Apellido = reader["Apellido"].ToString(),
-						NroContacto = reader["NroContacto"].ToString(),
-						CorreoElectronico = reader["CorreoElectronico"].ToString(),
-						DireccionEnvio = reader["DireccionEnvio"].ToString(),
-						Contraseña = reader["Contraseña"].ToString()
-
-					});
+					int Id = int.Parse(reader["Id"].ToString());
+					string Nombre = reader["Nombre"].ToString();
+					float Precio = float.Parse(reader["Precio"].ToString());
+					Bebida bebida = _bebidaController.Crear(tipoBebida, Nombre, Precio, Id);
+					bebidas.Add(bebida);
 				}
 			}
 			catch (Exception)
@@ -316,8 +301,6 @@ namespace Servicio.Datos
 			finally { conn.Close(); }
 			return bebidas;
 		}
-
-
 
 		#endregion
 	}

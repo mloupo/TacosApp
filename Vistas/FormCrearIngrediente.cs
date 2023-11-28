@@ -26,21 +26,21 @@ namespace Vistas
 			GuardarIngrediente();
 		}
 
-		private void CmbIngredientType_SelectedIndexChanged(object sender, EventArgs e)
+		private void cmbTipoIngrediente_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			LimpiarCampos();
 			ActualizarGridView();
 		}
 
-		private void BtnCancel_Click(object sender, EventArgs e)
+		private void btnCancelarCreacion_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
 
 		private void FormIngredientDetails_Load(object sender, EventArgs e)
 		{
-			CmbIngredientType.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente));
-			tipoIngrediente = CmbIngredientType.SelectedItem.ToString();
+			cmbTipoIngrediente.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente));
+			tipoIngrediente = cmbTipoIngrediente.SelectedItem.ToString();
 			CargarGridView();
 		}
 
@@ -150,13 +150,14 @@ namespace Vistas
 
 		private void CargarGridView()
 		{
+			dgvIngredientDetails.DataSource = null;
 			_ingredientes = _capaLogicaNegocio.ObtenerIngredientes(tipoIngrediente);
 			dgvIngredientDetails.DataSource = _ingredientes;
 		}
 
 		private void ActualizarGridView()
 		{
-			tipoIngrediente = CmbIngredientType.SelectedItem.ToString();
+			tipoIngrediente = cmbTipoIngrediente.SelectedItem.ToString();
 			_ingredientes = _capaLogicaNegocio.ObtenerIngredientes(tipoIngrediente);
 			dgvIngredientDetails.DataSource = _ingredientes;
 		}

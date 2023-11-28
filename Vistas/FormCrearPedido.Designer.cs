@@ -30,14 +30,12 @@
 		{
 			components = new System.ComponentModel.Container();
 			btnAgregarIngrediente = new Button();
-			label2 = new Label();
-			label1 = new Label();
-			lblTacoCreated = new Label();
+			lblIngrediente = new Label();
+			lblTipoIngrediente = new Label();
+			lblTacoInfo = new Label();
 			cmbTipoIngrediente = new ComboBox();
 			cmbIngrediente = new ComboBox();
 			dgvTacoDetails = new DataGridView();
-			dgvIdTaco = new DataGridViewTextBoxColumn();
-			dgvPrecio = new DataGridViewTextBoxColumn();
 			lblTacoMasCaro = new Label();
 			lblTacoPromedio = new Label();
 			lblTacoMasBarato = new Label();
@@ -52,9 +50,6 @@
 			txtMenorValorTaco = new TextBox();
 			IngredienteTacoGroup = new GroupBox();
 			dgvIngredientesTacoDetalle = new DataGridView();
-			Ingrediente = new DataGridViewTextBoxColumn();
-			Precio = new DataGridViewTextBoxColumn();
-			tacoBindingSource = new BindingSource(components);
 			txtNroContactoCliente = new TextBox();
 			label4 = new Label();
 			lblEmailCliente = new Label();
@@ -70,14 +65,22 @@
 			lblBebida = new Label();
 			gbEstadisticas = new GroupBox();
 			gbConfirmarPedido = new GroupBox();
+			rellenoBindingSource = new BindingSource(components);
+			tacoBindingSource = new BindingSource(components);
+			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			cantidadMaximaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgvTacoDetails).BeginInit();
 			IngredienteTacoGroup.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvIngredientesTacoDetalle).BeginInit();
-			((System.ComponentModel.ISupportInitialize)tacoBindingSource).BeginInit();
 			ClienteGroup.SuspendLayout();
 			gbBebidas.SuspendLayout();
 			gbEstadisticas.SuspendLayout();
 			gbConfirmarPedido.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
+			((System.ComponentModel.ISupportInitialize)tacoBindingSource).BeginInit();
 			SuspendLayout();
 			// 
 			// btnAgregarIngrediente
@@ -90,32 +93,32 @@
 			btnAgregarIngrediente.UseVisualStyleBackColor = true;
 			btnAgregarIngrediente.Click += btnAgregarIngrediente_Click;
 			// 
-			// label2
+			// lblIngrediente
 			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(11, 63);
-			label2.Name = "label2";
-			label2.Size = new Size(96, 18);
-			label2.TabIndex = 7;
-			label2.Text = "Ingrediente";
+			lblIngrediente.AutoSize = true;
+			lblIngrediente.Location = new Point(11, 63);
+			lblIngrediente.Name = "lblIngrediente";
+			lblIngrediente.Size = new Size(96, 18);
+			lblIngrediente.TabIndex = 7;
+			lblIngrediente.Text = "Ingrediente";
 			// 
-			// label1
+			// lblTipoIngrediente
 			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(11, 32);
-			label1.Name = "label1";
-			label1.Size = new Size(136, 18);
-			label1.TabIndex = 6;
-			label1.Text = "Tipo Ingrediente";
+			lblTipoIngrediente.AutoSize = true;
+			lblTipoIngrediente.Location = new Point(11, 32);
+			lblTipoIngrediente.Name = "lblTipoIngrediente";
+			lblTipoIngrediente.Size = new Size(136, 18);
+			lblTipoIngrediente.TabIndex = 6;
+			lblTipoIngrediente.Text = "Tipo Ingrediente";
 			// 
-			// lblTacoCreated
+			// lblTacoInfo
 			// 
-			lblTacoCreated.AutoSize = true;
-			lblTacoCreated.Location = new Point(11, 126);
-			lblTacoCreated.Name = "lblTacoCreated";
-			lblTacoCreated.Size = new Size(96, 18);
-			lblTacoCreated.TabIndex = 11;
-			lblTacoCreated.Text = "Taco Info: ";
+			lblTacoInfo.AutoSize = true;
+			lblTacoInfo.Location = new Point(11, 138);
+			lblTacoInfo.Name = "lblTacoInfo";
+			lblTacoInfo.Size = new Size(96, 18);
+			lblTacoInfo.TabIndex = 11;
+			lblTacoInfo.Text = "Taco Info: ";
 			// 
 			// cmbTipoIngrediente
 			// 
@@ -138,8 +141,10 @@
 			// 
 			// dgvTacoDetails
 			// 
+			dgvTacoDetails.AutoGenerateColumns = false;
 			dgvTacoDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvTacoDetails.Columns.AddRange(new DataGridViewColumn[] { dgvIdTaco, dgvPrecio });
+			dgvTacoDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2 });
+			dgvTacoDetails.DataSource = tacoBindingSource;
 			dgvTacoDetails.Location = new Point(11, 428);
 			dgvTacoDetails.Name = "dgvTacoDetails";
 			dgvTacoDetails.RowHeadersWidth = 51;
@@ -147,24 +152,10 @@
 			dgvTacoDetails.Size = new Size(544, 152);
 			dgvTacoDetails.TabIndex = 14;
 			// 
-			// dgvIdTaco
-			// 
-			dgvIdTaco.HeaderText = "Taco Nro";
-			dgvIdTaco.MinimumWidth = 6;
-			dgvIdTaco.Name = "dgvIdTaco";
-			dgvIdTaco.Width = 125;
-			// 
-			// dgvPrecio
-			// 
-			dgvPrecio.HeaderText = "Precio";
-			dgvPrecio.MinimumWidth = 6;
-			dgvPrecio.Name = "dgvPrecio";
-			dgvPrecio.Width = 125;
-			// 
 			// lblTacoMasCaro
 			// 
 			lblTacoMasCaro.AutoSize = true;
-			lblTacoMasCaro.Location = new Point(44, 24);
+			lblTacoMasCaro.Location = new Point(30, 44);
 			lblTacoMasCaro.Name = "lblTacoMasCaro";
 			lblTacoMasCaro.Size = new Size(112, 18);
 			lblTacoMasCaro.TabIndex = 15;
@@ -173,7 +164,7 @@
 			// lblTacoPromedio
 			// 
 			lblTacoPromedio.AutoSize = true;
-			lblTacoPromedio.Location = new Point(44, 63);
+			lblTacoPromedio.Location = new Point(30, 75);
 			lblTacoPromedio.Name = "lblTacoPromedio";
 			lblTacoPromedio.Size = new Size(112, 18);
 			lblTacoPromedio.TabIndex = 16;
@@ -182,7 +173,7 @@
 			// lblTacoMasBarato
 			// 
 			lblTacoMasBarato.AutoSize = true;
-			lblTacoMasBarato.Location = new Point(44, 105);
+			lblTacoMasBarato.Location = new Point(30, 106);
 			lblTacoMasBarato.Name = "lblTacoMasBarato";
 			lblTacoMasBarato.Size = new Size(128, 18);
 			lblTacoMasBarato.TabIndex = 17;
@@ -190,7 +181,7 @@
 			// 
 			// btnCrearTaco
 			// 
-			btnCrearTaco.Location = new Point(392, 374);
+			btnCrearTaco.Location = new Point(392, 332);
 			btnCrearTaco.Name = "btnCrearTaco";
 			btnCrearTaco.Size = new Size(163, 26);
 			btnCrearTaco.TabIndex = 18;
@@ -242,21 +233,21 @@
 			// 
 			// txtMayorValorTaco
 			// 
-			txtMayorValorTaco.Location = new Point(186, 24);
+			txtMayorValorTaco.Location = new Point(173, 44);
 			txtMayorValorTaco.Name = "txtMayorValorTaco";
 			txtMayorValorTaco.Size = new Size(79, 25);
 			txtMayorValorTaco.TabIndex = 28;
 			// 
 			// txtPromedioValorTaco
 			// 
-			txtPromedioValorTaco.Location = new Point(186, 63);
+			txtPromedioValorTaco.Location = new Point(173, 75);
 			txtPromedioValorTaco.Name = "txtPromedioValorTaco";
 			txtPromedioValorTaco.Size = new Size(79, 25);
 			txtPromedioValorTaco.TabIndex = 29;
 			// 
 			// txtMenorValorTaco
 			// 
-			txtMenorValorTaco.Location = new Point(186, 99);
+			txtMenorValorTaco.Location = new Point(173, 106);
 			txtMenorValorTaco.Name = "txtMenorValorTaco";
 			txtMenorValorTaco.Size = new Size(79, 25);
 			txtMenorValorTaco.TabIndex = 30;
@@ -264,13 +255,13 @@
 			// IngredienteTacoGroup
 			// 
 			IngredienteTacoGroup.Controls.Add(dgvIngredientesTacoDetalle);
-			IngredienteTacoGroup.Controls.Add(label1);
+			IngredienteTacoGroup.Controls.Add(lblTipoIngrediente);
 			IngredienteTacoGroup.Controls.Add(btnAgregarIngrediente);
 			IngredienteTacoGroup.Controls.Add(dgvTacoDetails);
 			IngredienteTacoGroup.Controls.Add(cmbIngrediente);
 			IngredienteTacoGroup.Controls.Add(cmbTipoIngrediente);
-			IngredienteTacoGroup.Controls.Add(label2);
-			IngredienteTacoGroup.Controls.Add(lblTacoCreated);
+			IngredienteTacoGroup.Controls.Add(lblIngrediente);
+			IngredienteTacoGroup.Controls.Add(lblTacoInfo);
 			IngredienteTacoGroup.Controls.Add(btnCrearTaco);
 			IngredienteTacoGroup.Location = new Point(10, 12);
 			IngredienteTacoGroup.Name = "IngredienteTacoGroup";
@@ -281,30 +272,16 @@
 			// 
 			// dgvIngredientesTacoDetalle
 			// 
+			dgvIngredientesTacoDetalle.AutoGenerateColumns = false;
 			dgvIngredientesTacoDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvIngredientesTacoDetalle.Columns.AddRange(new DataGridViewColumn[] { Ingrediente, Precio });
-			dgvIngredientesTacoDetalle.Location = new Point(11, 206);
+			dgvIngredientesTacoDetalle.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, precioDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, cantidadMaximaDataGridViewTextBoxColumn });
+			dgvIngredientesTacoDetalle.DataSource = rellenoBindingSource;
+			dgvIngredientesTacoDetalle.Location = new Point(11, 159);
 			dgvIngredientesTacoDetalle.Name = "dgvIngredientesTacoDetalle";
 			dgvIngredientesTacoDetalle.RowHeadersWidth = 51;
 			dgvIngredientesTacoDetalle.RowTemplate.Height = 29;
 			dgvIngredientesTacoDetalle.Size = new Size(544, 151);
 			dgvIngredientesTacoDetalle.TabIndex = 19;
-			// 
-			// Ingrediente
-			// 
-			Ingrediente.HeaderText = "Ingrediente";
-			Ingrediente.MinimumWidth = 6;
-			Ingrediente.Name = "Ingrediente";
-			Ingrediente.ReadOnly = true;
-			Ingrediente.Width = 125;
-			// 
-			// Precio
-			// 
-			Precio.HeaderText = "Precio";
-			Precio.MinimumWidth = 6;
-			Precio.Name = "Precio";
-			Precio.ReadOnly = true;
-			Precio.Width = 125;
 			// 
 			// txtNroContactoCliente
 			// 
@@ -456,12 +433,63 @@
 			gbConfirmarPedido.Controls.Add(label5);
 			gbConfirmarPedido.Controls.Add(textBox4);
 			gbConfirmarPedido.Controls.Add(label6);
-			gbConfirmarPedido.Location = new Point(896, 457);
+			gbConfirmarPedido.Location = new Point(887, 467);
 			gbConfirmarPedido.Name = "gbConfirmarPedido";
 			gbConfirmarPedido.Size = new Size(250, 125);
 			gbConfirmarPedido.TabIndex = 35;
 			gbConfirmarPedido.TabStop = false;
 			gbConfirmarPedido.Text = "Confirmacion";
+			// 
+			// rellenoBindingSource
+			// 
+			rellenoBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Tacos.Relleno);
+			// 
+			// tacoBindingSource
+			// 
+			tacoBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Tacos.Taco);
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			dataGridViewTextBoxColumn2.DataPropertyName = "Id";
+			dataGridViewTextBoxColumn2.HeaderText = "Id";
+			dataGridViewTextBoxColumn2.MinimumWidth = 6;
+			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			dataGridViewTextBoxColumn2.ReadOnly = true;
+			dataGridViewTextBoxColumn2.Width = 125;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			dataGridViewTextBoxColumn1.HeaderText = "Id";
+			dataGridViewTextBoxColumn1.MinimumWidth = 6;
+			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			dataGridViewTextBoxColumn1.Visible = false;
+			dataGridViewTextBoxColumn1.Width = 125;
+			// 
+			// precioDataGridViewTextBoxColumn
+			// 
+			precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+			precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+			precioDataGridViewTextBoxColumn.MinimumWidth = 6;
+			precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+			precioDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// nombreDataGridViewTextBoxColumn
+			// 
+			nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+			nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+			nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+			nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+			nombreDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// cantidadMaximaDataGridViewTextBoxColumn
+			// 
+			cantidadMaximaDataGridViewTextBoxColumn.DataPropertyName = "CantidadMaxima";
+			cantidadMaximaDataGridViewTextBoxColumn.HeaderText = "CantidadMaxima";
+			cantidadMaximaDataGridViewTextBoxColumn.MinimumWidth = 6;
+			cantidadMaximaDataGridViewTextBoxColumn.Name = "cantidadMaximaDataGridViewTextBoxColumn";
+			cantidadMaximaDataGridViewTextBoxColumn.Visible = false;
+			cantidadMaximaDataGridViewTextBoxColumn.Width = 125;
 			// 
 			// FormCrearPedido
 			// 
@@ -481,7 +509,6 @@
 			IngredienteTacoGroup.ResumeLayout(false);
 			IngredienteTacoGroup.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)dgvIngredientesTacoDetalle).EndInit();
-			((System.ComponentModel.ISupportInitialize)tacoBindingSource).EndInit();
 			ClienteGroup.ResumeLayout(false);
 			ClienteGroup.PerformLayout();
 			gbBebidas.ResumeLayout(false);
@@ -490,6 +517,8 @@
 			gbEstadisticas.PerformLayout();
 			gbConfirmarPedido.ResumeLayout(false);
 			gbConfirmarPedido.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();
+			((System.ComponentModel.ISupportInitialize)tacoBindingSource).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -497,9 +526,9 @@
 
 
 		private Button btnAgregarIngrediente;
-		private Label label2;
-		private Label label1;
-		private Label lblTacoCreated;
+		private Label lblIngrediente;
+		private Label lblTipoIngrediente;
+		private Label lblTacoInfo;
 		private ComboBox cmbTipoIngrediente;
 		private ComboBox cmbIngrediente;
 		private DataGridView dgvTacoDetails;
@@ -507,8 +536,6 @@
 		private Label lblTacoPromedio;
 		private Label lblTacoMasBarato;
 		private Button btnCrearTaco;
-		private DataGridViewTextBoxColumn dgvIdTaco;
-		private DataGridViewTextBoxColumn dgvPrecio;
 		private Button btnCargaPedido;
 		private Label label5;
 		private Label label6;
@@ -529,14 +556,18 @@
 		private CheckBox ckbBebida;
 		private Label lblTipoBebida;
 		private Label lblBebida;
-		private DataGridView dgvIngredientesTacoDetalle;
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-		private BindingSource tacoBindingSource;
 		private GroupBox gbEstadisticas;
 		private GroupBox gbConfirmarPedido;
 		private ComboBox cmbBebidaSeleccionada;
 		private ComboBox cmbTipoBebida;
-		private DataGridViewTextBoxColumn Ingrediente;
-		private DataGridViewTextBoxColumn Precio;
+		private DataGridView dgvIngredientesTacoDetalle;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private BindingSource tacoBindingSource;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+		private DataGridViewTextBoxColumn cantidadMaximaDataGridViewTextBoxColumn;
+		private BindingSource rellenoBindingSource;
 	}
 }
