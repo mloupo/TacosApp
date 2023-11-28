@@ -60,19 +60,28 @@ namespace Servicio.Logica
 
 		#endregion
 
+		#region bebidas
 		public List<Bebida> ObtenerBebidas(string tipoBebida)
 		{
 			return _capaAccesoDatos.ObtenerBebidas(tipoBebida);
 		}
 
-		public void AlmacenarBebida(Bebida creacion, string tipoBebida)
+		public IBebida AlmacenarBebida(Bebida bebida, string tipoBebida)
 		{
-			throw new NotImplementedException();
+			if (bebida.Id == 0)
+				_capaAccesoDatos.InsertarBebida(bebida, tipoBebida);
+			else
+				_capaAccesoDatos.ActualizarBebida(bebida, tipoBebida);
+
+			return bebida;
+
 		}
 
-		public void EliminarBebida(int id, string? tipoBebida)
+		public void EliminarBebida(int id, string tipoBebida)
 		{
-			throw new NotImplementedException();
+			_capaAccesoDatos.EliminarBebida(id, tipoBebida);
 		}
+
+		#endregion
 	}
 }

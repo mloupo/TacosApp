@@ -44,11 +44,10 @@ namespace Vistas
 			return _allIngredientes;
 		}
 
-		private Form OpenIngredientDetails()
+		private void OpenIngredientDetails()
 		{
 			FormCrearIngrediente formIngredientDetails = new();
 			formIngredientDetails.ShowDialog();
-			return formIngredientDetails;
 		}
 
 		private void FormIngredient_Load(object sender, EventArgs e)

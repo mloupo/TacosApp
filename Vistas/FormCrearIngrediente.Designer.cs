@@ -32,14 +32,17 @@ namespace Vistas
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			cmbTipoIngrediente = new ComboBox();
 			lblIngredientType = new Label();
-			txtIngredientName = new TextBox();
-			txtIngredientPrice = new TextBox();
+			cmbTipoIngrediente = new ComboBox();
+
 			lblIngredientName = new Label();
+			txtIngredientName = new TextBox();
 			lblIngredientPrice = new Label();
+			txtIngredientPrice = new TextBox();
+
 			btnCrearIngrediente = new Button();
 			btnCancelarCreacion = new Button();
+
 			dgvIngredientDetails = new DataGridView();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -70,22 +73,6 @@ namespace Vistas
 			lblIngredientType.TabIndex = 2;
 			lblIngredientType.Text = "Tipo";
 			// 
-			// txtIngredientName
-			// 
-			txtIngredientName.Location = new Point(73, 74);
-			txtIngredientName.Margin = new Padding(3, 2, 3, 2);
-			txtIngredientName.Name = "txtIngredientName";
-			txtIngredientName.Size = new Size(274, 25);
-			txtIngredientName.TabIndex = 3;
-			// 
-			// txtIngredientPrice
-			// 
-			txtIngredientPrice.Location = new Point(73, 115);
-			txtIngredientPrice.Margin = new Padding(3, 2, 3, 2);
-			txtIngredientPrice.Name = "txtIngredientPrice";
-			txtIngredientPrice.Size = new Size(274, 25);
-			txtIngredientPrice.TabIndex = 4;
-			// 
 			// lblIngredientName
 			// 
 			lblIngredientName.AutoSize = true;
@@ -96,6 +83,14 @@ namespace Vistas
 			lblIngredientName.TabIndex = 5;
 			lblIngredientName.Text = "Nombre";
 			// 
+			// txtIngredientName
+			// 
+			txtIngredientName.Location = new Point(73, 74);
+			txtIngredientName.Margin = new Padding(3, 2, 3, 2);
+			txtIngredientName.Name = "txtIngredientName";
+			txtIngredientName.Size = new Size(274, 25);
+			txtIngredientName.TabIndex = 3;
+			// 
 			// lblIngredientPrice
 			// 
 			lblIngredientPrice.AutoSize = true;
@@ -105,6 +100,14 @@ namespace Vistas
 			lblIngredientPrice.Size = new Size(56, 18);
 			lblIngredientPrice.TabIndex = 6;
 			lblIngredientPrice.Text = "Precio";
+			// 
+			// txtIngredientPrice
+			// 
+			txtIngredientPrice.Location = new Point(73, 115);
+			txtIngredientPrice.Margin = new Padding(3, 2, 3, 2);
+			txtIngredientPrice.Name = "txtIngredientPrice";
+			txtIngredientPrice.Size = new Size(274, 25);
+			txtIngredientPrice.TabIndex = 4;
 			// 
 			// btnCrearIngrediente
 			// 

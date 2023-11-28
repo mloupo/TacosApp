@@ -106,7 +106,6 @@ namespace Servicio.Datos
 
 			finally { conn.Close(); }
 		}
-
 		public void EliminarIngrediente(int id, string tipoIngredinte)
 		{
 			try
@@ -277,12 +276,8 @@ namespace Servicio.Datos
 			try
 			{
 				conn.Open();
-				string query = $@"SELECT Id, Nombre, Precio 
-									FROM {tipoBebida}";
-				SqlCommand cmd = new();
-
-				cmd.CommandText = query;
-				cmd.Connection = conn;
+				string query = $@"SELECT Id, Nombre, Precio FROM {tipoBebida}";
+				SqlCommand cmd = new(query, conn);
 
 				SqlDataReader reader = cmd.ExecuteReader();
 				while (reader.Read())
@@ -300,6 +295,83 @@ namespace Servicio.Datos
 			}
 			finally { conn.Close(); }
 			return bebidas;
+		}
+
+		public void EliminarBebida(int id, string tipoBebida)
+		{
+			try
+			{
+				conn.Open();
+				string query = $@"DELETE FROM {tipoBebida} WHERE ID = @Id";
+				SqlCommand cmd = new(query, conn);
+				cmd.Parameters.Add(new SqlParameter("@Id", id));
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+
+			finally { conn.Close(); }
+		}
+
+		public void ActualizarBebida(Bebida bebida, string tipoBebida)
+		{
+			try
+			{
+				conn.Open();
+				string query = $@" UPDATE {tipoBebida} 
+								SET Nombre = @Nombre,
+									Precio = @Precio
+								WHERE Id = @Id
+				";
+
+				SqlParameter Id = new("@Id", bebida.Id);
+				SqlParameter Nombre = new("@Nombre", bebida.Nombre);
+				SqlParameter Precio = new("@Precio", bebida.Precio);
+
+				SqlCommand cmd = new(query, conn);
+
+				cmd.Parameters.Add(Id);
+				cmd.Parameters.Add(Nombre);
+				cmd.Parameters.Add(Precio);
+
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+
+			finally { conn.Close(); }
+		}
+
+		public void InsertarBebida(Bebida bebida, string tipoBebida)
+		{
+			try
+			{
+				conn.Open();
+				string query = $@" INSERT INTO {tipoBebida} (Nombre, Precio)
+								  VALUES (@Nombre, @Precio)";
+				SqlParameter Nombre = new()
+				{
+					ParameterName = "@Nombre",
+					Value = bebida.Nombre,
+					DbType = System.Data.DbType.String
+				};
+
+				SqlParameter Precio = new("@Precio", bebida.Precio);
+				SqlCommand cmd = new(query, conn);
+				cmd.Parameters.Add(Nombre);
+				cmd.Parameters.Add(Precio);
+
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally { conn.Close(); }
 		}
 
 		#endregion

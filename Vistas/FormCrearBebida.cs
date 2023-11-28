@@ -109,7 +109,7 @@ namespace Vistas
 				return;
 			}
 
-			Bebida creacion = (Bebida)_controladorBebida.Crear(
+			Bebida creacion = _controladorBebida.Crear(
 				_tipoBebida,
 				txtNombreBebida.Text,
 				float.Parse(txtPrecioBebida.Text));
@@ -151,7 +151,6 @@ namespace Vistas
 
 		private void CargarGridView()
 		{
-			dgvBebidaDetalles.DataSource = null;
 			_listaBebidas = _capaLogicaNegocio.ObtenerBebidas(_tipoBebida);
 			dgvBebidaDetalles.DataSource = _listaBebidas;
 		}

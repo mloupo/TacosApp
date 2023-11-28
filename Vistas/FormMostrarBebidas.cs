@@ -44,11 +44,10 @@ namespace Vistas
 			return _allBebidas;
 		}
 
-		private Form AbrirCrearBebidaForm()
+		private void AbrirCrearBebidaForm()
 		{
 			FormCrearBebida formBebidaDetalles = new();
 			formBebidaDetalles.ShowDialog();
-			return formBebidaDetalles;
 		}
 
 		private void FormMostrarBebidas_Load(object sender, EventArgs e)
@@ -66,7 +65,7 @@ namespace Vistas
 		{
 
 			var filteredBebidas = _allBebidas
-				.Where(i => i.Nombre.ToLower().Contains(txtBuscarBebida.Text.ToLower()))
+				.Where(b => b.Nombre.ToLower().Contains(txtBuscarBebida.Text.ToLower()))
 				.ToList();
 
 			dgvFormBebida.DataSource = filteredBebidas;

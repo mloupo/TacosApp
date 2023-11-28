@@ -24,13 +24,15 @@ namespace Contactos
 		{
 			SalvarContacto();
 			this.Close();
-			((ContactosForm)this.Owner).poblarDataGridView();
+			if (this.Owner is ContactosForm contactosForm)
+			{
+				contactosForm.poblarDataGridView();
+			}
 		}
 
 
 
 		#endregion
-
 
 		#region metodos privados
 		private void SalvarContacto()

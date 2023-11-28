@@ -7,7 +7,7 @@ namespace Vistas
 		public FormRaiz()
 		{
 			InitializeComponent();
-
+			Helpers.AbrirFormularioHijo(AbrirFormularioCrearPedido(), RootPanel);
 		}
 
 		#region EVENTS
