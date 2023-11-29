@@ -60,10 +60,10 @@
 			txtNroContactoCliente = new TextBox();
 			label4 = new Label();
 			lblEmailCliente = new Label();
-			txtDatosCliente = new TextBox();
 			dtPickerDeliveryRequest = new DateTimePicker();
 			ckbDelivery = new CheckBox();
 			ClienteGroup = new GroupBox();
+			cmbNombreCliente = new ComboBox();
 			btnAgregarContactoDelivery = new Button();
 			gbBebidas = new GroupBox();
 			btnAgregarBebida = new Button();
@@ -74,6 +74,7 @@
 			lblBebida = new Label();
 			gbEstadisticas = new GroupBox();
 			gbConfirmarPedido = new GroupBox();
+			contactoBindingSource = new BindingSource(components);
 			((System.ComponentModel.ISupportInitialize)dgvTacoDetails).BeginInit();
 			((System.ComponentModel.ISupportInitialize)tacoBindingSource).BeginInit();
 			IngredienteTacoGroup.SuspendLayout();
@@ -83,6 +84,7 @@
 			gbBebidas.SuspendLayout();
 			gbEstadisticas.SuspendLayout();
 			gbConfirmarPedido.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)contactoBindingSource).BeginInit();
 			SuspendLayout();
 			// 
 			// btnAgregarIngrediente
@@ -149,8 +151,10 @@
 			dgvTacoDetails.DataSource = tacoBindingSource;
 			dgvTacoDetails.Location = new Point(11, 428);
 			dgvTacoDetails.Name = "dgvTacoDetails";
+			dgvTacoDetails.ReadOnly = true;
 			dgvTacoDetails.RowHeadersWidth = 51;
 			dgvTacoDetails.RowTemplate.Height = 29;
+			dgvTacoDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgvTacoDetails.Size = new Size(544, 152);
 			dgvTacoDetails.TabIndex = 14;
 			// 
@@ -293,8 +297,10 @@
 			dgvIngredientesTacoDetalle.DataSource = rellenoBindingSource;
 			dgvIngredientesTacoDetalle.Location = new Point(11, 159);
 			dgvIngredientesTacoDetalle.Name = "dgvIngredientesTacoDetalle";
+			dgvIngredientesTacoDetalle.ReadOnly = true;
 			dgvIngredientesTacoDetalle.RowHeadersWidth = 51;
 			dgvIngredientesTacoDetalle.RowTemplate.Height = 29;
+			dgvIngredientesTacoDetalle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgvIngredientesTacoDetalle.Size = new Size(544, 151);
 			dgvIngredientesTacoDetalle.TabIndex = 19;
 			// 
@@ -304,7 +310,7 @@
 			dataGridViewTextBoxColumn1.HeaderText = "Id";
 			dataGridViewTextBoxColumn1.MinimumWidth = 6;
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			dataGridViewTextBoxColumn1.Visible = false;
+			dataGridViewTextBoxColumn1.ReadOnly = true;
 			dataGridViewTextBoxColumn1.Width = 125;
 			// 
 			// precioDataGridViewTextBoxColumn
@@ -313,6 +319,7 @@
 			precioDataGridViewTextBoxColumn.HeaderText = "Precio";
 			precioDataGridViewTextBoxColumn.MinimumWidth = 6;
 			precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+			precioDataGridViewTextBoxColumn.ReadOnly = true;
 			precioDataGridViewTextBoxColumn.Width = 125;
 			// 
 			// nombreDataGridViewTextBoxColumn
@@ -321,6 +328,7 @@
 			nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
 			nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
 			nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+			nombreDataGridViewTextBoxColumn.ReadOnly = true;
 			nombreDataGridViewTextBoxColumn.Width = 125;
 			// 
 			// cantidadMaximaDataGridViewTextBoxColumn
@@ -329,6 +337,7 @@
 			cantidadMaximaDataGridViewTextBoxColumn.HeaderText = "CantidadMaxima";
 			cantidadMaximaDataGridViewTextBoxColumn.MinimumWidth = 6;
 			cantidadMaximaDataGridViewTextBoxColumn.Name = "cantidadMaximaDataGridViewTextBoxColumn";
+			cantidadMaximaDataGridViewTextBoxColumn.ReadOnly = true;
 			cantidadMaximaDataGridViewTextBoxColumn.Visible = false;
 			cantidadMaximaDataGridViewTextBoxColumn.Width = 125;
 			// 
@@ -361,14 +370,6 @@
 			lblEmailCliente.TabIndex = 19;
 			lblEmailCliente.Text = "Email";
 			// 
-			// txtDatosCliente
-			// 
-			txtDatosCliente.Location = new Point(129, 66);
-			txtDatosCliente.Name = "txtDatosCliente";
-			txtDatosCliente.Size = new Size(408, 25);
-			txtDatosCliente.TabIndex = 21;
-			txtDatosCliente.Text = "Correo Electronico";
-			// 
 			// dtPickerDeliveryRequest
 			// 
 			dtPickerDeliveryRequest.Location = new Point(25, 143);
@@ -389,10 +390,10 @@
 			// 
 			// ClienteGroup
 			// 
+			ClienteGroup.Controls.Add(cmbNombreCliente);
 			ClienteGroup.Controls.Add(btnAgregarContactoDelivery);
 			ClienteGroup.Controls.Add(ckbDelivery);
 			ClienteGroup.Controls.Add(dtPickerDeliveryRequest);
-			ClienteGroup.Controls.Add(txtDatosCliente);
 			ClienteGroup.Controls.Add(lblEmailCliente);
 			ClienteGroup.Controls.Add(label4);
 			ClienteGroup.Controls.Add(txtNroContactoCliente);
@@ -402,6 +403,16 @@
 			ClienteGroup.TabIndex = 31;
 			ClienteGroup.TabStop = false;
 			ClienteGroup.Text = "Envios";
+			// 
+			// cmbNombreCliente
+			// 
+			cmbNombreCliente.DataSource = contactoBindingSource;
+			cmbNombreCliente.FormattingEnabled = true;
+			cmbNombreCliente.Location = new Point(129, 64);
+			cmbNombreCliente.Name = "cmbNombreCliente";
+			cmbNombreCliente.Size = new Size(408, 26);
+			cmbNombreCliente.TabIndex = 26;
+			cmbNombreCliente.SelectedIndexChanged += cmbNombreCliente_SelectedIndexChanged;
 			// 
 			// btnAgregarContactoDelivery
 			// 
@@ -515,6 +526,10 @@
 			gbConfirmarPedido.TabStop = false;
 			gbConfirmarPedido.Text = "Confirmacion";
 			// 
+			// contactoBindingSource
+			// 
+			contactoBindingSource.DataSource = typeof(Modelo.EntidadesUsuario.Contacto);
+			// 
 			// FormCrearPedido
 			// 
 			AutoScaleDimensions = new SizeF(8F, 18F);
@@ -543,6 +558,7 @@
 			gbEstadisticas.PerformLayout();
 			gbConfirmarPedido.ResumeLayout(false);
 			gbConfirmarPedido.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)contactoBindingSource).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -572,7 +588,6 @@
 		private TextBox txtNroContactoCliente;
 		private Label label4;
 		private Label lblEmailCliente;
-		private TextBox txtDatosCliente;
 		private DateTimePicker dtPickerDeliveryRequest;
 		private CheckBox ckbDelivery;
 		private GroupBox ClienteGroup;
@@ -588,12 +603,14 @@
 		private DataGridView dgvIngredientesTacoDetalle;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private BindingSource tacoBindingSource;
+		private BindingSource rellenoBindingSource;
+		private Button btnAgregarContactoDelivery;
+		private Button btnAgregarBebida;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn cantidadMaximaDataGridViewTextBoxColumn;
-		private BindingSource rellenoBindingSource;
-		private Button btnAgregarContactoDelivery;
-		private Button btnAgregarBebida;
+		private ComboBox cmbNombreCliente;
+		private BindingSource contactoBindingSource;
 	}
 }

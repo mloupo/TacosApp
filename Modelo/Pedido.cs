@@ -1,17 +1,19 @@
 ﻿using Modelo.EntidadesProducto.Bebidas;
 using Modelo.EntidadesProducto.Tacos;
+using Modelo.EntidadesUsuario;
 using Modelo.Interfaces;
 namespace Modelo
 {
 	public class Pedido : IPedido
 	{
-		private readonly List<Taco> _listaTacos;
-		private readonly List<Bebida> _listaBebidas;
+		private List<Taco> _listaTacos;
+		private List<Bebida> _listaBebidas;
 		public float Importe { get; set; }
 
 		public int Id { get; set; }
 		public readonly DateTime CreadoEn;
 		public readonly DateTime EntregadEn;
+		public Contacto? Contacto { get; set; }
 
 		public Pedido(int id, List<Taco> listaTacos, List<Bebida> listaBebidas)
 		{

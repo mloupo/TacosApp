@@ -2,8 +2,8 @@
 using Modelo;
 using Modelo.EntidadesProducto.Bebidas;
 using Modelo.EntidadesProducto.Tacos;
+using Modelo.EntidadesUsuario;
 using Servicio.Logica;
-using Validaciones.Ingredientes;
 
 namespace Vistas
 {
@@ -16,6 +16,7 @@ namespace Vistas
 		private Bebida _bebida;
 		private Taco _taco;
 		private Pedido _pedido;
+		private Contacto _contacto;
 
 		private List<Ingrediente> _ingredientesSeleccionados;
 		private List<Bebida> _bebidasSeleccionadas;
@@ -24,26 +25,30 @@ namespace Vistas
 
 		private readonly CapaLogicaNegocio _businessLogicLayer;
 		private readonly ControladorPedido _pedidoController;
-		private readonly AgregarIngredienteValidador _agregarIngredienteValidador;
+		//private readonly AgregarIngredienteValidador _agregarIngredienteValidador;
 
 		public FormCrearPedido()
 		{
 			InitializeComponent();
 			_businessLogicLayer = new CapaLogicaNegocio();
 			_pedidoController = ControladorPedido.ObtenerInstancia();
-			_tacos = new List<Taco>();
 			_ingredientesSeleccionados = new List<Ingrediente>();
 			_bebidasSeleccionadas = new List<Bebida>();
+			_tacos = new List<Taco>();
 		}
 		private void FormCreateTaco_Load(object sender, EventArgs e)
 		{
 			cmbTipoIngrediente.DataSource = Enum.GetNames(typeof(Enums.TipoIngrediente));
-			txtDatosCliente.Enabled = false;
+			cmbTipoBebida.DataSource = Enum.GetNames(typeof(Enums.TipoBebida));
+			cmbNombreCliente.DataSource = _businessLogicLayer.ObtenerContactos();
+
+			cmbNombreCliente.Enabled = false;
 			txtNroContactoCliente.Enabled = false;
 			dtPickerDeliveryRequest.Enabled = false;
-			cmbTipoBebida.DataSource = Enum.GetNames(typeof(Enums.TipoBebida));
+
 			cmbTipoBebida.Enabled = false;
 			cmbBebida.Enabled = false;
+
 			btnAgregarBebida.Enabled = false;
 			btnAgregarContactoDelivery.Enabled = false;
 		}
@@ -59,7 +64,10 @@ namespace Vistas
 			_tipoBebida = cmbTipoBebida.SelectedItem.ToString();
 			CargarBebidasCmb();
 		}
+		private void cmbNombreCliente_SelectedIndexChanged(object sender, EventArgs e)
+		{
 
+		}
 
 		private void CargarIngredientesCmb()
 		{
@@ -75,22 +83,26 @@ namespace Vistas
 			cmbBebida.DisplayMember = "Nombre";
 			cmbBebida.SelectedIndex = 0;
 		}
+		private void CargarClientesCmb()
+		{
+			cmbNombreCliente.DataSource = _businessLogicLayer.ObtenerContactos();
+			cmbNombreCliente.ValueMember = "Id";
+			cmbNombreCliente.DisplayMember = "Nombre";
+			cmbNombreCliente.SelectedIndex = 0;
+		}
 
 
 		private void btnAgregarIngrediente_Click(object sender, EventArgs e)
 		{
-			_ingrediente = _businessLogicLayer.ObtenerIngredientes(_tipoIngrediente)
-				.FirstOrDefault(i => i.Nombre == cmbIngrediente.SelectedItem.ToString());
+			_ingredientesSeleccionados = _businessLogicLayer.ObtenerIngredientes(_tipoIngrediente);
+			_ingrediente = _ingredientesSeleccionados.FirstOrDefault(i => i.Nombre == cmbIngrediente.SelectedItem.ToString());
+
 
 			if (_ingrediente != null)
 			{
 				_ingredientesSeleccionados.Add(_ingrediente);
 				ActualizarDgvListaIngredientesTaco(_ingredientesSeleccionados);
 			}
-		}
-		private void btnCrearTaco_Click(object sender, EventArgs e)
-		{
-			CrearTacoSiIngredientes();
 		}
 		private void btnAgregarBebida_Click(object sender, EventArgs e)
 		{
@@ -108,8 +120,14 @@ namespace Vistas
 		}
 		private void btnAgregarContactoDelivery_Click(object sender, EventArgs e)
 		{
-
+			_pedidoController.AgregarInfoContactoAPedido();
 		}
+
+		private void btnCrearTaco_Click(object sender, EventArgs e)
+		{
+			CrearTacoSiIngredientes();
+		}
+
 		private void btnCargaPedido_Click(object sender, EventArgs e)
 		{
 			GenerarNuevoPedido();
@@ -141,7 +159,7 @@ namespace Vistas
 
 		private void CambiarEstadoTextboxesDelivery(bool enabled)
 		{
-			txtDatosCliente.Enabled = enabled;
+			cmbNombreCliente.Enabled = enabled;
 			txtNroContactoCliente.Enabled = enabled;
 			dtPickerDeliveryRequest.Enabled = enabled;
 			btnAgregarContactoDelivery.Enabled = enabled;
@@ -155,7 +173,7 @@ namespace Vistas
 
 		private void CrearTacoSiIngredientes()
 		{
-			if (_ingredientesSeleccionados.Any())
+			if (_ingredientesSeleccionados != null)
 			{
 				CrearYAgregarTaco();
 			}
@@ -199,5 +217,7 @@ namespace Vistas
 			_pedido = _pedidoController.CrearNuevoPedido(_tacos, _bebidasSeleccionadas);
 			_pedido.ToString();
 		}
+
+
 	}
 }

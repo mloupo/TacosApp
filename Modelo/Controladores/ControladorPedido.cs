@@ -1,6 +1,7 @@
 ﻿using Modelo;
 using Modelo.EntidadesProducto.Bebidas;
 using Modelo.EntidadesProducto.Tacos;
+using Modelo.EntidadesUsuario;
 
 namespace Model.Controllers
 {
@@ -8,6 +9,7 @@ namespace Model.Controllers
 	public class ControladorPedido
 	{
 		private Pedido _pedido;
+		private Contacto _contacto;
 		private List<Taco> _listaTacos;
 		private List<Bebida> _listaBebidas;
 		private static ControladorPedido? _controladorPedido;
@@ -61,9 +63,9 @@ namespace Model.Controllers
 			return false;
 		}
 
-		public void AgregarInfoContactoAPedido(Pedido pedido, string datosCliente, string nroContacto, DateTime fechaEntrega)
+		public void AgregarInfoContactoAPedido()
 		{
-			// Lógica para agregar información de contacto al pedido
+			_pedido.Contacto = _contacto;
 		}
 
 		private bool EsPedidoValido(Pedido pedido)
