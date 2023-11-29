@@ -66,7 +66,7 @@ namespace Vistas
 		}
 		private void cmbNombreCliente_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
+			CargarClientesCmb();
 		}
 
 		private void CargarIngredientesCmb()
@@ -85,7 +85,8 @@ namespace Vistas
 		}
 		private void CargarClientesCmb()
 		{
-			cmbNombreCliente.DataSource = _businessLogicLayer.ObtenerContactos();
+			var clientes = _businessLogicLayer.ObtenerContactos();
+			cmbNombreCliente.DataSource = clientes;
 			cmbNombreCliente.ValueMember = "Id";
 			cmbNombreCliente.DisplayMember = "Nombre";
 			cmbNombreCliente.SelectedIndex = 0;
