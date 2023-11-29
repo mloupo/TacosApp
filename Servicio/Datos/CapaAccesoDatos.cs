@@ -14,6 +14,7 @@ namespace Servicio.Datos
 
 		private ControladorIngrediente? _ingredientController;
 		private ControladorBebida? _bebidaController;
+		private Bebida _bebida;
 
 		#region Ingredientes
 		public void InsertarIngrediente(Ingrediente ingrediente, string tipoIngrediente)
@@ -271,7 +272,7 @@ namespace Servicio.Datos
 		#region Bebidas
 		public List<Bebida> ObtenerBebidas(string tipoBebida)
 		{
-
+			_bebidaController = ControladorBebida.ObtenerInstancia();
 			List<Bebida> bebidas = new();
 			try
 			{
@@ -285,8 +286,8 @@ namespace Servicio.Datos
 					int Id = int.Parse(reader["Id"].ToString());
 					string Nombre = reader["Nombre"].ToString();
 					float Precio = float.Parse(reader["Precio"].ToString());
-					Bebida bebida = _bebidaController.Crear(tipoBebida, Nombre, Precio, Id);
-					bebidas.Add(bebida);
+					_bebida = _bebidaController.Crear(tipoBebida, Nombre, Precio, Id);
+					bebidas.Add(_bebida);
 				}
 			}
 			catch (Exception)

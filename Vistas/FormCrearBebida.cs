@@ -1,6 +1,4 @@
-﻿
-
-using Modelo;
+﻿using Modelo;
 using Modelo.Controladores;
 using Modelo.EntidadesProducto.Bebidas;
 using Servicio.Logica;
@@ -177,6 +175,11 @@ namespace Vistas
 		public void EliminarBebida(int id)
 		{
 			_capaLogicaNegocio.EliminarBebida(id, _tipoBebida);
+		}
+
+		private void btnCancelarCreacion_Click_1(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }

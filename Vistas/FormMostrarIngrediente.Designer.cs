@@ -40,7 +40,6 @@ namespace Vistas
 			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-			CantidadMaxima = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgvFormIngredient).BeginInit();
 			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			SuspendLayout();
@@ -49,7 +48,7 @@ namespace Vistas
 			// 
 			dgvFormIngredient.AutoGenerateColumns = false;
 			dgvFormIngredient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, CantidadMaxima });
+			dgvFormIngredient.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1 });
 			dgvFormIngredient.DataSource = rellenoBindingSource;
 			dgvFormIngredient.Location = new Point(9, 62);
 			dgvFormIngredient.Margin = new Padding(3, 2, 3, 2);
@@ -99,7 +98,6 @@ namespace Vistas
 			dataGridViewTextBoxColumn3.HeaderText = "Id";
 			dataGridViewTextBoxColumn3.MinimumWidth = 6;
 			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			dataGridViewTextBoxColumn3.Visible = false;
 			dataGridViewTextBoxColumn3.Width = 125;
 			// 
 			// dataGridViewTextBoxColumn2
@@ -117,15 +115,6 @@ namespace Vistas
 			dataGridViewTextBoxColumn1.MinimumWidth = 6;
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			dataGridViewTextBoxColumn1.Width = 125;
-			// 
-			// CantidadMaxima
-			// 
-			CantidadMaxima.DataPropertyName = "CantidadMaxima";
-			CantidadMaxima.HeaderText = "Cant Max";
-			CantidadMaxima.MinimumWidth = 6;
-			CantidadMaxima.Name = "CantidadMaxima";
-			CantidadMaxima.ReadOnly = true;
-			CantidadMaxima.Width = 125;
 			// 
 			// FormMostrarIngrediente
 			// 
@@ -162,6 +151,5 @@ namespace Vistas
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private DataGridViewTextBoxColumn CantidadMaxima;
 	}
 }

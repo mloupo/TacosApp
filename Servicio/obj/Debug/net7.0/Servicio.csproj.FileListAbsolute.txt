@@ -1,6 +1,3 @@
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Servicio\bin\Debug\net7.0\Modelo.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Servicio\bin\Debug\net7.0\Modelo.runtimeconfig.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Servicio\bin\Debug\net7.0\Modelo.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Servicio\bin\Debug\net7.0\Servicio.deps.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Servicio\bin\Debug\net7.0\Servicio.dll
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Servicio\bin\Debug\net7.0\Servicio.pdb

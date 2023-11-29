@@ -34,34 +34,22 @@ namespace Vistas
 			components = new System.ComponentModel.Container();
 			lblIngredientType = new Label();
 			cmbTipoIngrediente = new ComboBox();
-
 			lblIngredientName = new Label();
 			txtIngredientName = new TextBox();
 			lblIngredientPrice = new Label();
 			txtIngredientPrice = new TextBox();
-
 			btnCrearIngrediente = new Button();
 			btnCancelarCreacion = new Button();
-
 			dgvIngredientDetails = new DataGridView();
+			bindingSource1 = new BindingSource(components);
+			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-			Edit = new DataGridViewLinkColumn();
 			Delete = new DataGridViewLinkColumn();
-			rellenoBindingSource = new BindingSource(components);
+			Edit = new DataGridViewLinkColumn();
 			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).BeginInit();
-			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
+			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
 			SuspendLayout();
-			// 
-			// cmbTipoIngrediente
-			// 
-			cmbTipoIngrediente.FormattingEnabled = true;
-			cmbTipoIngrediente.Location = new Point(73, 35);
-			cmbTipoIngrediente.Margin = new Padding(3, 2, 3, 2);
-			cmbTipoIngrediente.Name = "cmbTipoIngrediente";
-			cmbTipoIngrediente.Size = new Size(274, 26);
-			cmbTipoIngrediente.TabIndex = 0;
-			cmbTipoIngrediente.SelectedIndexChanged += cmbTipoIngrediente_SelectedIndexChanged;
 			// 
 			// lblIngredientType
 			// 
@@ -72,6 +60,16 @@ namespace Vistas
 			lblIngredientType.Size = new Size(40, 18);
 			lblIngredientType.TabIndex = 2;
 			lblIngredientType.Text = "Tipo";
+			// 
+			// cmbTipoIngrediente
+			// 
+			cmbTipoIngrediente.FormattingEnabled = true;
+			cmbTipoIngrediente.Location = new Point(73, 35);
+			cmbTipoIngrediente.Margin = new Padding(3, 2, 3, 2);
+			cmbTipoIngrediente.Name = "cmbTipoIngrediente";
+			cmbTipoIngrediente.Size = new Size(274, 26);
+			cmbTipoIngrediente.TabIndex = 0;
+			cmbTipoIngrediente.SelectedIndexChanged += cmbTipoIngrediente_SelectedIndexChanged;
 			// 
 			// lblIngredientName
 			// 
@@ -112,7 +110,7 @@ namespace Vistas
 			// btnCrearIngrediente
 			// 
 			btnCrearIngrediente.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btnCrearIngrediente.Location = new Point(382, 72);
+			btnCrearIngrediente.Location = new Point(366, 78);
 			btnCrearIngrediente.Margin = new Padding(3, 2, 3, 2);
 			btnCrearIngrediente.Name = "btnCrearIngrediente";
 			btnCrearIngrediente.Size = new Size(111, 26);
@@ -124,7 +122,7 @@ namespace Vistas
 			// btnCancelarCreacion
 			// 
 			btnCancelarCreacion.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btnCancelarCreacion.Location = new Point(382, 107);
+			btnCancelarCreacion.Location = new Point(366, 113);
 			btnCancelarCreacion.Margin = new Padding(3, 2, 3, 2);
 			btnCancelarCreacion.Name = "btnCancelarCreacion";
 			btnCancelarCreacion.Size = new Size(111, 26);
@@ -138,25 +136,37 @@ namespace Vistas
 			dgvIngredientDetails.AllowUserToOrderColumns = true;
 			dgvIngredientDetails.AutoGenerateColumns = false;
 			dgvIngredientDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvIngredientDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, Edit, Delete });
-			dgvIngredientDetails.DataSource = rellenoBindingSource;
+			dgvIngredientDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, Delete, Edit });
+			dgvIngredientDetails.DataSource = bindingSource1;
 			dgvIngredientDetails.Location = new Point(12, 203);
 			dgvIngredientDetails.Margin = new Padding(2);
 			dgvIngredientDetails.Name = "dgvIngredientDetails";
 			dgvIngredientDetails.RowHeadersWidth = 51;
 			dgvIngredientDetails.RowTemplate.Height = 29;
-			dgvIngredientDetails.Size = new Size(510, 324);
+			dgvIngredientDetails.Size = new Size(465, 324);
 			dgvIngredientDetails.TabIndex = 12;
 			dgvIngredientDetails.CellContentClick += DgvIngredientDetails_CellContentClick;
 			// 
+			// bindingSource1
+			// 
+			bindingSource1.DataSource = typeof(Salsa);
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+			dataGridViewTextBoxColumn3.HeaderText = "Id";
+			dataGridViewTextBoxColumn3.MinimumWidth = 6;
+			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			dataGridViewTextBoxColumn3.Width = 53;
+			// 
 			// dataGridViewTextBoxColumn2
 			// 
-			dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
 			dataGridViewTextBoxColumn2.HeaderText = "Nombre";
 			dataGridViewTextBoxColumn2.MinimumWidth = 6;
 			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			dataGridViewTextBoxColumn2.Width = 85;
+			dataGridViewTextBoxColumn2.Width = 125;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -167,19 +177,9 @@ namespace Vistas
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			dataGridViewTextBoxColumn1.Width = 85;
 			// 
-			// Edit
-			// 
-			Edit.HeaderText = "";
-			Edit.MinimumWidth = 6;
-			Edit.Name = "Edit";
-			Edit.ReadOnly = true;
-			Edit.Text = "Edit";
-			Edit.UseColumnTextForLinkValue = true;
-			Edit.Width = 60;
-			// 
 			// Delete
 			// 
-			Delete.HeaderText = "";
+			Delete.HeaderText = "Eliminar";
 			Delete.MinimumWidth = 6;
 			Delete.Name = "Delete";
 			Delete.ReadOnly = true;
@@ -187,15 +187,21 @@ namespace Vistas
 			Delete.UseColumnTextForLinkValue = true;
 			Delete.Width = 80;
 			// 
-			// rellenoBindingSource
+			// Edit
 			// 
-			rellenoBindingSource.DataSource = typeof(Relleno);
+			Edit.HeaderText = "Editar";
+			Edit.MinimumWidth = 6;
+			Edit.Name = "Edit";
+			Edit.ReadOnly = true;
+			Edit.Text = "Edit";
+			Edit.UseColumnTextForLinkValue = true;
+			Edit.Width = 60;
 			// 
 			// FormCrearIngrediente
 			// 
 			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(528, 538);
+			ClientSize = new Size(489, 538);
 			Controls.Add(dgvIngredientDetails);
 			Controls.Add(btnCancelarCreacion);
 			Controls.Add(btnCrearIngrediente);
@@ -212,7 +218,7 @@ namespace Vistas
 			Text = "Crear Ingrediente";
 			Load += FormIngredientDetails_Load;
 			((System.ComponentModel.ISupportInitialize)dgvIngredientDetails).EndInit();
-			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();
+			((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -234,10 +240,11 @@ namespace Vistas
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
-		private BindingSource rellenoBindingSource;
+		private BindingSource bindingSource1;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private DataGridViewLinkColumn Edit;
 		private DataGridViewLinkColumn Delete;
+		private DataGridViewLinkColumn Edit;
 	}
 }

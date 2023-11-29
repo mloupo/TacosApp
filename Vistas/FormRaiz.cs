@@ -11,22 +11,20 @@ namespace Vistas
 		}
 
 		#region EVENTS
-
-		private void BtnGestionarElementos_Click(object sender, EventArgs e)
+		private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			AbrirFormularioGestorElementos();
+			AbrirFormularioMostrarIngrediente();
 		}
 
-
-
-
-		private void BtnCrearBebida_Click(object sender, EventArgs e)
+		private void bebidasToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			AbrirFormularioCrearBebidas();
+			AbrirFormularioMostrarBebidas();
 		}
 
-
-
+		private void contactosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AbrirFormularioMostrarContacto();
+		}
 		#endregion
 
 		#region PRIVATE METHODS
@@ -37,43 +35,22 @@ namespace Vistas
 			return frmPedido;
 		}
 
-		private void AbrirFormularioGestorElementos()
+		private void AbrirFormularioMostrarIngrediente()
 		{
 			FormMostrarIngrediente frmIngrediente = new();
 			frmIngrediente.ShowDialog();
 		}
 
-		private void AbrirFormularioCrearBebidas()
+		private void AbrirFormularioMostrarBebidas()
 		{
 			FormMostrarBebidas frmBebida = new();
 			frmBebida.ShowDialog(); ;
 		}
 
-		private void AbrirFormularioCrearContacto()
+		private void AbrirFormularioMostrarContacto()
 		{
-			ContactosDetalle frmContacto = new();
+			ContactosForm frmContacto = new();
 			frmContacto.ShowDialog();
-		}
-
-		#endregion
-
-
-
-		#region Eventos Menu
-
-		private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			AbrirFormularioGestorElementos();
-		}
-
-		private void bebidasToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			AbrirFormularioCrearBebidas();
-		}
-
-		private void contactosToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			AbrirFormularioCrearContacto();
 		}
 
 		#endregion

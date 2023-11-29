@@ -1,9 +1,3 @@
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Contactos.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Contactos.runtimeconfig.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Modelo.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Modelo.runtimeconfig.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Modelo.exe
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Contactos.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Validaciones.deps.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Validaciones.runtimeconfig.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Vistas\bin\Debug\net7.0-windows\Validaciones.exe

@@ -70,6 +70,5 @@ namespace Vistas
 
 			dgvFormBebida.DataSource = filteredBebidas;
 		}
-
 	}
 }

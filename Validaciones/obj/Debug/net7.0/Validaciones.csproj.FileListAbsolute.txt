@@ -1,6 +1,3 @@
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.deps.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.runtimeconfig.json
-C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Modelo.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Validaciones.exe
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Validaciones.deps.json
 C:\Users\Zen\ITEC\AnalistaProgramador\3er\Finales\TacosApp\Validaciones\bin\Debug\net7.0\Validaciones.runtimeconfig.json

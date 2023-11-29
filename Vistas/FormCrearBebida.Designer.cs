@@ -43,13 +43,18 @@ namespace Vistas
 			btnCancelarCreacion = new Button();
 			btnCrearBebida = new Button();
 			dgvBebidaDetalles = new DataGridView();
+			idDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			nombreDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			precioDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			Edit = new DataGridViewLinkColumn();
 			Delete = new DataGridViewLinkColumn();
+			gaseosaBindingSource = new BindingSource(components);
 			idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)aguaBindingSource).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgvBebidaDetalles).BeginInit();
+			((System.ComponentModel.ISupportInitialize)gaseosaBindingSource).BeginInit();
 			SuspendLayout();
 			// 
 			// lblTipoBebida
@@ -110,6 +115,7 @@ namespace Vistas
 			btnCancelarCreacion.TabIndex = 6;
 			btnCancelarCreacion.Text = "Cancelar";
 			btnCancelarCreacion.UseVisualStyleBackColor = true;
+			btnCancelarCreacion.Click += btnCancelarCreacion_Click_1;
 			// 
 			// btnCrearBebida
 			// 
@@ -126,20 +132,46 @@ namespace Vistas
 			dgvBebidaDetalles.AllowUserToOrderColumns = true;
 			dgvBebidaDetalles.AutoGenerateColumns = false;
 			dgvBebidaDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvBebidaDetalles.Columns.AddRange(new DataGridViewColumn[] { Edit, Delete });
-			dgvBebidaDetalles.DataSource = aguaBindingSource;
+			dgvBebidaDetalles.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn2, nombreDataGridViewTextBoxColumn2, precioDataGridViewTextBoxColumn2, Edit, Delete });
+			dgvBebidaDetalles.DataSource = gaseosaBindingSource;
 			dgvBebidaDetalles.Location = new Point(12, 203);
 			dgvBebidaDetalles.Margin = new Padding(2);
 			dgvBebidaDetalles.Name = "dgvBebidaDetalles";
 			dgvBebidaDetalles.RowHeadersWidth = 51;
 			dgvBebidaDetalles.RowTemplate.Height = 29;
-			dgvBebidaDetalles.Size = new Size(526, 333);
+			dgvBebidaDetalles.Size = new Size(472, 333);
 			dgvBebidaDetalles.TabIndex = 13;
 			dgvBebidaDetalles.CellContentClick += dgvBebidaDetalles_CellContentClick;
 			// 
+			// idDataGridViewTextBoxColumn2
+			// 
+			idDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+			idDataGridViewTextBoxColumn2.HeaderText = "Id";
+			idDataGridViewTextBoxColumn2.MinimumWidth = 6;
+			idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+			idDataGridViewTextBoxColumn2.Width = 53;
+			// 
+			// nombreDataGridViewTextBoxColumn2
+			// 
+			nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+			nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
+			nombreDataGridViewTextBoxColumn2.MinimumWidth = 6;
+			nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
+			nombreDataGridViewTextBoxColumn2.Width = 125;
+			// 
+			// precioDataGridViewTextBoxColumn2
+			// 
+			precioDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			precioDataGridViewTextBoxColumn2.DataPropertyName = "Precio";
+			precioDataGridViewTextBoxColumn2.HeaderText = "Precio";
+			precioDataGridViewTextBoxColumn2.MinimumWidth = 6;
+			precioDataGridViewTextBoxColumn2.Name = "precioDataGridViewTextBoxColumn2";
+			precioDataGridViewTextBoxColumn2.Width = 85;
+			// 
 			// Edit
 			// 
-			Edit.HeaderText = "";
+			Edit.HeaderText = "Editar";
 			Edit.MinimumWidth = 6;
 			Edit.Name = "Edit";
 			Edit.ReadOnly = true;
@@ -149,13 +181,18 @@ namespace Vistas
 			// 
 			// Delete
 			// 
-			Delete.HeaderText = "";
+			Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			Delete.HeaderText = "Eliminar";
 			Delete.MinimumWidth = 6;
 			Delete.Name = "Delete";
 			Delete.ReadOnly = true;
 			Delete.Text = "Delete";
 			Delete.UseColumnTextForLinkValue = true;
-			Delete.Width = 80;
+			Delete.Width = 78;
+			// 
+			// gaseosaBindingSource
+			// 
+			gaseosaBindingSource.DataSource = typeof(Gaseosa);
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -179,7 +216,7 @@ namespace Vistas
 			// 
 			AutoScaleDimensions = new SizeF(8F, 18F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(528, 538);
+			ClientSize = new Size(491, 538);
 			Controls.Add(dgvBebidaDetalles);
 			Controls.Add(btnCrearBebida);
 			Controls.Add(btnCancelarCreacion);
@@ -197,6 +234,7 @@ namespace Vistas
 			Load += FormCrearBebida_Load;
 			((System.ComponentModel.ISupportInitialize)aguaBindingSource).EndInit();
 			((System.ComponentModel.ISupportInitialize)dgvBebidaDetalles).EndInit();
+			((System.ComponentModel.ISupportInitialize)gaseosaBindingSource).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -223,6 +261,10 @@ namespace Vistas
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
 		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
+		private BindingSource gaseosaBindingSource;
+		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn2;
+		private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn2;
 		private DataGridViewLinkColumn Edit;
 		private DataGridViewLinkColumn Delete;
 	}
