@@ -16,7 +16,6 @@ namespace Servicio.Datos
 		private ControladorBebida? _bebidaController;
 		private Bebida _bebida;
 
-		#region Ingredientes
 		public void InsertarIngrediente(Ingrediente ingrediente, string tipoIngrediente)
 		{
 			try
@@ -44,89 +43,33 @@ namespace Servicio.Datos
 			}
 			finally { conn.Close(); }
 		}
-
-		public List<Ingrediente> ObtenerIngredientes(string tipoIngrediente)
+		public void InsertarBebida(Bebida bebida, string tipoBebida)
 		{
-			List<Ingrediente> ingredientes = new();
-			_ingredientController = ControladorIngrediente.ObtenerInstancia();
-
 			try
 			{
 				conn.Open();
-				string query = $@"SELECT Id, Nombre, Precio FROM {tipoIngrediente}";
-				SqlCommand cmd = new(query, conn);
-				SqlDataReader reader = cmd.ExecuteReader();
-
-				while (reader.Read())
+				string query = $@" INSERT INTO {tipoBebida} (Nombre, Precio)
+								  VALUES (@Nombre, @Precio)";
+				SqlParameter Nombre = new()
 				{
-					int Id = int.Parse(reader["Id"].ToString());
-					string Nombre = reader["Nombre"].ToString();
-					float Precio = float.Parse(reader["Precio"].ToString());
-					Ingrediente ingred = _ingredientController.Crear(tipoIngrediente, Nombre, Precio, Id);
-					ingredientes.Add(ingred);
-				}
-			}
+					ParameterName = "@Nombre",
+					Value = bebida.Nombre,
+					DbType = System.Data.DbType.String
+				};
 
-			catch (Exception)
-			{
-				throw;
-			}
-
-			finally { conn.Close(); }
-
-			return ingredientes;
-		}
-
-		public void ActualizarIngrediente(Ingrediente ingrediente, string tipoIngrediente)
-		{
-			try
-			{
-				conn.Open();
-				string query = $@" UPDATE {tipoIngrediente} 
-								SET Nombre = @Nombre,
-									Precio = @Precio
-								WHERE Id = @Id";
-
-				SqlParameter Id = new("@Id", ingrediente.Id);
-				SqlParameter Nombre = new("@Nombre", ingrediente.Nombre);
-				SqlParameter Precio = new("@Precio", ingrediente.Precio);
-
+				SqlParameter Precio = new("@Precio", bebida.Precio);
 				SqlCommand cmd = new(query, conn);
-
-				cmd.Parameters.Add(Id);
 				cmd.Parameters.Add(Nombre);
 				cmd.Parameters.Add(Precio);
 
 				cmd.ExecuteNonQuery();
-
 			}
 			catch (Exception)
 			{
 				throw;
 			}
-
 			finally { conn.Close(); }
 		}
-		public void EliminarIngrediente(int id, string tipoIngredinte)
-		{
-			try
-			{
-				conn.Open();
-				string query = $@"DELETE FROM {tipoIngredinte} WHERE ID = @Id";
-				SqlCommand cmd = new(query, conn);
-				cmd.Parameters.Add(new SqlParameter("@Id", id));
-				cmd.ExecuteNonQuery();
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-
-			finally { conn.Close(); }
-		}
-		#endregion
-
-		#region contactos
 		public void InsertarContacto(Contacto contacto)
 		{
 			try
@@ -159,47 +102,65 @@ namespace Servicio.Datos
 			finally { conn.Close(); }
 		}
 
-		public void ActualizarContacto(Contacto contacto)
+
+		public List<Ingrediente> ObtenerIngredientes(string tipoIngrediente)
 		{
+			List<Ingrediente> ingredientes = new();
+			_ingredientController = ControladorIngrediente.ObtenerInstancia();
+
 			try
 			{
 				conn.Open();
-				string query = @"UPDATE Contactos 
-									SET Nombre = @Nombre,
-										Apellido = @Apellido,
-										NroContacto = @NroContacto,
-										CorreoElectronico = @CorreoElectronico,
-										DireccionEnvio = @DireccionEnvio,
-										Contraseña = @Contraseña
-									WHERE Id = @Id";
-
-				SqlParameter Id = new("@Id", contacto.Id);
-				SqlParameter Nombre = new("@Nombre", contacto.Nombre);
-				SqlParameter Apellido = new("@Apellido", contacto.Apellido);
-				SqlParameter NroContacto = new("@NroContacto", contacto.NroContacto);
-				SqlParameter CorreoElectronico = new("@CorreoElectronico", contacto.CorreoElectronico);
-				SqlParameter DireccionEnvio = new("@DireccionEnvio", contacto.DireccionEnvio);
-				SqlParameter Contraseña = new("@Contraseña", contacto.Contraseña);
-
+				string query = $@"SELECT Id, Nombre, Precio FROM {tipoIngrediente}";
 				SqlCommand cmd = new(query, conn);
-				cmd.Parameters.Add(Id);
-				cmd.Parameters.Add(Nombre);
-				cmd.Parameters.Add(Apellido);
-				cmd.Parameters.Add(NroContacto);
-				cmd.Parameters.Add(CorreoElectronico);
-				cmd.Parameters.Add(DireccionEnvio);
-				cmd.Parameters.Add(Contraseña);
+				SqlDataReader reader = cmd.ExecuteReader();
 
-				cmd.ExecuteNonQuery();
+				while (reader.Read())
+				{
+					int Id = int.Parse(reader["Id"].ToString());
+					string Nombre = reader["Nombre"].ToString();
+					float Precio = float.Parse(reader["Precio"].ToString());
+					Ingrediente ingred = _ingredientController.Crear(tipoIngrediente, Nombre, Precio, Id);
+					ingredientes.Add(ingred);
+				}
+			}
+
+			catch (Exception)
+			{
+				throw;
+			}
+
+			finally { conn.Close(); }
+
+			return ingredientes;
+		}
+		public List<Bebida> ObtenerBebidas(string tipoBebida)
+		{
+			_bebidaController = ControladorBebida.ObtenerInstancia();
+			List<Bebida> bebidas = new();
+			try
+			{
+				conn.Open();
+				string query = $@"SELECT Id, Nombre, Precio FROM {tipoBebida}";
+				SqlCommand cmd = new(query, conn);
+				SqlDataReader reader = cmd.ExecuteReader();
+
+				while (reader.Read())
+				{
+					int Id = int.Parse(reader["Id"].ToString());
+					string Nombre = reader["Nombre"].ToString();
+					float Precio = float.Parse(reader["Precio"].ToString());
+					_bebida = _bebidaController.Crear(tipoBebida, Nombre, Precio, Id);
+					bebidas.Add(_bebida);
+				}
 			}
 			catch (Exception)
 			{
-
 				throw;
 			}
 			finally { conn.Close(); }
+			return bebidas;
 		}
-
 		public List<Contacto> ObtenerContactos(string textoObjetivo = null)
 		{
 			List<Contacto> contactos = new();
@@ -250,63 +211,30 @@ namespace Servicio.Datos
 			finally { conn.Close(); }
 			return contactos;
 		}
-		public void EliminarContacto(int idContacto)
+
+
+		public void ActualizarIngrediente(Ingrediente ingrediente, string tipoIngrediente)
 		{
 			try
 			{
 				conn.Open();
-				string query = @"DELETE FROM Contactos WHERE Id = @Id";
+				string query = $@" UPDATE {tipoIngrediente} 
+								SET Nombre = @Nombre,
+									Precio = @Precio
+								WHERE Id = @Id";
+
+				SqlParameter Id = new("@Id", ingrediente.Id);
+				SqlParameter Nombre = new("@Nombre", ingrediente.Nombre);
+				SqlParameter Precio = new("@Precio", ingrediente.Precio);
+
 				SqlCommand cmd = new(query, conn);
-				cmd.Parameters.Add(new SqlParameter("@Id", idContacto));
+
+				cmd.Parameters.Add(Id);
+				cmd.Parameters.Add(Nombre);
+				cmd.Parameters.Add(Precio);
+
 				cmd.ExecuteNonQuery();
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-			finally { conn.Close(); }
-		}
 
-		#endregion
-
-		#region Bebidas
-		public List<Bebida> ObtenerBebidas(string tipoBebida)
-		{
-			_bebidaController = ControladorBebida.ObtenerInstancia();
-			List<Bebida> bebidas = new();
-			try
-			{
-				conn.Open();
-				string query = $@"SELECT Id, Nombre, Precio FROM {tipoBebida}";
-				SqlCommand cmd = new(query, conn);
-				SqlDataReader reader = cmd.ExecuteReader();
-
-				while (reader.Read())
-				{
-					int Id = int.Parse(reader["Id"].ToString());
-					string Nombre = reader["Nombre"].ToString();
-					float Precio = float.Parse(reader["Precio"].ToString());
-					_bebida = _bebidaController.Crear(tipoBebida, Nombre, Precio, Id);
-					bebidas.Add(_bebida);
-				}
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-			finally { conn.Close(); }
-			return bebidas;
-		}
-
-		public void EliminarBebida(int id, string tipoBebida)
-		{
-			try
-			{
-				conn.Open();
-				string query = $@"DELETE FROM {tipoBebida} WHERE ID = @Id";
-				SqlCommand cmd = new(query, conn);
-				cmd.Parameters.Add(new SqlParameter("@Id", id));
-				cmd.ExecuteNonQuery();
 			}
 			catch (Exception)
 			{
@@ -315,7 +243,6 @@ namespace Servicio.Datos
 
 			finally { conn.Close(); }
 		}
-
 		public void ActualizarBebida(Bebida bebida, string tipoBebida)
 		{
 			try
@@ -346,26 +273,90 @@ namespace Servicio.Datos
 
 			finally { conn.Close(); }
 		}
-
-		public void InsertarBebida(Bebida bebida, string tipoBebida)
+		public void ActualizarContacto(Contacto contacto)
 		{
 			try
 			{
 				conn.Open();
-				string query = $@" INSERT INTO {tipoBebida} (Nombre, Precio)
-								  VALUES (@Nombre, @Precio)";
-				SqlParameter Nombre = new()
-				{
-					ParameterName = "@Nombre",
-					Value = bebida.Nombre,
-					DbType = System.Data.DbType.String
-				};
+				string query = @"UPDATE Contactos 
+									SET Nombre = @Nombre,
+										Apellido = @Apellido,
+										NroContacto = @NroContacto,
+										CorreoElectronico = @CorreoElectronico,
+										DireccionEnvio = @DireccionEnvio,
+										Contraseña = @Contraseña
+									WHERE Id = @Id";
 
-				SqlParameter Precio = new("@Precio", bebida.Precio);
+				SqlParameter Id = new("@Id", contacto.Id);
+				SqlParameter Nombre = new("@Nombre", contacto.Nombre);
+				SqlParameter Apellido = new("@Apellido", contacto.Apellido);
+				SqlParameter NroContacto = new("@NroContacto", contacto.NroContacto);
+				SqlParameter CorreoElectronico = new("@CorreoElectronico", contacto.CorreoElectronico);
+				SqlParameter DireccionEnvio = new("@DireccionEnvio", contacto.DireccionEnvio);
+				SqlParameter Contraseña = new("@Contraseña", contacto.Contraseña);
+
 				SqlCommand cmd = new(query, conn);
+				cmd.Parameters.Add(Id);
 				cmd.Parameters.Add(Nombre);
-				cmd.Parameters.Add(Precio);
+				cmd.Parameters.Add(Apellido);
+				cmd.Parameters.Add(NroContacto);
+				cmd.Parameters.Add(CorreoElectronico);
+				cmd.Parameters.Add(DireccionEnvio);
+				cmd.Parameters.Add(Contraseña);
 
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			finally { conn.Close(); }
+		}
+
+
+		public void EliminarIngrediente(int id, string tipoIngrediente)
+		{
+			try
+			{
+				conn.Open();
+				string query = $@"DELETE FROM {tipoIngrediente} WHERE ID = @Id";
+				SqlCommand cmd = new(query, conn);
+				cmd.Parameters.Add(new SqlParameter("@Id", id));
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+
+			finally { conn.Close(); }
+		}
+		public void EliminarBebida(int id, string tipoBebida)
+		{
+			try
+			{
+				conn.Open();
+				string query = $@"DELETE FROM {tipoBebida} WHERE ID = @Id";
+				SqlCommand cmd = new(query, conn);
+				cmd.Parameters.Add(new SqlParameter("@Id", id));
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+
+			finally { conn.Close(); }
+		}
+		public void EliminarContacto(int idContacto)
+		{
+			try
+			{
+				conn.Open();
+				string query = @"DELETE FROM Contactos WHERE Id = @Id";
+				SqlCommand cmd = new(query, conn);
+				cmd.Parameters.Add(new SqlParameter("@Id", idContacto));
 				cmd.ExecuteNonQuery();
 			}
 			catch (Exception)
@@ -375,6 +366,11 @@ namespace Servicio.Datos
 			finally { conn.Close(); }
 		}
 
-		#endregion
+
+
+
+
+
+
 	}
 }

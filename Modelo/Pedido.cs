@@ -21,34 +21,6 @@ namespace Modelo
 			_listaBebidas = listaBebidas;
 		}
 
-		public void ConfirmarPedido()
-		{
-			Importe = ObtenerImporteTotal();
-		}
-
-		public float ObtenerImporteTotal()
-		{
-			Importe = ObtenerImporteTacos() + ObtenerImporteBebidas();
-			return Importe;
-		}
-
-		public float ObtenerImporteTacos()
-		{
-			foreach (Taco taco in _listaTacos)
-			{
-				Importe += taco.ObtenerPrecio();
-			}
-			return Importe;
-		}
-
-		public float ObtenerImporteBebidas()
-		{
-			foreach (Bebida bebida in _listaBebidas)
-			{
-				Importe += bebida.Precio;
-			}
-			return Importe;
-		}
 
 		public void AgregarTaco(Taco taco)
 		{
@@ -61,6 +33,52 @@ namespace Modelo
 			{
 				Console.WriteLine("No se puede agregar un taco nulo al pedido.");
 			}
+		}
+		public void AgregarBebida(Bebida bebida)
+		{
+			if (bebida != null)
+			{
+				_listaBebidas.Add(bebida);
+				Console.WriteLine($"Bebida agregada al pedido #{Id}: {bebida}");
+			}
+			else
+			{
+				Console.WriteLine("No se puede agregar una bebida nula al pedido.");
+			}
+		}
+
+
+		public float ObtenerImporteTacos()
+		{
+			foreach (Taco taco in _listaTacos)
+			{
+				Importe += taco.ObtenerPrecio();
+			}
+			return Importe;
+		}
+		public float ObtenerImporteBebidas()
+		{
+			foreach (Bebida bebida in _listaBebidas)
+			{
+				Importe += bebida.Precio;
+			}
+			return Importe;
+		}
+		public float ObtenerImporteTotal()
+		{
+			Importe = ObtenerImporteTacos() + ObtenerImporteBebidas();
+			return Importe;
+		}
+
+
+		public void ConfirmarPedido()
+		{
+			Importe = ObtenerImporteTotal();
+		}
+
+		public override string ToString()
+		{
+			return $"Pedido #{Id} - Importe: ${Importe:0.00}";
 		}
 	}
 }

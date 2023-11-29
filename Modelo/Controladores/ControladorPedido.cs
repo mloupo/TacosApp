@@ -28,7 +28,7 @@ namespace Model.Controllers
 			return _controladorPedido;
 		}
 
-		public Pedido AgregarNuevoPedido(List<Taco> listaTacos, List<Bebida> listaBebidas)
+		public Pedido CrearNuevoPedido(List<Taco> listaTacos, List<Bebida> listaBebidas)
 		{
 			contadorPedidos += 1;
 			_listaTacos = listaTacos;
@@ -37,15 +37,7 @@ namespace Model.Controllers
 
 			Console.WriteLine($"Este es el pedido numero: {contadorPedidos}");
 
-			// generar metodo para agregar un nuevo pedido
-			// generar metodo para evaluar el input
-			// manejo de excepciones
 			return _pedido;
-		}
-
-		public void AgregarIngredienteATaco(Taco taco, Ingrediente ingrediente)
-		{
-			// Lógica para agregar un ingrediente a un taco
 		}
 
 		public bool AgregarTacoAPedido(Pedido pedido, Taco taco)
@@ -58,9 +50,15 @@ namespace Model.Controllers
 			return false;
 		}
 
-		public void AgregarBebidaAPedido(Pedido pedido, Bebida bebida)
+		public bool AgregarBebidaAPedido(Bebida bebida)
 		{
-			// Lógica para agregar una bebida al pedido
+
+			if (EsPedidoValido(_pedido))
+			{
+				_pedido.AgregarBebida(bebida);
+				return true;
+			}
+			return false;
 		}
 
 		public void AgregarInfoContactoAPedido(Pedido pedido, string datosCliente, string nroContacto, DateTime fechaEntrega)

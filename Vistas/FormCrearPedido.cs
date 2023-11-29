@@ -15,6 +15,7 @@ namespace Vistas
 		private Ingrediente _ingrediente;
 		private Bebida _bebida;
 		private Taco _taco;
+		private Pedido _pedido;
 
 		private List<Ingrediente> _ingredientesSeleccionados;
 		private List<Bebida> _bebidasSeleccionadas;
@@ -81,9 +82,7 @@ namespace Vistas
 			_ingrediente = _businessLogicLayer.ObtenerIngredientes(_tipoIngrediente)
 				.FirstOrDefault(i => i.Nombre == cmbIngrediente.SelectedItem.ToString());
 
-			int cantidadMaxima = _ingrediente.CantidadMaxima;
-
-			if (_agregarIngredienteValidador.Validate(_ingrediente).IsValid)
+			if (_ingrediente != null)
 			{
 				_ingredientesSeleccionados.Add(_ingrediente);
 				ActualizarDgvListaIngredientesTaco(_ingredientesSeleccionados);
@@ -197,9 +196,8 @@ namespace Vistas
 		public void GenerarNuevoPedido()
 		{
 			Console.WriteLine("Generando nuevo pedido");
-			// generaste el pedido nro ...
-			// tu pedido esta compuesto por ...
-			// el valor total es ...
+			_pedido = _pedidoController.CrearNuevoPedido(_tacos, _bebidasSeleccionadas);
+			_pedido.ToString();
 		}
 	}
 }

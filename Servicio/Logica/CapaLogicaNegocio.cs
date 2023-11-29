@@ -15,7 +15,6 @@ namespace Servicio.Logica
 			_capaAccesoDatos = new();
 		}
 
-		#region ingredientes
 		public IIngrediente AlmacenarIngrediente(Ingrediente ingrediente, string tipoIngrediente)
 		{
 			if (ingrediente.Id == 0)
@@ -36,9 +35,7 @@ namespace Servicio.Logica
 			_capaAccesoDatos.EliminarIngrediente(id, tipoIngrediente);
 		}
 
-		#endregion
 
-		#region contactos
 		public Contacto AgregarContacto(Contacto contacto)
 		{
 			if (contacto.Id == 0)
@@ -58,15 +55,13 @@ namespace Servicio.Logica
 			_capaAccesoDatos.EliminarContacto(idContacto);
 		}
 
-		#endregion
 
-		#region bebidas
 		public List<Bebida> ObtenerBebidas(string tipoBebida)
 		{
 			return _capaAccesoDatos.ObtenerBebidas(tipoBebida);
 		}
 
-		public IBebida AlmacenarBebida(Bebida bebida, string tipoBebida)
+		public Bebida AlmacenarBebida(Bebida bebida, string tipoBebida)
 		{
 			if (bebida.Id == 0)
 				_capaAccesoDatos.InsertarBebida(bebida, tipoBebida);
@@ -74,7 +69,6 @@ namespace Servicio.Logica
 				_capaAccesoDatos.ActualizarBebida(bebida, tipoBebida);
 
 			return bebida;
-
 		}
 
 		public void EliminarBebida(int id, string tipoBebida)
@@ -82,6 +76,5 @@ namespace Servicio.Logica
 			_capaAccesoDatos.EliminarBebida(id, tipoBebida);
 		}
 
-		#endregion
 	}
 }
