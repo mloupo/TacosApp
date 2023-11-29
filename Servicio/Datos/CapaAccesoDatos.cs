@@ -279,8 +279,8 @@ namespace Servicio.Datos
 				conn.Open();
 				string query = $@"SELECT Id, Nombre, Precio FROM {tipoBebida}";
 				SqlCommand cmd = new(query, conn);
-
 				SqlDataReader reader = cmd.ExecuteReader();
+
 				while (reader.Read())
 				{
 					int Id = int.Parse(reader["Id"].ToString());

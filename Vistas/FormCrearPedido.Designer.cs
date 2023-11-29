@@ -43,10 +43,10 @@
 			lblTacoMasBarato = new Label();
 			btnCrearTaco = new Button();
 			btnCargaPedido = new Button();
-			label5 = new Label();
-			label6 = new Label();
-			textBox3 = new TextBox();
-			textBox4 = new TextBox();
+			lblNumeroPedido = new Label();
+			lblImporteTotaPedido = new Label();
+			txtNumeroPedido = new TextBox();
+			txtImporteTotalPedido = new TextBox();
 			txtMayorValorTaco = new TextBox();
 			txtPromedioValorTaco = new TextBox();
 			txtMenorValorTaco = new TextBox();
@@ -67,7 +67,7 @@
 			btnAgregarContactoDelivery = new Button();
 			gbBebidas = new GroupBox();
 			btnAgregarBebida = new Button();
-			cmbBebidaSeleccionada = new ComboBox();
+			cmbBebida = new ComboBox();
 			cmbTipoBebida = new ComboBox();
 			ckbBebida = new CheckBox();
 			lblTipoBebida = new Label();
@@ -214,37 +214,37 @@
 			btnCargaPedido.UseVisualStyleBackColor = true;
 			btnCargaPedido.Click += btnCargaPedido_Click;
 			// 
-			// label5
+			// lblNumeroPedido
 			// 
-			label5.AutoSize = true;
-			label5.Location = new Point(14, 27);
-			label5.Name = "label5";
-			label5.Size = new Size(96, 18);
-			label5.TabIndex = 24;
-			label5.Text = "Pedido Nro:";
+			lblNumeroPedido.AutoSize = true;
+			lblNumeroPedido.Location = new Point(14, 27);
+			lblNumeroPedido.Name = "lblNumeroPedido";
+			lblNumeroPedido.Size = new Size(96, 18);
+			lblNumeroPedido.TabIndex = 24;
+			lblNumeroPedido.Text = "Pedido Nro:";
 			// 
-			// label6
+			// lblImporteTotaPedido
 			// 
-			label6.AutoSize = true;
-			label6.Location = new Point(14, 55);
-			label6.Name = "label6";
-			label6.Size = new Size(72, 18);
-			label6.TabIndex = 25;
-			label6.Text = "Importe:";
+			lblImporteTotaPedido.AutoSize = true;
+			lblImporteTotaPedido.Location = new Point(14, 55);
+			lblImporteTotaPedido.Name = "lblImporteTotaPedido";
+			lblImporteTotaPedido.Size = new Size(72, 18);
+			lblImporteTotaPedido.TabIndex = 25;
+			lblImporteTotaPedido.Text = "Importe:";
 			// 
-			// textBox3
+			// txtNumeroPedido
 			// 
-			textBox3.Location = new Point(107, 24);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(125, 25);
-			textBox3.TabIndex = 26;
+			txtNumeroPedido.Location = new Point(107, 24);
+			txtNumeroPedido.Name = "txtNumeroPedido";
+			txtNumeroPedido.Size = new Size(125, 25);
+			txtNumeroPedido.TabIndex = 26;
 			// 
-			// textBox4
+			// txtImporteTotalPedido
 			// 
-			textBox4.Location = new Point(107, 52);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new Size(125, 25);
-			textBox4.TabIndex = 27;
+			txtImporteTotalPedido.Location = new Point(107, 52);
+			txtImporteTotalPedido.Name = "txtImporteTotalPedido";
+			txtImporteTotalPedido.Size = new Size(125, 25);
+			txtImporteTotalPedido.TabIndex = 27;
 			// 
 			// txtMayorValorTaco
 			// 
@@ -416,7 +416,7 @@
 			// gbBebidas
 			// 
 			gbBebidas.Controls.Add(btnAgregarBebida);
-			gbBebidas.Controls.Add(cmbBebidaSeleccionada);
+			gbBebidas.Controls.Add(cmbBebida);
 			gbBebidas.Controls.Add(cmbTipoBebida);
 			gbBebidas.Controls.Add(ckbBebida);
 			gbBebidas.Controls.Add(lblTipoBebida);
@@ -438,14 +438,14 @@
 			btnAgregarBebida.UseVisualStyleBackColor = true;
 			btnAgregarBebida.Click += btnAgregarBebida_Click;
 			// 
-			// cmbBebidaSeleccionada
+			// cmbBebida
 			// 
-			cmbBebidaSeleccionada.FormattingEnabled = true;
-			cmbBebidaSeleccionada.Location = new Point(129, 98);
-			cmbBebidaSeleccionada.Name = "cmbBebidaSeleccionada";
-			cmbBebidaSeleccionada.Size = new Size(408, 26);
-			cmbBebidaSeleccionada.TabIndex = 26;
-			cmbBebidaSeleccionada.Text = "Bebida";
+			cmbBebida.FormattingEnabled = true;
+			cmbBebida.Location = new Point(129, 98);
+			cmbBebida.Name = "cmbBebida";
+			cmbBebida.Size = new Size(408, 26);
+			cmbBebida.TabIndex = 26;
+			cmbBebida.Text = "Bebida";
 			// 
 			// cmbTipoBebida
 			// 
@@ -503,11 +503,11 @@
 			// 
 			// gbConfirmarPedido
 			// 
-			gbConfirmarPedido.Controls.Add(textBox3);
+			gbConfirmarPedido.Controls.Add(txtNumeroPedido);
 			gbConfirmarPedido.Controls.Add(btnCargaPedido);
-			gbConfirmarPedido.Controls.Add(label5);
-			gbConfirmarPedido.Controls.Add(textBox4);
-			gbConfirmarPedido.Controls.Add(label6);
+			gbConfirmarPedido.Controls.Add(lblNumeroPedido);
+			gbConfirmarPedido.Controls.Add(txtImporteTotalPedido);
+			gbConfirmarPedido.Controls.Add(lblImporteTotaPedido);
 			gbConfirmarPedido.Location = new Point(887, 467);
 			gbConfirmarPedido.Name = "gbConfirmarPedido";
 			gbConfirmarPedido.Size = new Size(250, 125);
@@ -561,10 +561,10 @@
 		private Label lblTacoMasBarato;
 		private Button btnCrearTaco;
 		private Button btnCargaPedido;
-		private Label label5;
-		private Label label6;
-		private TextBox textBox3;
-		private TextBox textBox4;
+		private Label lblNumeroPedido;
+		private Label lblImporteTotaPedido;
+		private TextBox txtNumeroPedido;
+		private TextBox txtImporteTotalPedido;
 		private TextBox txtMayorValorTaco;
 		private TextBox txtPromedioValorTaco;
 		private TextBox txtMenorValorTaco;
@@ -583,7 +583,7 @@
 		private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private GroupBox gbEstadisticas;
 		private GroupBox gbConfirmarPedido;
-		private ComboBox cmbBebidaSeleccionada;
+		private ComboBox cmbBebida;
 		private ComboBox cmbTipoBebida;
 		private DataGridView dgvIngredientesTacoDetalle;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

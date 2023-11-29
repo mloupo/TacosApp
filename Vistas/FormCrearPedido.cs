@@ -42,7 +42,7 @@ namespace Vistas
 			dtPickerDeliveryRequest.Enabled = false;
 			cmbTipoBebida.DataSource = Enum.GetNames(typeof(Enums.TipoBebida));
 			cmbTipoBebida.Enabled = false;
-			cmbBebidaSeleccionada.Enabled = false;
+			cmbBebida.Enabled = false;
 			btnAgregarBebida.Enabled = false;
 			btnAgregarContactoDelivery.Enabled = false;
 		}
@@ -56,7 +56,7 @@ namespace Vistas
 		private void cmbTipoBebida_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			_tipoBebida = cmbTipoBebida.SelectedItem.ToString();
-			CargarTipoBebidasCmb();
+			CargarBebidasCmb();
 		}
 
 
@@ -67,12 +67,12 @@ namespace Vistas
 			cmbIngrediente.DisplayMember = "Nombre";
 			cmbIngrediente.SelectedIndex = 0;
 		}
-		private void CargarTipoBebidasCmb()
+		private void CargarBebidasCmb()
 		{
-			cmbBebidaSeleccionada.DataSource = _businessLogicLayer.ObtenerBebidas(_tipoBebida);
-			cmbBebidaSeleccionada.ValueMember = "Id";
-			cmbBebidaSeleccionada.DisplayMember = "Nombre";
-			cmbBebidaSeleccionada.SelectedIndex = 0;
+			cmbBebida.DataSource = _businessLogicLayer.ObtenerBebidas(_tipoBebida);
+			cmbBebida.ValueMember = "Id";
+			cmbBebida.DisplayMember = "Nombre";
+			cmbBebida.SelectedIndex = 0;
 		}
 
 
@@ -93,17 +93,27 @@ namespace Vistas
 		{
 			CrearTacoSiIngredientes();
 		}
-		private void btnCargaPedido_Click(object sender, EventArgs e)
-		{
-			GenerarNuevoPedido();
-		}
 		private void btnAgregarBebida_Click(object sender, EventArgs e)
 		{
+			_bebida = _businessLogicLayer.ObtenerBebidas(_tipoBebida)
+				.FirstOrDefault(i => i.Nombre == cmbBebida.SelectedItem.ToString());
 
+			if (_bebida != null)
+			{
+				_bebidasSeleccionadas.Add(_bebida);
+				foreach (var bebida in _bebidasSeleccionadas)
+				{
+					Console.WriteLine(bebida);
+				}
+			}
 		}
 		private void btnAgregarContactoDelivery_Click(object sender, EventArgs e)
 		{
 
+		}
+		private void btnCargaPedido_Click(object sender, EventArgs e)
+		{
+			GenerarNuevoPedido();
 		}
 
 
@@ -140,7 +150,7 @@ namespace Vistas
 		private void CambiarEstadoTextboxesBebidas(bool enabled)
 		{
 			cmbTipoBebida.Enabled = enabled;
-			cmbBebidaSeleccionada.Enabled = enabled;
+			cmbBebida.Enabled = enabled;
 			btnAgregarBebida.Enabled = enabled;
 		}
 

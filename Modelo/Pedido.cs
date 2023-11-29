@@ -43,11 +43,24 @@ namespace Modelo
 
 		public float ObtenerImporteBebidas()
 		{
-			foreach (IBebida bebida in _listaBebidas)
+			foreach (Bebida bebida in _listaBebidas)
 			{
-				Importe += bebida.ObtenerPrecio();
+				Importe += bebida.Precio;
 			}
 			return Importe;
+		}
+
+		public void AgregarTaco(Taco taco)
+		{
+			if (taco != null)
+			{
+				_listaTacos.Add(taco);
+				Console.WriteLine($"Taco agregado al pedido #{Id}: {taco}");
+			}
+			else
+			{
+				Console.WriteLine("No se puede agregar un taco nulo al pedido.");
+			}
 		}
 	}
 }

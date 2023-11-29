@@ -12,15 +12,14 @@ namespace Modelo.EntidadesProducto.Bebidas
 		{
 			return $" Nro: {Id} de {Nombre}, Precio: {Precio}";
 		}
-
-		public float ObtenerPrecio()
-		{
-			return Precio;
-		}
-
 		public void ObtenerPrecioConsola()
 		{
 			Console.WriteLine($"El precio de {Nombre} es {Precio}");
 		}
+		public override string? ToString()
+		{
+			return GetType().Name + DatosBebida();
+		}
+
 	}
 }
