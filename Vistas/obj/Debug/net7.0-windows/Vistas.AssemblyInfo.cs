@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vistas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf1bd366abff1f613f0b848d4ce8255962fff540")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e11fb1f911f53bb48efa456d5031eea5f88fa9e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vistas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vistas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

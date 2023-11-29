@@ -99,6 +99,7 @@
 			Name = "FormRaiz";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Raiz";
+			Load += FormRaiz_Load;
 			menuStrip1.ResumeLayout(false);
 			menuStrip1.PerformLayout();
 			ResumeLayout(false);

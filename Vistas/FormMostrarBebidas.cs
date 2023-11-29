@@ -70,5 +70,10 @@ namespace Vistas
 
 			dgvFormBebida.DataSource = filteredBebidas;
 		}
+
+		private void FormMostrarBebidas_Load_1(object sender, EventArgs e)
+		{
+			ActualizarGrillaSearch();
+		}
 	}
 }

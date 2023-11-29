@@ -40,5 +40,25 @@ namespace Model.Controllers
 			// manejo de excepciones
 			return _pedido;
 		}
+		public void AgregarIngredienteATaco(Taco taco, Ingrediente ingrediente)
+		{
+			// Lógica para agregar un ingrediente a un taco
+		}
+
+		public void AgregarTacoAPedido(Pedido pedido, Taco taco)
+		{
+			// Lógica para agregar un taco al pedido
+		}
+
+		public void AgregarBebidaAPedido(Pedido pedido, Bebida bebida)
+		{
+			// Lógica para agregar una bebida al pedido
+		}
+
+		public void AgregarInfoContactoAPedido(Pedido pedido, string datosCliente, string nroContacto, DateTime fechaEntrega)
+		{
+			// Lógica para agregar información de contacto al pedido
+		}
+
 	}
 }

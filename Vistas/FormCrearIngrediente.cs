@@ -51,8 +51,8 @@ namespace Vistas
 			if (cell.Value.ToString() == "Edit")
 			{
 				int id = int.Parse(dgvIngredientDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
-				string name = dgvIngredientDetails.Rows[e.RowIndex].Cells[0].Value.ToString();
-				string priceStr = dgvIngredientDetails.Rows[e.RowIndex].Cells[1].Value.ToString();
+				string name = dgvIngredientDetails.Rows[e.RowIndex].Cells[1].Value.ToString();
+				string priceStr = dgvIngredientDetails.Rows[e.RowIndex].Cells[2].Value.ToString();
 
 				if (!EsValidoDecimal(priceStr))
 				{

@@ -94,11 +94,12 @@ namespace Vistas
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
+			dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			dataGridViewTextBoxColumn3.DataPropertyName = "Id";
 			dataGridViewTextBoxColumn3.HeaderText = "Id";
 			dataGridViewTextBoxColumn3.MinimumWidth = 6;
 			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			dataGridViewTextBoxColumn3.Width = 125;
+			dataGridViewTextBoxColumn3.Width = 53;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -110,11 +111,12 @@ namespace Vistas
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
+			dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			dataGridViewTextBoxColumn1.DataPropertyName = "Precio";
 			dataGridViewTextBoxColumn1.HeaderText = "Precio";
 			dataGridViewTextBoxColumn1.MinimumWidth = 6;
 			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			dataGridViewTextBoxColumn1.Width = 125;
+			dataGridViewTextBoxColumn1.Width = 85;
 			// 
 			// FormMostrarIngrediente
 			// 

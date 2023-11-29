@@ -36,6 +36,8 @@
 			cmbTipoIngrediente = new ComboBox();
 			cmbIngrediente = new ComboBox();
 			dgvTacoDetails = new DataGridView();
+			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			tacoBindingSource = new BindingSource(components);
 			lblTacoMasCaro = new Label();
 			lblTacoPromedio = new Label();
 			lblTacoMasBarato = new Label();
@@ -50,6 +52,11 @@
 			txtMenorValorTaco = new TextBox();
 			IngredienteTacoGroup = new GroupBox();
 			dgvIngredientesTacoDetalle = new DataGridView();
+			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			cantidadMaximaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			rellenoBindingSource = new BindingSource(components);
 			txtNroContactoCliente = new TextBox();
 			label4 = new Label();
 			lblEmailCliente = new Label();
@@ -57,7 +64,9 @@
 			dtPickerDeliveryRequest = new DateTimePicker();
 			ckbDelivery = new CheckBox();
 			ClienteGroup = new GroupBox();
+			btnAgregarContactoDelivery = new Button();
 			gbBebidas = new GroupBox();
+			btnAgregarBebida = new Button();
 			cmbBebidaSeleccionada = new ComboBox();
 			cmbTipoBebida = new ComboBox();
 			ckbBebida = new CheckBox();
@@ -65,22 +74,15 @@
 			lblBebida = new Label();
 			gbEstadisticas = new GroupBox();
 			gbConfirmarPedido = new GroupBox();
-			rellenoBindingSource = new BindingSource(components);
-			tacoBindingSource = new BindingSource(components);
-			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			cantidadMaximaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgvTacoDetails).BeginInit();
+			((System.ComponentModel.ISupportInitialize)tacoBindingSource).BeginInit();
 			IngredienteTacoGroup.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvIngredientesTacoDetalle).BeginInit();
+			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
 			ClienteGroup.SuspendLayout();
 			gbBebidas.SuspendLayout();
 			gbEstadisticas.SuspendLayout();
 			gbConfirmarPedido.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).BeginInit();
-			((System.ComponentModel.ISupportInitialize)tacoBindingSource).BeginInit();
 			SuspendLayout();
 			// 
 			// btnAgregarIngrediente
@@ -151,6 +153,19 @@
 			dgvTacoDetails.RowTemplate.Height = 29;
 			dgvTacoDetails.Size = new Size(544, 152);
 			dgvTacoDetails.TabIndex = 14;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			dataGridViewTextBoxColumn2.DataPropertyName = "Id";
+			dataGridViewTextBoxColumn2.HeaderText = "Id";
+			dataGridViewTextBoxColumn2.MinimumWidth = 6;
+			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			dataGridViewTextBoxColumn2.ReadOnly = true;
+			dataGridViewTextBoxColumn2.Width = 125;
+			// 
+			// tacoBindingSource
+			// 
+			tacoBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Tacos.Taco);
 			// 
 			// lblTacoMasCaro
 			// 
@@ -283,180 +298,6 @@
 			dgvIngredientesTacoDetalle.Size = new Size(544, 151);
 			dgvIngredientesTacoDetalle.TabIndex = 19;
 			// 
-			// txtNroContactoCliente
-			// 
-			txtNroContactoCliente.Location = new Point(147, 53);
-			txtNroContactoCliente.Name = "txtNroContactoCliente";
-			txtNroContactoCliente.Size = new Size(408, 25);
-			txtNroContactoCliente.TabIndex = 22;
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(43, 56);
-			label4.Name = "label4";
-			label4.Size = new Size(104, 18);
-			label4.TabIndex = 20;
-			label4.Text = "Nro Contacto";
-			// 
-			// lblEmailCliente
-			// 
-			lblEmailCliente.AutoSize = true;
-			lblEmailCliente.Location = new Point(43, 26);
-			lblEmailCliente.Name = "lblEmailCliente";
-			lblEmailCliente.Size = new Size(48, 18);
-			lblEmailCliente.TabIndex = 19;
-			lblEmailCliente.Text = "Email";
-			// 
-			// txtDatosCliente
-			// 
-			txtDatosCliente.Location = new Point(147, 23);
-			txtDatosCliente.Name = "txtDatosCliente";
-			txtDatosCliente.Size = new Size(408, 25);
-			txtDatosCliente.TabIndex = 21;
-			txtDatosCliente.Text = "Correo Electronico";
-			// 
-			// dtPickerDeliveryRequest
-			// 
-			dtPickerDeliveryRequest.Location = new Point(332, 84);
-			dtPickerDeliveryRequest.Name = "dtPickerDeliveryRequest";
-			dtPickerDeliveryRequest.Size = new Size(223, 25);
-			dtPickerDeliveryRequest.TabIndex = 23;
-			// 
-			// ckbDelivery
-			// 
-			ckbDelivery.AutoSize = true;
-			ckbDelivery.Location = new Point(43, 91);
-			ckbDelivery.Name = "ckbDelivery";
-			ckbDelivery.Size = new Size(190, 22);
-			ckbDelivery.TabIndex = 24;
-			ckbDelivery.Text = "Solicita tu Delivery";
-			ckbDelivery.UseVisualStyleBackColor = true;
-			ckbDelivery.CheckedChanged += ckbDelivery_CheckedChanged;
-			// 
-			// ClienteGroup
-			// 
-			ClienteGroup.Controls.Add(ckbDelivery);
-			ClienteGroup.Controls.Add(dtPickerDeliveryRequest);
-			ClienteGroup.Controls.Add(txtDatosCliente);
-			ClienteGroup.Controls.Add(lblEmailCliente);
-			ClienteGroup.Controls.Add(label4);
-			ClienteGroup.Controls.Add(txtNroContactoCliente);
-			ClienteGroup.Location = new Point(582, 162);
-			ClienteGroup.Name = "ClienteGroup";
-			ClienteGroup.Size = new Size(565, 132);
-			ClienteGroup.TabIndex = 31;
-			ClienteGroup.TabStop = false;
-			ClienteGroup.Text = "Envios";
-			// 
-			// gbBebidas
-			// 
-			gbBebidas.Controls.Add(cmbBebidaSeleccionada);
-			gbBebidas.Controls.Add(cmbTipoBebida);
-			gbBebidas.Controls.Add(ckbBebida);
-			gbBebidas.Controls.Add(lblTipoBebida);
-			gbBebidas.Controls.Add(lblBebida);
-			gbBebidas.Location = new Point(582, 24);
-			gbBebidas.Name = "gbBebidas";
-			gbBebidas.Size = new Size(564, 132);
-			gbBebidas.TabIndex = 33;
-			gbBebidas.TabStop = false;
-			gbBebidas.Text = "Bebidas";
-			// 
-			// cmbBebidaSeleccionada
-			// 
-			cmbBebidaSeleccionada.FormattingEnabled = true;
-			cmbBebidaSeleccionada.Location = new Point(147, 50);
-			cmbBebidaSeleccionada.Name = "cmbBebidaSeleccionada";
-			cmbBebidaSeleccionada.Size = new Size(408, 26);
-			cmbBebidaSeleccionada.TabIndex = 26;
-			cmbBebidaSeleccionada.Text = "Bebida";
-			// 
-			// cmbTipoBebida
-			// 
-			cmbTipoBebida.FormattingEnabled = true;
-			cmbTipoBebida.Items.AddRange(new object[] { "Agua", "Gaseosa", "Cerveza" });
-			cmbTipoBebida.Location = new Point(147, 18);
-			cmbTipoBebida.Name = "cmbTipoBebida";
-			cmbTipoBebida.Size = new Size(408, 26);
-			cmbTipoBebida.TabIndex = 25;
-			cmbTipoBebida.Text = "Tipo Bebida";
-			// 
-			// ckbBebida
-			// 
-			ckbBebida.AutoSize = true;
-			ckbBebida.Location = new Point(43, 91);
-			ckbBebida.Name = "ckbBebida";
-			ckbBebida.Size = new Size(166, 22);
-			ckbBebida.TabIndex = 24;
-			ckbBebida.Text = "Agrega una Bebida";
-			ckbBebida.UseVisualStyleBackColor = true;
-			ckbBebida.CheckedChanged += ckbBebida_CheckedChanged;
-			// 
-			// lblTipoBebida
-			// 
-			lblTipoBebida.AutoSize = true;
-			lblTipoBebida.Location = new Point(43, 26);
-			lblTipoBebida.Name = "lblTipoBebida";
-			lblTipoBebida.Size = new Size(40, 18);
-			lblTipoBebida.TabIndex = 19;
-			lblTipoBebida.Text = "Tipo";
-			// 
-			// lblBebida
-			// 
-			lblBebida.AutoSize = true;
-			lblBebida.Location = new Point(43, 56);
-			lblBebida.Name = "lblBebida";
-			lblBebida.Size = new Size(56, 18);
-			lblBebida.TabIndex = 20;
-			lblBebida.Text = "Bebida";
-			// 
-			// gbEstadisticas
-			// 
-			gbEstadisticas.Controls.Add(txtMayorValorTaco);
-			gbEstadisticas.Controls.Add(lblTacoMasCaro);
-			gbEstadisticas.Controls.Add(txtMenorValorTaco);
-			gbEstadisticas.Controls.Add(lblTacoPromedio);
-			gbEstadisticas.Controls.Add(txtPromedioValorTaco);
-			gbEstadisticas.Controls.Add(lblTacoMasBarato);
-			gbEstadisticas.Location = new Point(582, 300);
-			gbEstadisticas.Name = "gbEstadisticas";
-			gbEstadisticas.Size = new Size(565, 151);
-			gbEstadisticas.TabIndex = 34;
-			gbEstadisticas.TabStop = false;
-			gbEstadisticas.Text = "Estadisticas";
-			// 
-			// gbConfirmarPedido
-			// 
-			gbConfirmarPedido.Controls.Add(textBox3);
-			gbConfirmarPedido.Controls.Add(btnCargaPedido);
-			gbConfirmarPedido.Controls.Add(label5);
-			gbConfirmarPedido.Controls.Add(textBox4);
-			gbConfirmarPedido.Controls.Add(label6);
-			gbConfirmarPedido.Location = new Point(887, 467);
-			gbConfirmarPedido.Name = "gbConfirmarPedido";
-			gbConfirmarPedido.Size = new Size(250, 125);
-			gbConfirmarPedido.TabIndex = 35;
-			gbConfirmarPedido.TabStop = false;
-			gbConfirmarPedido.Text = "Confirmacion";
-			// 
-			// rellenoBindingSource
-			// 
-			rellenoBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Tacos.Relleno);
-			// 
-			// tacoBindingSource
-			// 
-			tacoBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Tacos.Taco);
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			dataGridViewTextBoxColumn2.DataPropertyName = "Id";
-			dataGridViewTextBoxColumn2.HeaderText = "Id";
-			dataGridViewTextBoxColumn2.MinimumWidth = 6;
-			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			dataGridViewTextBoxColumn2.ReadOnly = true;
-			dataGridViewTextBoxColumn2.Width = 125;
-			// 
 			// dataGridViewTextBoxColumn1
 			// 
 			dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -491,6 +332,189 @@
 			cantidadMaximaDataGridViewTextBoxColumn.Visible = false;
 			cantidadMaximaDataGridViewTextBoxColumn.Width = 125;
 			// 
+			// rellenoBindingSource
+			// 
+			rellenoBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Tacos.Relleno);
+			// 
+			// txtNroContactoCliente
+			// 
+			txtNroContactoCliente.Location = new Point(129, 96);
+			txtNroContactoCliente.Name = "txtNroContactoCliente";
+			txtNroContactoCliente.Size = new Size(408, 25);
+			txtNroContactoCliente.TabIndex = 22;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Location = new Point(25, 99);
+			label4.Name = "label4";
+			label4.Size = new Size(104, 18);
+			label4.TabIndex = 20;
+			label4.Text = "Nro Contacto";
+			// 
+			// lblEmailCliente
+			// 
+			lblEmailCliente.AutoSize = true;
+			lblEmailCliente.Location = new Point(25, 69);
+			lblEmailCliente.Name = "lblEmailCliente";
+			lblEmailCliente.Size = new Size(48, 18);
+			lblEmailCliente.TabIndex = 19;
+			lblEmailCliente.Text = "Email";
+			// 
+			// txtDatosCliente
+			// 
+			txtDatosCliente.Location = new Point(129, 66);
+			txtDatosCliente.Name = "txtDatosCliente";
+			txtDatosCliente.Size = new Size(408, 25);
+			txtDatosCliente.TabIndex = 21;
+			txtDatosCliente.Text = "Correo Electronico";
+			// 
+			// dtPickerDeliveryRequest
+			// 
+			dtPickerDeliveryRequest.Location = new Point(25, 143);
+			dtPickerDeliveryRequest.Name = "dtPickerDeliveryRequest";
+			dtPickerDeliveryRequest.Size = new Size(223, 25);
+			dtPickerDeliveryRequest.TabIndex = 23;
+			// 
+			// ckbDelivery
+			// 
+			ckbDelivery.AutoSize = true;
+			ckbDelivery.Location = new Point(30, 24);
+			ckbDelivery.Name = "ckbDelivery";
+			ckbDelivery.Size = new Size(190, 22);
+			ckbDelivery.TabIndex = 24;
+			ckbDelivery.Text = "Solicita tu Delivery";
+			ckbDelivery.UseVisualStyleBackColor = true;
+			ckbDelivery.CheckedChanged += ckbDelivery_CheckedChanged;
+			// 
+			// ClienteGroup
+			// 
+			ClienteGroup.Controls.Add(btnAgregarContactoDelivery);
+			ClienteGroup.Controls.Add(ckbDelivery);
+			ClienteGroup.Controls.Add(dtPickerDeliveryRequest);
+			ClienteGroup.Controls.Add(txtDatosCliente);
+			ClienteGroup.Controls.Add(lblEmailCliente);
+			ClienteGroup.Controls.Add(label4);
+			ClienteGroup.Controls.Add(txtNroContactoCliente);
+			ClienteGroup.Location = new Point(582, 216);
+			ClienteGroup.Name = "ClienteGroup";
+			ClienteGroup.Size = new Size(565, 208);
+			ClienteGroup.TabIndex = 31;
+			ClienteGroup.TabStop = false;
+			ClienteGroup.Text = "Envios";
+			// 
+			// btnAgregarContactoDelivery
+			// 
+			btnAgregarContactoDelivery.Location = new Point(443, 143);
+			btnAgregarContactoDelivery.Name = "btnAgregarContactoDelivery";
+			btnAgregarContactoDelivery.Size = new Size(94, 29);
+			btnAgregarContactoDelivery.TabIndex = 25;
+			btnAgregarContactoDelivery.Text = "Agregar";
+			btnAgregarContactoDelivery.UseVisualStyleBackColor = true;
+			btnAgregarContactoDelivery.Click += btnAgregarContactoDelivery_Click;
+			// 
+			// gbBebidas
+			// 
+			gbBebidas.Controls.Add(btnAgregarBebida);
+			gbBebidas.Controls.Add(cmbBebidaSeleccionada);
+			gbBebidas.Controls.Add(cmbTipoBebida);
+			gbBebidas.Controls.Add(ckbBebida);
+			gbBebidas.Controls.Add(lblTipoBebida);
+			gbBebidas.Controls.Add(lblBebida);
+			gbBebidas.Location = new Point(582, 24);
+			gbBebidas.Name = "gbBebidas";
+			gbBebidas.Size = new Size(564, 186);
+			gbBebidas.TabIndex = 33;
+			gbBebidas.TabStop = false;
+			gbBebidas.Text = "Bebidas";
+			// 
+			// btnAgregarBebida
+			// 
+			btnAgregarBebida.Location = new Point(443, 147);
+			btnAgregarBebida.Name = "btnAgregarBebida";
+			btnAgregarBebida.Size = new Size(94, 29);
+			btnAgregarBebida.TabIndex = 27;
+			btnAgregarBebida.Text = "Agregar";
+			btnAgregarBebida.UseVisualStyleBackColor = true;
+			btnAgregarBebida.Click += btnAgregarBebida_Click;
+			// 
+			// cmbBebidaSeleccionada
+			// 
+			cmbBebidaSeleccionada.FormattingEnabled = true;
+			cmbBebidaSeleccionada.Location = new Point(129, 98);
+			cmbBebidaSeleccionada.Name = "cmbBebidaSeleccionada";
+			cmbBebidaSeleccionada.Size = new Size(408, 26);
+			cmbBebidaSeleccionada.TabIndex = 26;
+			cmbBebidaSeleccionada.Text = "Bebida";
+			// 
+			// cmbTipoBebida
+			// 
+			cmbTipoBebida.FormattingEnabled = true;
+			cmbTipoBebida.Items.AddRange(new object[] { "Agua", "Gaseosa", "Cerveza" });
+			cmbTipoBebida.Location = new Point(129, 66);
+			cmbTipoBebida.Name = "cmbTipoBebida";
+			cmbTipoBebida.Size = new Size(408, 26);
+			cmbTipoBebida.TabIndex = 25;
+			cmbTipoBebida.Text = "Tipo Bebida";
+			// 
+			// ckbBebida
+			// 
+			ckbBebida.AutoSize = true;
+			ckbBebida.Location = new Point(30, 24);
+			ckbBebida.Name = "ckbBebida";
+			ckbBebida.Size = new Size(166, 22);
+			ckbBebida.TabIndex = 24;
+			ckbBebida.Text = "Agrega una Bebida";
+			ckbBebida.UseVisualStyleBackColor = true;
+			ckbBebida.CheckedChanged += ckbBebida_CheckedChanged;
+			// 
+			// lblTipoBebida
+			// 
+			lblTipoBebida.AutoSize = true;
+			lblTipoBebida.Location = new Point(25, 74);
+			lblTipoBebida.Name = "lblTipoBebida";
+			lblTipoBebida.Size = new Size(40, 18);
+			lblTipoBebida.TabIndex = 19;
+			lblTipoBebida.Text = "Tipo";
+			// 
+			// lblBebida
+			// 
+			lblBebida.AutoSize = true;
+			lblBebida.Location = new Point(25, 104);
+			lblBebida.Name = "lblBebida";
+			lblBebida.Size = new Size(56, 18);
+			lblBebida.TabIndex = 20;
+			lblBebida.Text = "Bebida";
+			// 
+			// gbEstadisticas
+			// 
+			gbEstadisticas.Controls.Add(txtMayorValorTaco);
+			gbEstadisticas.Controls.Add(lblTacoMasCaro);
+			gbEstadisticas.Controls.Add(txtMenorValorTaco);
+			gbEstadisticas.Controls.Add(lblTacoPromedio);
+			gbEstadisticas.Controls.Add(txtPromedioValorTaco);
+			gbEstadisticas.Controls.Add(lblTacoMasBarato);
+			gbEstadisticas.Location = new Point(582, 447);
+			gbEstadisticas.Name = "gbEstadisticas";
+			gbEstadisticas.Size = new Size(273, 151);
+			gbEstadisticas.TabIndex = 34;
+			gbEstadisticas.TabStop = false;
+			gbEstadisticas.Text = "Estadisticas";
+			// 
+			// gbConfirmarPedido
+			// 
+			gbConfirmarPedido.Controls.Add(textBox3);
+			gbConfirmarPedido.Controls.Add(btnCargaPedido);
+			gbConfirmarPedido.Controls.Add(label5);
+			gbConfirmarPedido.Controls.Add(textBox4);
+			gbConfirmarPedido.Controls.Add(label6);
+			gbConfirmarPedido.Location = new Point(887, 467);
+			gbConfirmarPedido.Name = "gbConfirmarPedido";
+			gbConfirmarPedido.Size = new Size(250, 125);
+			gbConfirmarPedido.TabIndex = 35;
+			gbConfirmarPedido.TabStop = false;
+			gbConfirmarPedido.Text = "Confirmacion";
+			// 
 			// FormCrearPedido
 			// 
 			AutoScaleDimensions = new SizeF(8F, 18F);
@@ -506,9 +530,11 @@
 			Text = "Crear Pedido";
 			Load += FormCreateTaco_Load;
 			((System.ComponentModel.ISupportInitialize)dgvTacoDetails).EndInit();
+			((System.ComponentModel.ISupportInitialize)tacoBindingSource).EndInit();
 			IngredienteTacoGroup.ResumeLayout(false);
 			IngredienteTacoGroup.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)dgvIngredientesTacoDetalle).EndInit();
+			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();
 			ClienteGroup.ResumeLayout(false);
 			ClienteGroup.PerformLayout();
 			gbBebidas.ResumeLayout(false);
@@ -517,8 +543,6 @@
 			gbEstadisticas.PerformLayout();
 			gbConfirmarPedido.ResumeLayout(false);
 			gbConfirmarPedido.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)rellenoBindingSource).EndInit();
-			((System.ComponentModel.ISupportInitialize)tacoBindingSource).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -569,5 +593,7 @@
 		private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn cantidadMaximaDataGridViewTextBoxColumn;
 		private BindingSource rellenoBindingSource;
+		private Button btnAgregarContactoDelivery;
+		private Button btnAgregarBebida;
 	}
 }

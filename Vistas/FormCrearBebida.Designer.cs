@@ -43,15 +43,15 @@ namespace Vistas
 			btnCancelarCreacion = new Button();
 			btnCrearBebida = new Button();
 			dgvBebidaDetalles = new DataGridView();
+			gaseosaBindingSource = new BindingSource(components);
+			idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			idDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			nombreDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			precioDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			Edit = new DataGridViewLinkColumn();
 			Delete = new DataGridViewLinkColumn();
-			gaseosaBindingSource = new BindingSource(components);
-			idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)aguaBindingSource).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgvBebidaDetalles).BeginInit();
 			((System.ComponentModel.ISupportInitialize)gaseosaBindingSource).BeginInit();
@@ -143,53 +143,6 @@ namespace Vistas
 			dgvBebidaDetalles.TabIndex = 13;
 			dgvBebidaDetalles.CellContentClick += dgvBebidaDetalles_CellContentClick;
 			// 
-			// idDataGridViewTextBoxColumn2
-			// 
-			idDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-			idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-			idDataGridViewTextBoxColumn2.HeaderText = "Id";
-			idDataGridViewTextBoxColumn2.MinimumWidth = 6;
-			idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-			idDataGridViewTextBoxColumn2.Width = 53;
-			// 
-			// nombreDataGridViewTextBoxColumn2
-			// 
-			nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-			nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
-			nombreDataGridViewTextBoxColumn2.MinimumWidth = 6;
-			nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
-			nombreDataGridViewTextBoxColumn2.Width = 125;
-			// 
-			// precioDataGridViewTextBoxColumn2
-			// 
-			precioDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-			precioDataGridViewTextBoxColumn2.DataPropertyName = "Precio";
-			precioDataGridViewTextBoxColumn2.HeaderText = "Precio";
-			precioDataGridViewTextBoxColumn2.MinimumWidth = 6;
-			precioDataGridViewTextBoxColumn2.Name = "precioDataGridViewTextBoxColumn2";
-			precioDataGridViewTextBoxColumn2.Width = 85;
-			// 
-			// Edit
-			// 
-			Edit.HeaderText = "Editar";
-			Edit.MinimumWidth = 6;
-			Edit.Name = "Edit";
-			Edit.ReadOnly = true;
-			Edit.Text = "Edit";
-			Edit.UseColumnTextForLinkValue = true;
-			Edit.Width = 60;
-			// 
-			// Delete
-			// 
-			Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-			Delete.HeaderText = "Eliminar";
-			Delete.MinimumWidth = 6;
-			Delete.Name = "Delete";
-			Delete.ReadOnly = true;
-			Delete.Text = "Delete";
-			Delete.UseColumnTextForLinkValue = true;
-			Delete.Width = 78;
-			// 
 			// gaseosaBindingSource
 			// 
 			gaseosaBindingSource.DataSource = typeof(Gaseosa);
@@ -211,6 +164,55 @@ namespace Vistas
 			precioDataGridViewTextBoxColumn.MinimumWidth = 6;
 			precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
 			precioDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// idDataGridViewTextBoxColumn2
+			// 
+			idDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+			idDataGridViewTextBoxColumn2.HeaderText = "Id";
+			idDataGridViewTextBoxColumn2.MinimumWidth = 6;
+			idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+			idDataGridViewTextBoxColumn2.Width = 53;
+			// 
+			// nombreDataGridViewTextBoxColumn2
+			// 
+			nombreDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+			nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
+			nombreDataGridViewTextBoxColumn2.MinimumWidth = 6;
+			nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
+			nombreDataGridViewTextBoxColumn2.Width = 85;
+			// 
+			// precioDataGridViewTextBoxColumn2
+			// 
+			precioDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			precioDataGridViewTextBoxColumn2.DataPropertyName = "Precio";
+			precioDataGridViewTextBoxColumn2.HeaderText = "Precio";
+			precioDataGridViewTextBoxColumn2.MinimumWidth = 6;
+			precioDataGridViewTextBoxColumn2.Name = "precioDataGridViewTextBoxColumn2";
+			precioDataGridViewTextBoxColumn2.Width = 85;
+			// 
+			// Edit
+			// 
+			Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			Edit.HeaderText = "Editar";
+			Edit.MinimumWidth = 6;
+			Edit.Name = "Edit";
+			Edit.ReadOnly = true;
+			Edit.Text = "Edit";
+			Edit.UseColumnTextForLinkValue = true;
+			Edit.Width = 62;
+			// 
+			// Delete
+			// 
+			Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+			Delete.HeaderText = "Eliminar";
+			Delete.MinimumWidth = 6;
+			Delete.Name = "Delete";
+			Delete.ReadOnly = true;
+			Delete.Text = "Delete";
+			Delete.UseColumnTextForLinkValue = true;
+			Delete.Width = 78;
 			// 
 			// FormCrearBebida
 			// 

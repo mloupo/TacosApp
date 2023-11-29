@@ -162,11 +162,12 @@ namespace Vistas
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
+			dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
 			dataGridViewTextBoxColumn2.HeaderText = "Nombre";
 			dataGridViewTextBoxColumn2.MinimumWidth = 6;
 			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			dataGridViewTextBoxColumn2.Width = 125;
+			dataGridViewTextBoxColumn2.Width = 85;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -179,23 +180,25 @@ namespace Vistas
 			// 
 			// Delete
 			// 
+			Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			Delete.HeaderText = "Eliminar";
 			Delete.MinimumWidth = 6;
 			Delete.Name = "Delete";
 			Delete.ReadOnly = true;
 			Delete.Text = "Delete";
 			Delete.UseColumnTextForLinkValue = true;
-			Delete.Width = 80;
+			Delete.Width = 78;
 			// 
 			// Edit
 			// 
+			Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			Edit.HeaderText = "Editar";
 			Edit.MinimumWidth = 6;
 			Edit.Name = "Edit";
 			Edit.ReadOnly = true;
 			Edit.Text = "Edit";
 			Edit.UseColumnTextForLinkValue = true;
-			Edit.Width = 60;
+			Edit.Width = 62;
 			// 
 			// FormCrearIngrediente
 			// 

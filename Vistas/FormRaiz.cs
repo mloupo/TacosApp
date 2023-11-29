@@ -54,5 +54,10 @@ namespace Vistas
 		}
 
 		#endregion
+
+		private void FormRaiz_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -53,7 +53,6 @@ namespace Vistas
 		private void FormIngredient_Load(object sender, EventArgs e)
 		{
 			ActualizarGrillaSearch();
-
 		}
 
 		private void BtnAddIngredient_Click(object sender, EventArgs e)
@@ -64,7 +63,6 @@ namespace Vistas
 
 		private void btnSearchIngredient_Click(object sender, EventArgs e)
 		{
-
 			var filteredIngredients = _allIngredientes
 				.Where(i => i.Nombre.ToLower().Contains(txtSearchIngredient.Text.ToLower()))
 				.ToList();

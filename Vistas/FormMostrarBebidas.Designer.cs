@@ -30,14 +30,17 @@ namespace Vistas
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
+			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
 			txtBuscarBebida = new TextBox();
 			btnBuscarBebida = new Button();
 			btnCrearBebida = new Button();
 			dgvFormBebida = new DataGridView();
+			gaseosaBindingSource = new BindingSource(components);
 			dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-			gaseosaBindingSource = new BindingSource(components);
 			((System.ComponentModel.ISupportInitialize)dgvFormBebida).BeginInit();
 			((System.ComponentModel.ISupportInitialize)gaseosaBindingSource).BeginInit();
 			SuspendLayout();
@@ -72,6 +75,7 @@ namespace Vistas
 			// 
 			// dgvFormBebida
 			// 
+			dgvFormBebida.AllowUserToOrderColumns = true;
 			dgvFormBebida.AutoGenerateColumns = false;
 			dgvFormBebida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgvFormBebida.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
@@ -83,17 +87,27 @@ namespace Vistas
 			dgvFormBebida.Size = new Size(478, 307);
 			dgvFormBebida.TabIndex = 4;
 			// 
+			// gaseosaBindingSource
+			// 
+			gaseosaBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Bebidas.Gaseosa);
+			// 
 			// dataGridViewTextBoxColumn4
 			// 
+			dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			dataGridViewTextBoxColumn4.DataPropertyName = "Id";
+			dataGridViewCellStyle1.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			dataGridViewCellStyle1.ForeColor = Color.Black;
+			dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
 			dataGridViewTextBoxColumn4.HeaderText = "Id";
 			dataGridViewTextBoxColumn4.MinimumWidth = 6;
 			dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			dataGridViewTextBoxColumn4.Width = 125;
+			dataGridViewTextBoxColumn4.Width = 53;
 			// 
 			// dataGridViewTextBoxColumn5
 			// 
 			dataGridViewTextBoxColumn5.DataPropertyName = "Nombre";
+			dataGridViewCellStyle2.ForeColor = Color.Black;
+			dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
 			dataGridViewTextBoxColumn5.HeaderText = "Nombre";
 			dataGridViewTextBoxColumn5.MinimumWidth = 6;
 			dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -101,15 +115,14 @@ namespace Vistas
 			// 
 			// dataGridViewTextBoxColumn6
 			// 
+			dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 			dataGridViewTextBoxColumn6.DataPropertyName = "Precio";
+			dataGridViewCellStyle3.ForeColor = Color.Black;
+			dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
 			dataGridViewTextBoxColumn6.HeaderText = "Precio";
 			dataGridViewTextBoxColumn6.MinimumWidth = 6;
 			dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			dataGridViewTextBoxColumn6.Width = 125;
-			// 
-			// gaseosaBindingSource
-			// 
-			gaseosaBindingSource.DataSource = typeof(Modelo.EntidadesProducto.Bebidas.Gaseosa);
+			dataGridViewTextBoxColumn6.Width = 85;
 			// 
 			// FormMostrarBebidas
 			// 
@@ -125,6 +138,7 @@ namespace Vistas
 			Name = "FormMostrarBebidas";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Lista de Bebidas";
+			Load += FormMostrarBebidas_Load_1;
 			((System.ComponentModel.ISupportInitialize)dgvFormBebida).EndInit();
 			((System.ComponentModel.ISupportInitialize)gaseosaBindingSource).EndInit();
 			ResumeLayout(false);
